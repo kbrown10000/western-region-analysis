@@ -174,6 +174,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <NavCard title="Executive Summary" link="/executive-summary" highlight />
             <NavCard title="🎯 GTM Strategy" link="/gtm-strategy" highlight />
+            <NavCard title="💎 Account Rationale" link="/account-rationale" highlight />
             <NavCard title="📊 Market Analysis" link="/market-analysis" highlight />
             <NavCard title="📍 Interactive Map" link="/map" highlight />
             <NavCard title="📊 Financial Dashboard" link="/dashboard" highlight />
