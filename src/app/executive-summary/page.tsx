@@ -11,6 +11,7 @@ export default function ExecutiveSummary() {
           <Link href="/" className="text-white font-bold text-xl">USDM Western Region</Link>
           <nav className="flex gap-6">
             <Link href="/market-analysis" className="text-slate-400 hover:text-white">Market Analysis</Link>
+            <Link href="/gtm-strategy" className="text-slate-400 hover:text-white">GTM Strategy</Link>
             <Link href="/targets" className="text-slate-400 hover:text-white">Targets</Link>
             <Link href="/action-plan" className="text-slate-400 hover:text-white">Action Plan</Link>
           </nav>

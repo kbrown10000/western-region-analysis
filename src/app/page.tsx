@@ -24,6 +24,9 @@ export default function Home() {
               <Link href="/executive-summary" className="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold rounded-lg transition-all transform hover:scale-105">
                 Executive Summary
               </Link>
+              <Link href="/gtm-strategy" className="px-8 py-4 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-lg transition-all transform hover:scale-105">
+                GTM Strategy
+              </Link>
               <Link href="/dashboard" className="px-8 py-4 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-all border border-slate-600">
                 Financial Dashboard
               </Link>
@@ -170,6 +173,8 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-white text-center mb-16">Full Report Sections</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <NavCard title="Executive Summary" link="/executive-summary" highlight />
+            <NavCard title="🎯 GTM Strategy" link="/gtm-strategy" highlight />
+            <NavCard title="📊 Market Analysis" link="/market-analysis" highlight />
             <NavCard title="📍 Interactive Map" link="/map" highlight />
             <NavCard title="📊 Financial Dashboard" link="/dashboard" highlight />
             <NavCard title="📈 Margin Analysis" link="/margin-analysis" highlight />
