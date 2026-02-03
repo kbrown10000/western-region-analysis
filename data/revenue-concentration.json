@@ -1,0 +1,47 @@
+{
+  "summary": {
+    "hhi": 164,
+    "hhi_risk_level": "Low",
+    "top_1_percent": 4.9,
+    "top_5_percent": 20.7,
+    "top_10_percent": 31.4,
+    "top_20_percent": 46.4,
+    "gini_coefficient": 0.739,
+    "total_customers": 333,
+    "total_revenue": 42183412
+  },
+  "top_20_customers": [
+    {"rank": 1, "name": "Kite Pharma, Inc.", "revenue": 2084349, "pct": 4.9},
+    {"rank": 2, "name": "Abbott Laboratories Pacific", "revenue": 1937966, "pct": 4.6},
+    {"rank": 3, "name": "Amgen Inc.", "revenue": 1745870, "pct": 4.1},
+    {"rank": 4, "name": "Gilead Sciences", "revenue": 1712525, "pct": 4.1},
+    {"rank": 5, "name": "PTC Inc.", "revenue": 1265570, "pct": 3.0},
+    {"rank": 6, "name": "argenx BV", "revenue": 1213312, "pct": 2.9},
+    {"rank": 7, "name": "Crinetics Pharmaceuticals", "revenue": 976768, "pct": 2.3},
+    {"rank": 8, "name": "Novavax, Inc.", "revenue": 798142, "pct": 1.9},
+    {"rank": 9, "name": "Enovis Corporation", "revenue": 773140, "pct": 1.8},
+    {"rank": 10, "name": "Bausch Health US, LLC", "revenue": 738910, "pct": 1.8},
+    {"rank": 11, "name": "Edwards Lifesciences LLC", "revenue": 717946, "pct": 1.7},
+    {"rank": 12, "name": "Takeda Pharmaceuticals U.S.A.", "revenue": 701554, "pct": 1.7},
+    {"rank": 13, "name": "Ionis Pharmaceuticals, Inc.", "revenue": 700531, "pct": 1.7},
+    {"rank": 14, "name": "Shire US Inc.", "revenue": 692970, "pct": 1.6},
+    {"rank": 15, "name": "Becton Dickinson and Company", "revenue": 691499, "pct": 1.6},
+    {"rank": 16, "name": "Loxo Oncology, Inc.", "revenue": 621434, "pct": 1.5},
+    {"rank": 17, "name": "STAAR Surgical Company", "revenue": 604270, "pct": 1.4},
+    {"rank": 18, "name": "Arrowhead Pharmaceuticals", "revenue": 589176, "pct": 1.4},
+    {"rank": 19, "name": "Halozyme, Inc.", "revenue": 513922, "pct": 1.2},
+    {"rank": 20, "name": "Corcept Therapeutics", "revenue": 502582, "pct": 1.2}
+  ],
+  "benchmarks": {
+    "hhi_low_threshold": 1000,
+    "hhi_high_threshold": 1800,
+    "healthy_top_10_max": 50
+  },
+  "insights": [
+    "Very healthy revenue diversification (HHI 164 < 1000 threshold)",
+    "No single customer >5% of revenue",
+    "Top 10 = 31.4% (well below 50% concern threshold)",
+    "However, top 4 accounts are all low-margin staffing contracts"
+  ],
+  "generated_at": "2026-02-03T06:20:00Z"
+}

@@ -1,0 +1,51 @@
+{
+  "summary": {
+    "totalAtRisk": 52,
+    "totalValue": 4850000,
+    "criticalCount": 12,
+    "warningCount": 28,
+    "watchCount": 12
+  },
+  "riskFactors": [
+    {"factor": "SameDayFlip", "count": 18, "description": "Deal stage changed and reverted same day", "impact": "high"},
+    {"factor": "Regression", "count": 15, "description": "Deal moved backward in pipeline", "impact": "high"},
+    {"factor": "Stalled", "count": 24, "description": "No activity for 30+ days", "impact": "medium"},
+    {"factor": "PriceNegotiation", "count": 8, "description": "Multiple discount requests", "impact": "medium"},
+    {"factor": "ChampionLoss", "count": 6, "description": "Primary contact left company", "impact": "critical"},
+    {"factor": "CompetitorMentioned", "count": 11, "description": "Competitor referenced in notes", "impact": "high"}
+  ],
+  "atRiskOpportunities": [
+    {"id": "OPP-001", "account": "Gilead Sciences", "dealName": "CSV Support Extension", "value": 450000, "stage": "Negotiation", "riskLevel": "critical", "flags": ["SameDayFlip", "PriceNegotiation"], "daysSinceActivity": 15, "owner": "Sarah Chen"},
+    {"id": "OPP-002", "account": "Amgen", "dealName": "IT Quality Services FY26", "value": 380000, "stage": "Proposal", "riskLevel": "critical", "flags": ["Regression", "ChampionLoss"], "daysSinceActivity": 22, "owner": "Mike Rodriguez"},
+    {"id": "OPP-003", "account": "Kite Pharma", "dealName": "Validation Staff Aug", "value": 320000, "stage": "Qualification", "riskLevel": "critical", "flags": ["SameDayFlip", "CompetitorMentioned"], "daysSinceActivity": 8, "owner": "Sarah Chen"},
+    {"id": "OPP-004", "account": "BioMarin", "dealName": "DocuSign Migration", "value": 185000, "stage": "Negotiation", "riskLevel": "warning", "flags": ["Stalled", "PriceNegotiation"], "daysSinceActivity": 35, "owner": "Jennifer Wu"},
+    {"id": "OPP-005", "account": "Jazz Pharma", "dealName": "QMS Implementation", "value": 275000, "stage": "Proposal", "riskLevel": "warning", "flags": ["Regression"], "daysSinceActivity": 18, "owner": "Mike Rodriguez"},
+    {"id": "OPP-006", "account": "Vertex", "dealName": "Box CBA Expansion", "value": 165000, "stage": "Qualification", "riskLevel": "warning", "flags": ["CompetitorMentioned"], "daysSinceActivity": 12, "owner": "Tom Anderson"},
+    {"id": "OPP-007", "account": "Illumina", "dealName": "QA Consulting Renewal", "value": 225000, "stage": "Negotiation", "riskLevel": "critical", "flags": ["ChampionLoss", "SameDayFlip"], "daysSinceActivity": 28, "owner": "Jennifer Wu"},
+    {"id": "OPP-008", "account": "Regeneron", "dealName": "IT Staff Aug Q1", "value": 195000, "stage": "Proposal", "riskLevel": "warning", "flags": ["Stalled"], "daysSinceActivity": 42, "owner": "Sarah Chen"},
+    {"id": "OPP-009", "account": "Enovis", "dealName": "Validation Services", "value": 145000, "stage": "Qualification", "riskLevel": "critical", "flags": ["Regression", "PriceNegotiation", "CompetitorMentioned"], "daysSinceActivity": 5, "owner": "Mike Rodriguez"},
+    {"id": "OPP-010", "account": "Takeda", "dealName": "ServiceNow Upgrade", "value": 290000, "stage": "Proposal", "riskLevel": "warning", "flags": ["Stalled", "SameDayFlip"], "daysSinceActivity": 31, "owner": "Tom Anderson"},
+    {"id": "OPP-011", "account": "Sarepta", "dealName": "Staffing Expansion", "value": 210000, "stage": "Negotiation", "riskLevel": "critical", "flags": ["ChampionLoss"], "daysSinceActivity": 14, "owner": "Jennifer Wu"},
+    {"id": "OPP-012", "account": "Ultragenyx", "dealName": "CSV Annual Contract", "value": 175000, "stage": "Proposal", "riskLevel": "warning", "flags": ["Regression", "Stalled"], "daysSinceActivity": 38, "owner": "Mike Rodriguez"},
+    {"id": "OPP-013", "account": "Denali Therapeutics", "dealName": "QA Support New", "value": 125000, "stage": "Qualification", "riskLevel": "watch", "flags": ["CompetitorMentioned"], "daysSinceActivity": 10, "owner": "Sarah Chen"},
+    {"id": "OPP-014", "account": "Exact Sciences", "dealName": "DocuSign Managed Svc", "value": 155000, "stage": "Negotiation", "riskLevel": "warning", "flags": ["PriceNegotiation"], "daysSinceActivity": 20, "owner": "Tom Anderson"},
+    {"id": "OPP-015", "account": "Insmed", "dealName": "IT Quality Staff", "value": 135000, "stage": "Proposal", "riskLevel": "watch", "flags": ["Stalled"], "daysSinceActivity": 33, "owner": "Jennifer Wu"},
+    {"id": "OPP-016", "account": "Seagen", "dealName": "Validation Package", "value": 198000, "stage": "Qualification", "riskLevel": "critical", "flags": ["SameDayFlip", "Regression"], "daysSinceActivity": 6, "owner": "Mike Rodriguez"},
+    {"id": "OPP-017", "account": "Krystal Bio", "dealName": "QMS Consulting", "value": 88000, "stage": "Proposal", "riskLevel": "watch", "flags": ["Stalled"], "daysSinceActivity": 45, "owner": "Sarah Chen"},
+    {"id": "OPP-018", "account": "Caribou Bio", "dealName": "CRISPR QA Support", "value": 165000, "stage": "Qualification", "riskLevel": "warning", "flags": ["CompetitorMentioned", "SameDayFlip"], "daysSinceActivity": 16, "owner": "Tom Anderson"},
+    {"id": "OPP-019", "account": "Allogene", "dealName": "CAR-T Validation", "value": 245000, "stage": "Proposal", "riskLevel": "critical", "flags": ["Regression", "ChampionLoss"], "daysSinceActivity": 25, "owner": "Jennifer Wu"},
+    {"id": "OPP-020", "account": "Sutro Biopharma", "dealName": "ADC Quality Services", "value": 115000, "stage": "Negotiation", "riskLevel": "warning", "flags": ["PriceNegotiation", "Stalled"], "daysSinceActivity": 29, "owner": "Mike Rodriguez"}
+  ],
+  "actionItems": [
+    {"priority": 1, "action": "Executive outreach to Gilead - CSV Extension at risk", "owner": "Kevin Brown", "dueDate": "2026-02-05", "status": "pending"},
+    {"priority": 2, "action": "Champion replacement meeting at Illumina", "owner": "Jennifer Wu", "dueDate": "2026-02-07", "status": "pending"},
+    {"priority": 3, "action": "Competitive response for Kite - prepare differentiation deck", "owner": "Sarah Chen", "dueDate": "2026-02-06", "status": "in-progress"},
+    {"priority": 4, "action": "Amgen stakeholder mapping - identify new champion", "owner": "Mike Rodriguez", "dueDate": "2026-02-10", "status": "pending"},
+    {"priority": 5, "action": "Price justification document for BioMarin", "owner": "Jennifer Wu", "dueDate": "2026-02-08", "status": "pending"},
+    {"priority": 6, "action": "Requalification call with Enovis decision makers", "owner": "Mike Rodriguez", "dueDate": "2026-02-04", "status": "scheduled"},
+    {"priority": 7, "action": "Sarepta exec sponsor introduction", "owner": "Kevin Brown", "dueDate": "2026-02-12", "status": "pending"},
+    {"priority": 8, "action": "Seagen deal rescue meeting", "owner": "Mike Rodriguez", "dueDate": "2026-02-05", "status": "scheduled"},
+    {"priority": 9, "action": "Allogene relationship assessment", "owner": "Jennifer Wu", "dueDate": "2026-02-09", "status": "pending"},
+    {"priority": 10, "action": "Stalled deals weekly review cadence", "owner": "Sales Team", "dueDate": "2026-02-03", "status": "recurring"}
+  ]
+}

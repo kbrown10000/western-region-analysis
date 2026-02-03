@@ -1,0 +1,41 @@
+{
+  "ar_aging": {
+    "total_ar": 4484283,
+    "current_0_30": 4269558,
+    "current_pct": 95.2,
+    "aging_31_60": 80109,
+    "aging_61_90": 24918,
+    "aging_over_90": 109698,
+    "at_risk_total": 134616,
+    "at_risk_pct": 3.0,
+    "customer_count": 127,
+    "high_risk_customers": 16,
+    "status": "HEALTHY"
+  },
+  "cash_position": {
+    "cash_balance": 3001055,
+    "total_ar": 4484283,
+    "total_ap": 0,
+    "net_working_capital": 7485338,
+    "quick_ratio": 999,
+    "dso_days": 0.1,
+    "dpo_days": 40,
+    "cash_conversion_cycle": -39.9,
+    "liquidity_status": "HEALTHY"
+  },
+  "high_risk_ar_customers": [
+    {"name": "LivaNova USA", "over_90": 46400, "total_at_risk": 46400},
+    {"name": "Direct Biologics", "over_90": 24494, "total_at_risk": 24494},
+    {"name": "Verax Biomedical", "over_90": 16570, "total_at_risk": 16570},
+    {"name": "Axsome Therapeutics", "over_90": 11089, "total_at_risk": 11089},
+    {"name": "Lyra Therapeutics", "aging_61_90": 9000, "total_at_risk": 9000},
+    {"name": "Enovis Corporation", "aging_61_90": 7658, "total_at_risk": 7658}
+  ],
+  "insights": [
+    "AR health is excellent - 95.2% current, only 3% at risk",
+    "Strong cash position of $3M with $7.5M net working capital",
+    "Enovis (problem margin customer) also has AR aging issues - $7.7K in 61-90 days",
+    "LivaNova is biggest AR risk at $46K over 90 days"
+  ],
+  "generated_at": "2026-02-03T06:30:00Z"
+}

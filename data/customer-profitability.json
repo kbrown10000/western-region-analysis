@@ -1,0 +1,54 @@
+{
+  "summary": {
+    "total_customers": 339,
+    "period": "2025-01-01 to 2026-01-01"
+  },
+  "key_insights": {
+    "managed_services_premium": "Managed services customers average 70%+ GP vs 25% for time-based",
+    "problem_accounts_west": [
+      {"name": "Gilead Sciences", "revenue": 2129569, "gp_pct": "22.0%", "hours": 19090, "type": "time-based"},
+      {"name": "Kite Pharma", "revenue": 2084349, "gp_pct": "19.9%", "hours": 13610, "type": "time-based"},
+      {"name": "Amgen", "revenue": 1745870, "gp_pct": "21.1%", "hours": 11571, "type": "time-based"},
+      {"name": "Enovis", "revenue": 773140, "gp_pct": "18.3%", "hours": 4087, "type": "time-based"}
+    ],
+    "high_margin_models": [
+      {"name": "PTC Inc.", "revenue": 1265570, "gp_pct": "96.5%", "hours": 530, "type": "100% managed"},
+      {"name": "Abbott Labs", "revenue": 1937966, "gp_pct": "64.3%", "hours": 6944, "type": "99% managed"},
+      {"name": "Harmony Biosciences", "revenue": 127237, "gp_pct": "93.1%", "hours": 97, "type": "100% managed"},
+      {"name": "Catalyst Pharma", "revenue": 308226, "gp_pct": "70.0%", "hours": 925, "type": "76% managed"}
+    ]
+  },
+  "regional_breakdown": {
+    "west_top_10": [
+      {"name": "Gilead Sciences", "revenue": 2129569, "gp_pct": "22.0%"},
+      {"name": "Kite Pharma", "revenue": 2084349, "gp_pct": "19.9%"},
+      {"name": "Amgen Inc.", "revenue": 1745870, "gp_pct": "21.1%"},
+      {"name": "Crinetics Pharmaceuticals", "revenue": 976768, "gp_pct": "44.8%"},
+      {"name": "Enovis Corporation", "revenue": 773140, "gp_pct": "18.3%"},
+      {"name": "Edwards Lifesciences", "revenue": 717946, "gp_pct": "33.3%"},
+      {"name": "Ionis Pharmaceuticals", "revenue": 700531, "gp_pct": "41.9%"},
+      {"name": "STAAR Surgical", "revenue": 604270, "gp_pct": "42.8%"},
+      {"name": "Arrowhead Pharmaceuticals", "revenue": 589176, "gp_pct": "44.1%"},
+      {"name": "Halozyme", "revenue": 513922, "gp_pct": "41.5%"}
+    ],
+    "east_top_10": [
+      {"name": "Abbott Labs", "revenue": 1937966, "gp_pct": "64.3%"},
+      {"name": "PTC Inc.", "revenue": 1265570, "gp_pct": "96.5%"},
+      {"name": "Takeda Pharmaceuticals", "revenue": 1041826, "gp_pct": "18.5%"},
+      {"name": "Novavax", "revenue": 798142, "gp_pct": "27.9%"},
+      {"name": "Bausch Health", "revenue": 738910, "gp_pct": "31.3%"},
+      {"name": "Shire US", "revenue": 692970, "gp_pct": "25.5%"},
+      {"name": "Becton Dickinson", "revenue": 691499, "gp_pct": "22.5%"},
+      {"name": "Loxo Oncology", "revenue": 621434, "gp_pct": "33.0%"},
+      {"name": "Kailera Therapeutics", "revenue": 499848, "gp_pct": "45.1%"},
+      {"name": "Sage Therapeutics", "revenue": 499179, "gp_pct": "42.5%"}
+    ]
+  },
+  "recommendations": [
+    "Convert Gilead from T&M to fixed-fee managed services - $425K+ GP recovery potential",
+    "Negotiate 15-20% rate increase at Kite Pharma renewal",
+    "Expand PTC-style managed services model to other West accounts",
+    "Target 40%+ GP on new Western deals via managed services focus"
+  ],
+  "generated_at": "2026-02-03T06:25:00Z"
+}

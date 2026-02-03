@@ -1,0 +1,37 @@
+{
+  "top20Customers": [
+    {"rank": 1, "name": "Gilead Sciences", "ltv": 8450000, "tenure": "8 years", "avgAnnualRevenue": 1950000, "trend": "stable", "services": ["Staffing CBA", "QA Consulting"]},
+    {"rank": 2, "name": "Kite Pharma", "ltv": 7200000, "tenure": "6 years", "avgAnnualRevenue": 1800000, "trend": "growing", "services": ["Staffing CBA", "Validation"]},
+    {"rank": 3, "name": "Amgen", "ltv": 6800000, "tenure": "10 years", "avgAnnualRevenue": 1600000, "trend": "declining", "services": ["Staffing CBA", "IT Quality"]},
+    {"rank": 4, "name": "Genentech", "ltv": 5900000, "tenure": "7 years", "avgAnnualRevenue": 1400000, "trend": "stable", "services": ["DocuSign CBA", "Staffing"]},
+    {"rank": 5, "name": "Abbott Labs", "ltv": 5200000, "tenure": "5 years", "avgAnnualRevenue": 1940000, "trend": "growing", "services": ["Managed Services", "Box CBA"]},
+    {"rank": 6, "name": "PTC Inc", "ltv": 4800000, "tenure": "4 years", "avgAnnualRevenue": 1270000, "trend": "growing", "services": ["PTC CBA Managed"]},
+    {"rank": 7, "name": "Neurocrine Biosciences", "ltv": 3500000, "tenure": "6 years", "avgAnnualRevenue": 890000, "trend": "stable", "services": ["QA Consulting", "CSV"]},
+    {"rank": 8, "name": "Jazz Pharmaceuticals", "ltv": 3200000, "tenure": "5 years", "avgAnnualRevenue": 820000, "trend": "growing", "services": ["Staffing CBA", "Training"]},
+    {"rank": 9, "name": "Takeda", "ltv": 3100000, "tenure": "4 years", "avgAnnualRevenue": 780000, "trend": "stable", "services": ["ServiceNow", "Validation"]},
+    {"rank": 10, "name": "BioMarin", "ltv": 2900000, "tenure": "5 years", "avgAnnualRevenue": 720000, "trend": "growing", "services": ["DocuSign CBA", "QA"]},
+    {"rank": 11, "name": "Enovis Corp", "ltv": 2700000, "tenure": "4 years", "avgAnnualRevenue": 773000, "trend": "declining", "services": ["Staffing CBA"]},
+    {"rank": 12, "name": "Vertex Pharmaceuticals", "ltv": 2500000, "tenure": "3 years", "avgAnnualRevenue": 680000, "trend": "growing", "services": ["Box CBA", "Validation"]},
+    {"rank": 13, "name": "Regeneron", "ltv": 2400000, "tenure": "4 years", "avgAnnualRevenue": 650000, "trend": "stable", "services": ["Staffing CBA", "IT"]},
+    {"rank": 14, "name": "Illumina", "ltv": 2200000, "tenure": "5 years", "avgAnnualRevenue": 580000, "trend": "declining", "services": ["QA Consulting"]},
+    {"rank": 15, "name": "Sarepta Therapeutics", "ltv": 2100000, "tenure": "3 years", "avgAnnualRevenue": 560000, "trend": "growing", "services": ["Staffing CBA", "Validation"]},
+    {"rank": 16, "name": "Exact Sciences", "ltv": 1900000, "tenure": "4 years", "avgAnnualRevenue": 520000, "trend": "stable", "services": ["DocuSign CBA"]},
+    {"rank": 17, "name": "Seagen", "ltv": 1800000, "tenure": "3 years", "avgAnnualRevenue": 490000, "trend": "growing", "services": ["Staffing CBA"]},
+    {"rank": 18, "name": "Ultragenyx", "ltv": 1700000, "tenure": "4 years", "avgAnnualRevenue": 450000, "trend": "stable", "services": ["QA Consulting", "CSV"]},
+    {"rank": 19, "name": "Insmed", "ltv": 1600000, "tenure": "3 years", "avgAnnualRevenue": 420000, "trend": "growing", "services": ["Staffing CBA"]},
+    {"rank": 20, "name": "Krystal Biotech", "ltv": 1500000, "tenure": "2 years", "avgAnnualRevenue": 380000, "trend": "growing", "services": ["Validation", "QA"]}
+  ],
+  "ltvByYear": [
+    {"year": 2020, "totalLtv": 38500000, "avgCustomerLtv": 2800000},
+    {"year": 2021, "totalLtv": 45200000, "avgCustomerLtv": 3100000},
+    {"year": 2022, "totalLtv": 52800000, "avgCustomerLtv": 3400000},
+    {"year": 2023, "totalLtv": 58900000, "avgCustomerLtv": 3600000},
+    {"year": 2024, "totalLtv": 64200000, "avgCustomerLtv": 3850000},
+    {"year": 2025, "totalLtv": 68500000, "avgCustomerLtv": 4100000}
+  ],
+  "ltvDistribution": {
+    "tier1_over5M": {"count": 5, "totalLtv": 34350000, "pctOfTotal": 50.1},
+    "tier2_2to5M": {"count": 9, "totalLtv": 24500000, "pctOfTotal": 35.8},
+    "tier3_under2M": {"count": 6, "totalLtv": 9700000, "pctOfTotal": 14.1}
+  }
+}
