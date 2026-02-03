@@ -1,0 +1,202 @@
+'use client';
+
+import Link from 'next/link';
+import targetsData from '../../../data/biotech-targets.json';
+
+const priorityColors: Record<string, string> = {
+  strategic: 'bg-purple-500',
+  high: 'bg-red-500',
+  medium: 'bg-yellow-500',
+  watch: 'bg-slate-500',
+};
+
+const priorityLabels: Record<string, string> = {
+  strategic: 'Strategic',
+  high: 'High Priority',
+  medium: 'Medium',
+  watch: 'Watch List',
+};
+
+export default function SanDiegoDeepDive() {
+  const socalTargets = targetsData.targets.filter(t => t.region === 'SanDiego');
+  const customers = targetsData.existingCustomers.filter(c => c.region === 'SanDiego');
+  
+  const strategicCount = socalTargets.filter(t => t.priority === 'strategic').length;
+  const highCount = socalTargets.filter(t => t.priority === 'high').length;
+  const totalFunding = socalTargets.reduce((sum, t) => {
+    const match = t.funding.match(/\$(\d+(?:\.\d+)?)(M|B)/);
+    if (match) {
+      const value = parseFloat(match[1]);
+      return sum + (match[2] === 'B' ? value * 1000 : value);
+    }
+    return sum;
+  }, 0);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+      <header className="border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <Link href="/" className="text-white font-bold text-xl">USDM Western Region</Link>
+          <nav className="flex gap-6">
+            <Link href="/bay-area-deep-dive" className="text-slate-400 hover:text-white">Genetown</Link>
+            <Link href="/seattle-deep-dive" className="text-slate-400 hover:text-white">Cascadia</Link>
+            <Link href="/targets" className="text-slate-400 hover:text-white">All Targets</Link>
+          </nav>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto px-6 py-12">
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold text-white mb-2">🏖️ Biotech Beach</h1>
+          <p className="text-xl text-cyan-400 mb-2">San Diego & Southern California</p>
+          <p className="text-slate-400">The biotech manufacturing powerhouse — cell therapy, CDMO, and commercial scale</p>
+        </div>
+
+        {/* Key Metrics */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+            <p className="text-slate-400 text-sm mb-1">Target Companies</p>
+            <p className="text-4xl font-bold text-cyan-400">{socalTargets.length}</p>
+          </div>
+          <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+            <p className="text-slate-400 text-sm mb-1">Strategic + High</p>
+            <p className="text-4xl font-bold text-white">{strategicCount + highCount}</p>
+          </div>
+          <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+            <p className="text-slate-400 text-sm mb-1">Total Funding</p>
+            <p className="text-4xl font-bold text-green-400">${(totalFunding / 1000).toFixed(1)}B+</p>
+          </div>
+          <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+            <p className="text-slate-400 text-sm mb-1">Existing Customers</p>
+            <p className="text-4xl font-bold text-purple-400">{customers.length}</p>
+          </div>
+        </div>
+
+        {/* ⚠️ Margin Alert */}
+        <section className="mb-12">
+          <div className="bg-red-900/30 rounded-xl p-6 border border-red-700/50">
+            <h2 className="text-2xl font-bold text-red-400 mb-4">⚠️ Margin Alert: San Diego Customers</h2>
+            <p className="text-slate-300 mb-4">Mixed margin performance in San Diego territory:</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-slate-800/50 rounded-lg p-4">
+                <p className="text-white font-bold">Gilead</p>
+                <p className="text-red-400 font-semibold">22% GP</p>
+                <p className="text-slate-400 text-sm">$2.13M rev • Oceanside</p>
+              </div>
+              <div className="bg-slate-800/50 rounded-lg p-4">
+                <p className="text-white font-bold">Neurocrine</p>
+                <p className="text-green-400 font-semibold">48% GP ✓</p>
+                <p className="text-slate-400 text-sm">$890K rev • San Diego</p>
+              </div>
+              <div className="bg-slate-800/50 rounded-lg p-4">
+                <p className="text-white font-bold">Enovis</p>
+                <p className="text-red-400 font-semibold">18.3% GP</p>
+                <p className="text-slate-400 text-sm">$773K rev • Carlsbad</p>
+              </div>
+            </div>
+            <Link href="/margin-analysis" className="inline-block mt-4 text-cyan-400 hover:text-cyan-300 text-sm">
+              View Full Margin Analysis →
+            </Link>
+          </div>
+        </section>
+
+        {/* Market Overview */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-6">📊 Market Overview</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-gradient-to-br from-cyan-900/30 to-blue-900/20 rounded-xl p-6 border border-cyan-700/30">
+              <h3 className="text-cyan-400 font-bold mb-2">$56B Economic Output</h3>
+              <p className="text-slate-300 text-sm">San Diego alone hosts ~2,000 life science companies with dedicated research parks and manufacturing hubs.</p>
+            </div>
+            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/20 rounded-xl p-6 border border-purple-700/30">
+              <h3 className="text-purple-400 font-bold mb-2">Manufacturing Epicenter</h3>
+              <p className="text-slate-300 text-sm">National Resilience ($2B), BioDuro-Sundia, and emerging CRDMOs making San Diego the cell therapy manufacturing capital.</p>
+            </div>
+            <div className="bg-gradient-to-br from-green-900/30 to-emerald-900/20 rounded-xl p-6 border border-green-700/30">
+              <h3 className="text-green-400 font-bold mb-2">Scripps/Salk Ecosystem</h3>
+              <p className="text-slate-300 text-sm">World-class research institutions driving innovation in cell therapy, genomics, and precision medicine.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Existing Customers */}
+        {customers.length > 0 && (
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-white mb-6">💼 Existing Customers</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {customers.map((customer, idx) => (
+                <div key={idx} className="bg-slate-800/50 rounded-xl p-6 border border-purple-500/50">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-white font-bold text-lg">{customer.name}</h3>
+                    <span className="text-purple-400 font-semibold">{customer.revenue}</span>
+                  </div>
+                  <p className="text-slate-400 text-sm mb-2">{customer.city}</p>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-slate-500">GP%:</span>
+                    <span className={`font-semibold ${parseFloat(customer.gp) >= 40 ? 'text-green-400' : parseFloat(customer.gp) >= 30 ? 'text-yellow-400' : 'text-red-400'}`}>
+                      {customer.gp}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Target Companies */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-6">🎯 Target Companies</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {socalTargets.filter(t => !t.isCustomer).map((target, idx) => (
+              <div key={idx} className="bg-slate-800/50 rounded-xl p-5 border border-slate-700 hover:border-cyan-500/50 transition-all">
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-white font-bold">{target.name}</h3>
+                  <span className={`${priorityColors[target.priority]} text-white text-xs px-2 py-1 rounded-full`}>
+                    {priorityLabels[target.priority]}
+                  </span>
+                </div>
+                <p className="text-cyan-400 text-sm mb-2">{target.focus}</p>
+                <div className="flex flex-wrap gap-2 text-xs text-slate-400">
+                  <span className="bg-slate-700 px-2 py-1 rounded">{target.city}</span>
+                  <span className="bg-slate-700 px-2 py-1 rounded">{target.funding}</span>
+                  <span className="bg-slate-700 px-2 py-1 rounded">{target.stage}</span>
+                </div>
+                {target.employees && (
+                  <p className="text-slate-500 text-xs mt-2">{target.employees} employees</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Key Opportunities */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-6">💡 Key Opportunities</h2>
+          <div className="space-y-4">
+            <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+              <h3 className="text-cyan-400 font-bold mb-2">1. National Resilience Partnership</h3>
+              <p className="text-slate-300">$2B biomanufacturing giant — massive quality systems needs. Position for GxP consulting, validation, and manufacturing support.</p>
+            </div>
+            <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+              <h3 className="text-cyan-400 font-bold mb-2">2. Cell Therapy Clinical Push</h3>
+              <p className="text-slate-300">Fate Therapeutics, Poseida, Artiva all in clinical trials. IND submissions, CMC support, and regulatory affairs opportunities.</p>
+            </div>
+            <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+              <h3 className="text-cyan-400 font-bold mb-2">3. Fix Existing Customer Margins</h3>
+              <p className="text-slate-300">Gilead, Kite, Enovis at ~20% GP — rate review, scope audit, and managed services migration needed. $1M+ margin recovery potential.</p>
+            </div>
+          </div>
+        </section>
+
+        <div className="flex gap-4">
+          <Link href="/seattle-deep-dive" className="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold rounded-lg transition-all">
+            Cascadia Corridor →
+          </Link>
+          <Link href="/" className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-all">
+            ← Back to Overview
+          </Link>
+        </div>
+      </main>
+    </div>
+  );
+}

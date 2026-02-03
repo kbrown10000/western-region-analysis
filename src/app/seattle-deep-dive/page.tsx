@@ -1,0 +1,176 @@
+'use client';
+
+import Link from 'next/link';
+import targetsData from '../../../data/biotech-targets.json';
+
+const priorityColors: Record<string, string> = {
+  strategic: 'bg-purple-500',
+  high: 'bg-red-500',
+  medium: 'bg-yellow-500',
+  watch: 'bg-slate-500',
+};
+
+const priorityLabels: Record<string, string> = {
+  strategic: 'Strategic',
+  high: 'High Priority',
+  medium: 'Medium',
+  watch: 'Watch List',
+};
+
+export default function SeattleDeepDive() {
+  const pnwTargets = targetsData.targets.filter(t => t.region === 'PNW');
+  
+  const strategicCount = pnwTargets.filter(t => t.priority === 'strategic').length;
+  const highCount = pnwTargets.filter(t => t.priority === 'high').length;
+  const totalFunding = pnwTargets.reduce((sum, t) => {
+    const match = t.funding.match(/\$(\d+(?:\.\d+)?)(M|B)/);
+    if (match) {
+      const value = parseFloat(match[1]);
+      return sum + (match[2] === 'B' ? value * 1000 : value);
+    }
+    return sum;
+  }, 0);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+      <header className="border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <Link href="/" className="text-white font-bold text-xl">USDM Western Region</Link>
+          <nav className="flex gap-6">
+            <Link href="/bay-area-deep-dive" className="text-slate-400 hover:text-white">Genetown</Link>
+            <Link href="/san-diego-deep-dive" className="text-slate-400 hover:text-white">Biotech Beach</Link>
+            <Link href="/targets" className="text-slate-400 hover:text-white">All Targets</Link>
+          </nav>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto px-6 py-12">
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold text-white mb-2">🌲 Cascadia Biotech Corridor</h1>
+          <p className="text-xl text-cyan-400 mb-2">Seattle & Pacific Northwest</p>
+          <p className="text-slate-400">The emerging frontier — in vivo cell therapy, AI protein design, and explosive growth</p>
+        </div>
+
+        {/* Key Metrics */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+            <p className="text-slate-400 text-sm mb-1">Target Companies</p>
+            <p className="text-4xl font-bold text-cyan-400">{pnwTargets.length}</p>
+          </div>
+          <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+            <p className="text-slate-400 text-sm mb-1">Strategic + High</p>
+            <p className="text-4xl font-bold text-white">{strategicCount + highCount}</p>
+          </div>
+          <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+            <p className="text-slate-400 text-sm mb-1">Total Funding</p>
+            <p className="text-4xl font-bold text-green-400">${(totalFunding / 1000).toFixed(1)}B+</p>
+          </div>
+          <div className="bg-green-900/30 rounded-xl p-6 border border-green-700/50">
+            <p className="text-green-400 text-sm mb-1">Growth Rate</p>
+            <p className="text-4xl font-bold text-green-400">24%</p>
+            <p className="text-slate-400 text-xs">5-year employment growth</p>
+          </div>
+        </div>
+
+        {/* 🌟 Opportunity Alert */}
+        <section className="mb-12">
+          <div className="bg-green-900/30 rounded-xl p-6 border border-green-700/50">
+            <h2 className="text-2xl font-bold text-green-400 mb-4">🌟 Greenfield Opportunity</h2>
+            <p className="text-slate-300 mb-4">Seattle is USDM's most under-penetrated market with the highest growth potential:</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-slate-800/50 rounded-lg p-4">
+                <p className="text-green-400 font-bold text-2xl">$0</p>
+                <p className="text-slate-400 text-sm">Current USDM Revenue</p>
+              </div>
+              <div className="bg-slate-800/50 rounded-lg p-4">
+                <p className="text-cyan-400 font-bold text-2xl">$1.5B+</p>
+                <p className="text-slate-400 text-sm">Recent VC Funding</p>
+              </div>
+              <div className="bg-slate-800/50 rounded-lg p-4">
+                <p className="text-purple-400 font-bold text-2xl">48.3%</p>
+                <p className="text-slate-400 text-sm">Projected GP% (best in West)</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Market Overview */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-6">📊 Market Overview</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-gradient-to-br from-cyan-900/30 to-blue-900/20 rounded-xl p-6 border border-cyan-700/30">
+              <h3 className="text-cyan-400 font-bold mb-2">24% Employment Growth</h3>
+              <p className="text-slate-300 text-sm">Fastest-growing biotech hub in the US over the past 5 years. Major expansion of lab space and talent.</p>
+            </div>
+            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/20 rounded-xl p-6 border border-purple-700/30">
+              <h3 className="text-purple-400 font-bold mb-2">In Vivo Cell Therapy Hub</h3>
+              <p className="text-slate-300 text-sm">Tune, Outpace, Umoja pioneering next-gen CAR-T that doesn't require ex vivo manufacturing. Revolutionary approach.</p>
+            </div>
+            <div className="bg-gradient-to-br from-yellow-900/30 to-orange-900/20 rounded-xl p-6 border border-yellow-700/30">
+              <h3 className="text-yellow-400 font-bold mb-2">🏆 Nobel Prize 2024</h3>
+              <p className="text-slate-300 text-sm">UW Institute for Protein Design (David Baker) won the Nobel Prize. World's top AI protein engineering talent here.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Target Companies */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-6">🎯 Target Companies</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {pnwTargets.map((target, idx) => (
+              <div key={idx} className="bg-slate-800/50 rounded-xl p-5 border border-slate-700 hover:border-cyan-500/50 transition-all">
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-white font-bold">{target.name}</h3>
+                  <span className={`${priorityColors[target.priority]} text-white text-xs px-2 py-1 rounded-full`}>
+                    {priorityLabels[target.priority]}
+                  </span>
+                </div>
+                <p className="text-cyan-400 text-sm mb-2">{target.focus}</p>
+                <div className="flex flex-wrap gap-2 text-xs text-slate-400">
+                  <span className="bg-slate-700 px-2 py-1 rounded">{target.city}</span>
+                  <span className="bg-slate-700 px-2 py-1 rounded">{target.funding}</span>
+                  <span className="bg-slate-700 px-2 py-1 rounded">{target.stage}</span>
+                </div>
+                {target.employees && (
+                  <p className="text-slate-500 text-xs mt-2">{target.employees} employees</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Key Opportunities */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-6">💡 Key Opportunities</h2>
+          <div className="space-y-4">
+            <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+              <h3 className="text-cyan-400 font-bold mb-2">1. Sana Biotechnology — Strategic Account</h3>
+              <p className="text-slate-300">$700M+ funded gene/cell therapy leader. IND filings, CMC support, manufacturing quality systems. Should be top priority.</p>
+            </div>
+            <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+              <h3 className="text-cyan-400 font-bold mb-2">2. In Vivo CAR-T Wave</h3>
+              <p className="text-slate-300">Tune ($175M), Outpace ($144M), Umoja ($100M) — all pursuing revolutionary in vivo approach. Early-stage = high-margin opportunity.</p>
+            </div>
+            <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+              <h3 className="text-cyan-400 font-bold mb-2">3. AI Protein Design Spinouts</h3>
+              <p className="text-slate-300">A-Alpha Bio, Arzeda, Accipiter all from UW ecosystem. Emerging companies with strong funding and unique technology.</p>
+            </div>
+            <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+              <h3 className="text-cyan-400 font-bold mb-2">4. Establish Local Presence</h3>
+              <p className="text-slate-300">No USDM footprint in Seattle. Consider local BD resource or partnership to capture this fast-growing market.</p>
+            </div>
+          </div>
+        </section>
+
+        <div className="flex gap-4">
+          <Link href="/action-plan" className="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold rounded-lg transition-all">
+            View Action Plan →
+          </Link>
+          <Link href="/" className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-all">
+            ← Back to Overview
+          </Link>
+        </div>
+      </main>
+    </div>
+  );
+}

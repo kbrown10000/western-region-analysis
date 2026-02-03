@@ -1,37 +1,55 @@
 {
+  "metadata": {
+    "source": "customer_ltv_corrected_2025.xlsx via Finance MCP",
+    "generatedAt": "2026-02-03",
+    "notes": "West Region only - 160 customers with 2024/2025 revenue"
+  },
   "top20Customers": [
-    {"rank": 1, "name": "Gilead Sciences", "ltv": 8450000, "tenure": "8 years", "avgAnnualRevenue": 1950000, "trend": "stable", "services": ["Staffing CBA", "QA Consulting"]},
-    {"rank": 2, "name": "Kite Pharma", "ltv": 7200000, "tenure": "6 years", "avgAnnualRevenue": 1800000, "trend": "growing", "services": ["Staffing CBA", "Validation"]},
-    {"rank": 3, "name": "Amgen", "ltv": 6800000, "tenure": "10 years", "avgAnnualRevenue": 1600000, "trend": "declining", "services": ["Staffing CBA", "IT Quality"]},
-    {"rank": 4, "name": "Genentech", "ltv": 5900000, "tenure": "7 years", "avgAnnualRevenue": 1400000, "trend": "stable", "services": ["DocuSign CBA", "Staffing"]},
-    {"rank": 5, "name": "Abbott Labs", "ltv": 5200000, "tenure": "5 years", "avgAnnualRevenue": 1940000, "trend": "growing", "services": ["Managed Services", "Box CBA"]},
-    {"rank": 6, "name": "PTC Inc", "ltv": 4800000, "tenure": "4 years", "avgAnnualRevenue": 1270000, "trend": "growing", "services": ["PTC CBA Managed"]},
-    {"rank": 7, "name": "Neurocrine Biosciences", "ltv": 3500000, "tenure": "6 years", "avgAnnualRevenue": 890000, "trend": "stable", "services": ["QA Consulting", "CSV"]},
-    {"rank": 8, "name": "Jazz Pharmaceuticals", "ltv": 3200000, "tenure": "5 years", "avgAnnualRevenue": 820000, "trend": "growing", "services": ["Staffing CBA", "Training"]},
-    {"rank": 9, "name": "Takeda", "ltv": 3100000, "tenure": "4 years", "avgAnnualRevenue": 780000, "trend": "stable", "services": ["ServiceNow", "Validation"]},
-    {"rank": 10, "name": "BioMarin", "ltv": 2900000, "tenure": "5 years", "avgAnnualRevenue": 720000, "trend": "growing", "services": ["DocuSign CBA", "QA"]},
-    {"rank": 11, "name": "Enovis Corp", "ltv": 2700000, "tenure": "4 years", "avgAnnualRevenue": 773000, "trend": "declining", "services": ["Staffing CBA"]},
-    {"rank": 12, "name": "Vertex Pharmaceuticals", "ltv": 2500000, "tenure": "3 years", "avgAnnualRevenue": 680000, "trend": "growing", "services": ["Box CBA", "Validation"]},
-    {"rank": 13, "name": "Regeneron", "ltv": 2400000, "tenure": "4 years", "avgAnnualRevenue": 650000, "trend": "stable", "services": ["Staffing CBA", "IT"]},
-    {"rank": 14, "name": "Illumina", "ltv": 2200000, "tenure": "5 years", "avgAnnualRevenue": 580000, "trend": "declining", "services": ["QA Consulting"]},
-    {"rank": 15, "name": "Sarepta Therapeutics", "ltv": 2100000, "tenure": "3 years", "avgAnnualRevenue": 560000, "trend": "growing", "services": ["Staffing CBA", "Validation"]},
-    {"rank": 16, "name": "Exact Sciences", "ltv": 1900000, "tenure": "4 years", "avgAnnualRevenue": 520000, "trend": "stable", "services": ["DocuSign CBA"]},
-    {"rank": 17, "name": "Seagen", "ltv": 1800000, "tenure": "3 years", "avgAnnualRevenue": 490000, "trend": "growing", "services": ["Staffing CBA"]},
-    {"rank": 18, "name": "Ultragenyx", "ltv": 1700000, "tenure": "4 years", "avgAnnualRevenue": 450000, "trend": "stable", "services": ["QA Consulting", "CSV"]},
-    {"rank": 19, "name": "Insmed", "ltv": 1600000, "tenure": "3 years", "avgAnnualRevenue": 420000, "trend": "growing", "services": ["Staffing CBA"]},
-    {"rank": 20, "name": "Krystal Biotech", "ltv": 1500000, "tenure": "2 years", "avgAnnualRevenue": 380000, "trend": "growing", "services": ["Validation", "QA"]}
+    {"rank": 1, "name": "Amgen Inc.", "ltv": 5992975, "tenure": "10+ years", "avgAnnualRevenue": 1610100, "revenue2025": 1610100, "revenue2024": 1773744, "gp": 14.6, "trend": "declining", "territory": "LA BioMed"},
+    {"rank": 2, "name": "Kite Pharma", "ltv": 5493777, "tenure": "6 years", "avgAnnualRevenue": 1962685, "revenue2025": 1962685, "revenue2024": 1010909, "gp": 19.1, "trend": "growing", "territory": "LA BioMed"},
+    {"rank": 3, "name": "Pfizer (West)", "ltv": 2616870, "tenure": "8+ years", "avgAnnualRevenue": 453371, "revenue2025": 453371, "revenue2024": 835000, "gp": 27.0, "trend": "declining", "territory": "LA BioMed"},
+    {"rank": 4, "name": "Edwards Lifesciences", "ltv": 2109014, "tenure": "5 years", "avgAnnualRevenue": 671546, "revenue2025": 671546, "revenue2024": 851827, "gp": 28.6, "trend": "declining", "territory": "LA BioMed"},
+    {"rank": 5, "name": "Fujifilm Diosynth CA", "ltv": 2008937, "tenure": "7 years", "avgAnnualRevenue": 321212, "revenue2025": 321212, "revenue2024": 672000, "gp": 24.4, "trend": "declining", "territory": "Biotech Beach"},
+    {"rank": 6, "name": "Takeda (West)", "ltv": 1904177, "tenure": "6 years", "avgAnnualRevenue": 414330, "revenue2025": 414330, "revenue2024": 850000, "gp": 24.6, "trend": "declining", "territory": "LA BioMed"},
+    {"rank": 7, "name": "Ionis Pharmaceuticals", "ltv": 1788868, "tenure": "6 years", "avgAnnualRevenue": 635229, "revenue2025": 635229, "revenue2024": 512095, "gp": 36.0, "trend": "growing", "territory": "Biotech Beach"},
+    {"rank": 8, "name": "Glaukos Corporation", "ltv": 1712276, "tenure": "6 years", "avgAnnualRevenue": 393645, "revenue2025": 393645, "revenue2024": 414600, "gp": 26.5, "trend": "declining", "territory": "Biotech Beach"},
+    {"rank": 9, "name": "Halozyme", "ltv": 1688689, "tenure": "6 years", "avgAnnualRevenue": 482957, "revenue2025": 482957, "revenue2024": 640500, "gp": 37.3, "trend": "declining", "territory": "Biotech Beach"},
+    {"rank": 10, "name": "Kite/Gilead Subsidiary", "ltv": 1548727, "tenure": "5 years", "avgAnnualRevenue": 308843, "revenue2025": 308843, "revenue2024": 1240000, "gp": 6.5, "trend": "declining", "territory": "LA BioMed"},
+    {"rank": 11, "name": "Crinetics Pharma", "ltv": 1300483, "tenure": "3 years", "avgAnnualRevenue": 911795, "revenue2025": 911795, "revenue2024": 347647, "gp": 40.9, "trend": "growing", "territory": "Biotech Beach"},
+    {"rank": 12, "name": "STAAR Surgical", "ltv": 1261237, "tenure": "4 years", "avgAnnualRevenue": 496260, "revenue2025": 496260, "revenue2024": 589500, "gp": 30.9, "trend": "declining", "territory": "LA BioMed"},
+    {"rank": 13, "name": "Corcept Therapeutics", "ltv": 1216148, "tenure": "4 years", "avgAnnualRevenue": 481861, "revenue2025": 481861, "revenue2024": 379000, "gp": 41.2, "trend": "growing", "territory": "Genetown"},
+    {"rank": 14, "name": "Arrowhead Pharma", "ltv": 1071554, "tenure": "3 years", "avgAnnualRevenue": 551694, "revenue2025": 551694, "revenue2024": 486100, "gp": 40.1, "trend": "growing", "territory": "LA BioMed"},
+    {"rank": 15, "name": "Benchling", "ltv": 945760, "tenure": "5 years", "avgAnnualRevenue": 228436, "revenue2025": 228436, "revenue2024": 296000, "gp": 16.8, "trend": "declining", "territory": "Biotech Beach"},
+    {"rank": 16, "name": "Eikon Therapeutics", "ltv": 920650, "tenure": "4 years", "avgAnnualRevenue": 189450, "revenue2025": 189450, "revenue2024": 266000, "gp": 43.1, "trend": "declining", "territory": "Biotech Beach"},
+    {"rank": 17, "name": "Enovis Corporation", "ltv": 868863, "tenure": "2 years", "avgAnnualRevenue": 710560, "revenue2025": 710560, "revenue2024": 158303, "gp": 11.0, "trend": "growing", "territory": "Biotech Beach"},
+    {"rank": 18, "name": "Spectranetics", "ltv": 785250, "tenure": "4 years", "avgAnnualRevenue": 220401, "revenue2025": 220401, "revenue2024": 496000, "gp": 18.1, "trend": "declining", "territory": "Biotech Beach"},
+    {"rank": 19, "name": "Genentech", "ltv": 793125, "tenure": "6 years", "avgAnnualRevenue": 174000, "revenue2025": 174012, "revenue2024": 218000, "gp": 20.3, "trend": "declining", "territory": "Genetown"},
+    {"rank": 20, "name": "Terumo Neuro", "ltv": 683203, "tenure": "3 years", "avgAnnualRevenue": 414907, "revenue2025": 414907, "revenue2024": 249600, "gp": 35.8, "trend": "growing", "territory": "Biotech Beach"}
   ],
   "ltvByYear": [
-    {"year": 2020, "totalLtv": 38500000, "avgCustomerLtv": 2800000},
-    {"year": 2021, "totalLtv": 45200000, "avgCustomerLtv": 3100000},
-    {"year": 2022, "totalLtv": 52800000, "avgCustomerLtv": 3400000},
-    {"year": 2023, "totalLtv": 58900000, "avgCustomerLtv": 3600000},
-    {"year": 2024, "totalLtv": 64200000, "avgCustomerLtv": 3850000},
-    {"year": 2025, "totalLtv": 68500000, "avgCustomerLtv": 4100000}
+    {"year": 2023, "totalLtv": 48000000, "avgCustomerLtv": 300000, "totalRevenue": 19500000},
+    {"year": 2024, "totalLtv": 55000000, "avgCustomerLtv": 344000, "totalRevenue": 19630000},
+    {"year": 2025, "totalLtv": 58570000, "avgCustomerLtv": 366000, "totalRevenue": 17190000}
   ],
   "ltvDistribution": {
-    "tier1_over5M": {"count": 5, "totalLtv": 34350000, "pctOfTotal": 50.1},
-    "tier2_2to5M": {"count": 9, "totalLtv": 24500000, "pctOfTotal": 35.8},
-    "tier3_under2M": {"count": 6, "totalLtv": 9700000, "pctOfTotal": 14.1}
+    "tier1_over5M": {"count": 2, "totalLtv": 11486752, "pctOfTotal": 19.6, "customers": ["Amgen", "Kite Pharma"]},
+    "tier2_2to5M": {"count": 4, "totalLtv": 8638998, "pctOfTotal": 14.7, "customers": ["Pfizer", "Edwards", "Fujifilm", "Takeda"]},
+    "tier3_1to2M": {"count": 10, "totalLtv": 13593865, "pctOfTotal": 23.2, "customers": ["Ionis", "Glaukos", "Halozyme", "Kite/Gilead", "Crinetics", "STAAR", "Corcept", "Arrowhead", "Benchling", "Eikon"]},
+    "tier4_under1M": {"count": 144, "totalLtv": 24850385, "pctOfTotal": 42.4, "customers": ["Plus 144 other West accounts"]}
+  },
+  "westSummary": {
+    "totalCustomers": 160,
+    "totalLTV": 58570000,
+    "totalRevenue2025": 17190000,
+    "totalRevenue2024": 19630000,
+    "yoyGrowth": -12.4,
+    "blendedGP": 34.3,
+    "openPipeline": 10860000
+  },
+  "territoryLTV": {
+    "BiotechBeach": {"customers": 147, "ltv": 32000000, "revenue2025": 9550000, "gp": 42.5},
+    "LABioMed": {"customers": 8, "ltv": 20000000, "revenue2025": 6470000, "gp": 22.0},
+    "Genetown": {"customers": 4, "ltv": 4500000, "revenue2025": 790000, "gp": 41.8},
+    "Cascadia": {"customers": 1, "ltv": 2070000, "revenue2025": 370000, "gp": 24.5}
   }
 }

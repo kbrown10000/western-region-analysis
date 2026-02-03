@@ -1,81 +1,69 @@
 'use client';
 
 import Link from 'next/link';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend, ComposedChart, Line, Area, Treemap } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend, ComposedChart, Line } from 'recharts';
 
-// Revenue by region data
-const revenueByRegion = [
-  { region: 'NorCal (Bay Area)', revenue: 8200000, gp: 42.5, customers: 28 },
-  { region: 'SoCal (San Diego)', revenue: 7800000, gp: 28.2, customers: 22 },
-  { region: 'SoCal (LA)', revenue: 3100000, gp: 24.8, customers: 8 },
-  { region: 'PNW (Seattle)', revenue: 2400000, gp: 48.3, customers: 12 },
-  { region: 'Other West', revenue: 1200000, gp: 45.1, customers: 6 },
+// CORRECTED 2025 DATA - From Finance MCP customer_ltv_corrected_2025.xlsx
+// 160 West customers, $17.19M revenue, 34.3% blended GP
+
+// Revenue by territory (REAL DATA)
+const revenueByTerritory = [
+  { territory: 'Biotech Beach', revenue: 9550000, gp: 42.5, customers: 147, gpDollars: 4058750 },
+  { territory: 'LA BioMed', revenue: 6470000, gp: 22.0, customers: 8, gpDollars: 1423400 },
+  { territory: 'Genetown', revenue: 790000, gp: 41.8, customers: 4, gpDollars: 330220 },
+  { territory: 'Cascadia', revenue: 370000, gp: 24.5, customers: 1, gpDollars: 90650 },
 ];
 
-// GP% heatmap data by customer
-const gpHeatmapData = [
-  { name: 'PTC Inc.', gp: 96.5, revenue: 1270, tier: 'Elite' },
-  { name: 'Abbott Labs', gp: 64.3, revenue: 1940, tier: 'A-Tier' },
-  { name: 'Neurocrine', gp: 48.0, revenue: 890, tier: 'A-Tier' },
-  { name: 'Genentech', gp: 42.0, revenue: 1800, tier: 'B-Tier' },
-  { name: 'BioMarin', gp: 38.5, revenue: 720, tier: 'B-Tier' },
-  { name: 'Jazz Pharma', gp: 35.2, revenue: 820, tier: 'B-Tier' },
-  { name: 'Vertex', gp: 33.8, revenue: 680, tier: 'B-Tier' },
-  { name: 'Gilead', gp: 22.0, revenue: 2130, tier: 'C-Tier' },
-  { name: 'Amgen', gp: 21.1, revenue: 1750, tier: 'C-Tier' },
-  { name: 'Kite Pharma', gp: 19.9, revenue: 2080, tier: 'C-Tier' },
-  { name: 'Enovis', gp: 18.3, revenue: 773, tier: 'C-Tier' },
+// Top customers by revenue with CORRECTED GP% (all tiers)
+const topCustomers = [
+  { name: 'Kite Pharma', revenue: 1963, gp: 19.1, tier: 'C', territory: 'LA BioMed', yoy: 94.2, trend: '↑' },
+  { name: 'Amgen', revenue: 1610, gp: 14.6, tier: 'C', territory: 'LA BioMed', yoy: -9.2, trend: '↓' },
+  { name: 'Crinetics', revenue: 912, gp: 40.9, tier: 'A', territory: 'Biotech Beach', yoy: 162.3, trend: '↑' },
+  { name: 'Enovis', revenue: 711, gp: 11.0, tier: 'C', territory: 'Biotech Beach', yoy: 348.9, trend: '↑' },
+  { name: 'Edwards', revenue: 672, gp: 28.6, tier: 'C', territory: 'LA BioMed', yoy: -21.2, trend: '↓' },
+  { name: 'Ionis', revenue: 635, gp: 36.0, tier: 'B', territory: 'Biotech Beach', yoy: 24.0, trend: '↑' },
+  { name: 'Arrowhead', revenue: 552, gp: 40.1, tier: 'A', territory: 'LA BioMed', yoy: 13.5, trend: '↑' },
+  { name: 'STAAR Surgical', revenue: 496, gp: 30.9, tier: 'B', territory: 'LA BioMed', yoy: -15.8, trend: '↓' },
+  { name: 'Halozyme', revenue: 483, gp: 37.3, tier: 'B', territory: 'Biotech Beach', yoy: -24.6, trend: '↓' },
+  { name: 'Corcept', revenue: 482, gp: 41.2, tier: 'A', territory: 'Genetown', yoy: 27.0, trend: '↑' },
 ];
 
-// Practice area breakdown
-const practiceAreaData = [
-  { name: 'Staffing CBA', revenue: 22100000, margin: 30, color: '#ef4444' },
-  { name: 'DocuSign CBA', revenue: 2000000, margin: 65, color: '#22c55e' },
-  { name: 'Box CBA', revenue: 1900000, margin: 65, color: '#06b6d4' },
-  { name: 'PTC CBA', revenue: 1500000, margin: 70, color: '#8b5cf6' },
-  { name: 'QA Consulting', revenue: 1800000, margin: 52, color: '#eab308' },
-  { name: 'Validation', revenue: 1400000, margin: 48, color: '#f97316' },
+// Tier breakdown (REAL DATA)
+const tierBreakdown = [
+  { tier: 'Tier A (≥40%)', customers: 103, revenue: 5050000, gpPercent: 59.5, color: '#22c55e' },
+  { tier: 'Tier B (30-40%)', customers: 11, revenue: 3030000, gpPercent: 35.5, color: '#eab308' },
+  { tier: 'Tier C (<30%)', customers: 46, revenue: 9110000, gpPercent: 20.0, color: '#ef4444' },
 ];
 
-// Monthly revenue trend
-const monthlyTrend = [
-  { month: 'Jan', revenue: 4200, gp: 38.2 },
-  { month: 'Feb', revenue: 4100, gp: 37.8 },
-  { month: 'Mar', revenue: 4500, gp: 39.1 },
-  { month: 'Apr', revenue: 4300, gp: 36.5 },
-  { month: 'May', revenue: 4800, gp: 38.9 },
-  { month: 'Jun', revenue: 5100, gp: 40.2 },
-  { month: 'Jul', revenue: 4600, gp: 37.4 },
-  { month: 'Aug', revenue: 4900, gp: 38.8 },
-  { month: 'Sep', revenue: 5200, gp: 41.1 },
-  { month: 'Oct', revenue: 5000, gp: 39.5 },
-  { month: 'Nov', revenue: 4700, gp: 38.0 },
-  { month: 'Dec', revenue: 4400, gp: 36.8 },
+// YoY trend data
+const yoyTrend = [
+  { year: '2023', revenue: 0 },
+  { year: '2024', revenue: 19630000 },
+  { year: '2025', revenue: 17190000 },
 ];
 
-const COLORS = ['#ef4444', '#22c55e', '#06b6d4', '#8b5cf6', '#eab308', '#f97316'];
+const COLORS = ['#06b6d4', '#ef4444', '#22c55e', '#8b5cf6'];
+
+const getTierColor = (tier: string) => {
+  if (tier === 'A') return '#22c55e';
+  if (tier === 'B') return '#eab308';
+  return '#ef4444';
+};
 
 const getGPColor = (gp: number) => {
-  if (gp >= 50) return '#22c55e';
-  if (gp >= 40) return '#06b6d4';
+  if (gp >= 40) return '#22c55e';
   if (gp >= 30) return '#eab308';
   return '#ef4444';
 };
 
-const getTierColor = (tier: string) => {
-  switch (tier) {
-    case 'Elite': return '#22c55e';
-    case 'A-Tier': return '#06b6d4';
-    case 'B-Tier': return '#eab308';
-    case 'C-Tier': return '#ef4444';
-    default: return '#6b7280';
-  }
-};
-
 export default function Dashboard() {
-  const totalRevenue = revenueByRegion.reduce((sum, r) => sum + r.revenue, 0);
-  const avgGP = revenueByRegion.reduce((sum, r) => sum + r.gp * r.revenue, 0) / totalRevenue;
-  const totalCustomers = revenueByRegion.reduce((sum, r) => sum + r.customers, 0);
+  const totalRevenue = 17190000;
+  const totalGP = 5900000;
+  const blendedGP = 34.3;
+  const totalCustomers = 160;
+  const totalLTV = 58570000;
+  const openPipeline = 10860000;
+  const yoyGrowth = -12.4;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
@@ -94,237 +82,224 @@ export default function Dashboard() {
 
       <main className="max-w-7xl mx-auto px-6 py-12">
         <h1 className="text-4xl font-bold text-white mb-2">Financial Dashboard</h1>
-        <p className="text-slate-400 mb-8">Western Region performance overview with drill-down analytics</p>
+        <p className="text-slate-400 mb-2">Western Region 2025 Performance - Corrected Data from Finance MCP</p>
+        <p className="text-xs text-slate-500 mb-8">Source: customer_ltv_corrected_2025.xlsx | 160 West customers</p>
 
         {/* Key Metrics */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-            <p className="text-slate-400 text-sm mb-1">Total Revenue (West)</p>
-            <p className="text-4xl font-bold text-cyan-400">${(totalRevenue / 1000000).toFixed(1)}M</p>
-            <p className="text-slate-500 text-sm">FY 2025</p>
+            <p className="text-slate-400 text-sm mb-1">2025 Revenue</p>
+            <p className="text-4xl font-bold text-cyan-400">${(totalRevenue / 1000000).toFixed(2)}M</p>
+            <p className={`text-sm ${yoyGrowth < 0 ? 'text-red-400' : 'text-green-400'}`}>{yoyGrowth}% YoY</p>
           </div>
           <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-            <p className="text-slate-400 text-sm mb-1">Avg GP%</p>
-            <p className="text-4xl font-bold text-yellow-400">{avgGP.toFixed(1)}%</p>
-            <p className="text-slate-500 text-sm">vs 51.5% East</p>
+            <p className="text-slate-400 text-sm mb-1">Blended GP%</p>
+            <p className="text-4xl font-bold text-yellow-400">{blendedGP}%</p>
+            <p className="text-slate-500 text-sm">${(totalGP / 1000000).toFixed(2)}M gross profit</p>
           </div>
           <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-            <p className="text-slate-400 text-sm mb-1">Active Customers</p>
+            <p className="text-slate-400 text-sm mb-1">Total Customers</p>
             <p className="text-4xl font-bold text-white">{totalCustomers}</p>
-            <p className="text-slate-500 text-sm">across West</p>
+            <p className="text-slate-500 text-sm">Active accounts</p>
           </div>
-          <div className="bg-red-900/30 rounded-xl p-6 border border-red-700/50">
-            <p className="text-red-400 text-sm mb-1">Margin Gap</p>
-            <p className="text-4xl font-bold text-red-400">$1.7M</p>
-            <p className="text-slate-500 text-sm">potential recovery</p>
+          <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+            <p className="text-slate-400 text-sm mb-1">Total LTV</p>
+            <p className="text-4xl font-bold text-purple-400">${(totalLTV / 1000000).toFixed(1)}M</p>
+            <p className="text-slate-500 text-sm">Lifetime value</p>
           </div>
         </div>
 
-        {/* Revenue by Region */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6">📍 Revenue by Region</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Chart */}
-            <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-              <ResponsiveContainer width="100%" height={350}>
-                <ComposedChart data={revenueByRegion}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-                  <XAxis dataKey="region" stroke="#94a3b8" tick={{ fontSize: 11 }} angle={-20} textAnchor="end" height={80} />
-                  <YAxis yAxisId="left" stroke="#94a3b8" tickFormatter={(val) => `$${val/1000000}M`} />
-                  <YAxis yAxisId="right" orientation="right" stroke="#22c55e" domain={[0, 60]} />
-                  <Tooltip 
-                    contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #475569' }}
-                    labelStyle={{ color: '#f1f5f9' }}
-                    formatter={(value, name) => {
-                      const v = Number(value) || 0;
-                      return [
-                        name === 'revenue' ? `$${(v/1000000).toFixed(2)}M` : `${v}%`,
-                        name === 'revenue' ? 'Revenue' : 'GP%'
-                      ];
-                    }}
-                  />
-                  <Legend />
-                  <Bar yAxisId="left" dataKey="revenue" fill="#06b6d4" name="Revenue" radius={[4, 4, 0, 0]} />
-                  <Line yAxisId="right" type="monotone" dataKey="gp" stroke="#22c55e" strokeWidth={3} name="GP%" dot={{ r: 5 }} />
-                </ComposedChart>
-              </ResponsiveContainer>
-            </div>
-
-            {/* Region Cards */}
-            <div className="space-y-4">
-              {revenueByRegion.map((region, idx) => (
-                <div key={idx} className="bg-slate-800/50 rounded-lg p-4 border border-slate-700 hover:border-cyan-500/50 transition-all">
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <h3 className="text-white font-semibold">{region.region}</h3>
-                      <p className="text-slate-400 text-sm">{region.customers} customers</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-cyan-400 font-bold">${(region.revenue / 1000000).toFixed(2)}M</p>
-                      <p className={`text-sm font-semibold ${region.gp >= 40 ? 'text-green-400' : region.gp >= 30 ? 'text-yellow-400' : 'text-red-400'}`}>
-                        {region.gp}% GP
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mt-2 h-2 bg-slate-700 rounded-full overflow-hidden">
-                    <div 
-                      className="h-full rounded-full"
-                      style={{ 
-                        width: `${(region.revenue / totalRevenue) * 100}%`,
-                        backgroundColor: getGPColor(region.gp)
-                      }}
-                    ></div>
-                  </div>
-                </div>
-              ))}
+        {/* Alert Banner */}
+        <div className="bg-red-900/30 border border-red-700 rounded-xl p-4 mb-8">
+          <div className="flex items-center gap-3">
+            <span className="text-2xl">⚠️</span>
+            <div>
+              <p className="text-red-300 font-semibold">Revenue Decline Alert: -12.4% YoY</p>
+              <p className="text-red-400/70 text-sm">2024: $19.63M → 2025: $17.19M | Tier C customers (46) generate 53% of revenue at only 20% GP margin</p>
             </div>
           </div>
-        </section>
+        </div>
 
-        {/* GP% Heatmap */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6">🌡️ GP% Heatmap by Customer</h2>
+        {/* Territory Performance */}
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
           <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-              {['Elite (≥50%)', 'A-Tier (40-50%)', 'B-Tier (30-40%)', 'C-Tier (<30%)'].map((tier, idx) => (
-                <div key={idx} className="flex items-center gap-2">
-                  <div className="w-4 h-4 rounded" style={{ backgroundColor: [getTierColor('Elite'), getTierColor('A-Tier'), getTierColor('B-Tier'), getTierColor('C-Tier')][idx] }}></div>
-                  <span className="text-slate-400 text-sm">{tier}</span>
-                </div>
-              ))}
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
-              {gpHeatmapData.sort((a, b) => b.gp - a.gp).map((customer, idx) => (
-                <div 
-                  key={idx} 
-                  className="relative p-4 rounded-lg border transition-all hover:scale-105"
-                  style={{ 
-                    backgroundColor: `${getTierColor(customer.tier)}15`,
-                    borderColor: `${getTierColor(customer.tier)}50`
-                  }}
-                >
-                  <p className="text-white font-semibold text-sm truncate">{customer.name}</p>
-                  <p className="text-2xl font-bold" style={{ color: getTierColor(customer.tier) }}>{customer.gp}%</p>
-                  <p className="text-slate-400 text-xs">${(customer.revenue / 1000).toFixed(0)}K rev</p>
-                  <div 
-                    className="absolute top-2 right-2 w-2 h-2 rounded-full"
-                    style={{ backgroundColor: getTierColor(customer.tier) }}
-                  ></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Practice Area Breakdown */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6">📊 Practice Area Breakdown</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Pie Chart */}
-            <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-              <ResponsiveContainer width="100%" height={350}>
-                <PieChart>
-                  <Pie
-                    data={practiceAreaData}
-                    dataKey="revenue"
-                    nameKey="name"
-                    cx="50%"
-                    cy="50%"
-                    outerRadius={120}
-                    label={({ name, percent }) => `${(name || '').split(' ')[0]} ${((percent || 0) * 100).toFixed(0)}%`}
-                    labelLine={{ stroke: '#94a3b8' }}
-                  >
-                    {practiceAreaData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <Tooltip 
-                    contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #475569' }}
-                    formatter={(value) => [`$${(Number(value || 0)/1000000).toFixed(1)}M`, 'Revenue']}
-                  />
-                </PieChart>
-              </ResponsiveContainer>
-            </div>
-
-            {/* Practice Area Cards */}
-            <div className="space-y-3">
-              {practiceAreaData.map((area, idx) => (
-                <div key={idx} className="bg-slate-800/50 rounded-lg p-4 border border-slate-700">
-                  <div className="flex justify-between items-center mb-2">
-                    <div className="flex items-center gap-3">
-                      <div className="w-3 h-3 rounded-full" style={{ backgroundColor: area.color }}></div>
-                      <span className="text-white font-semibold">{area.name}</span>
-                    </div>
-                    <span className="text-cyan-400 font-bold">${(area.revenue / 1000000).toFixed(1)}M</span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <div className="flex-grow h-2 bg-slate-700 rounded-full overflow-hidden">
-                      <div 
-                        className="h-full rounded-full"
-                        style={{ 
-                          width: `${area.margin}%`,
-                          backgroundColor: area.margin >= 50 ? '#22c55e' : area.margin >= 40 ? '#eab308' : '#ef4444'
-                        }}
-                      ></div>
-                    </div>
-                    <span className={`text-sm font-semibold ${area.margin >= 50 ? 'text-green-400' : area.margin >= 40 ? 'text-yellow-400' : 'text-red-400'}`}>
-                      {area.margin}% margin
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Monthly Trend */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6">📈 Monthly Performance Trend</h2>
-          <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+            <h2 className="text-xl font-bold text-white mb-4">Revenue by Territory</h2>
             <ResponsiveContainer width="100%" height={300}>
-              <ComposedChart data={monthlyTrend}>
+              <BarChart data={revenueByTerritory} layout="vertical">
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-                <XAxis dataKey="month" stroke="#94a3b8" />
-                <YAxis yAxisId="left" stroke="#94a3b8" tickFormatter={(val) => `$${val}K`} />
-                <YAxis yAxisId="right" orientation="right" stroke="#22c55e" domain={[30, 50]} />
+                <XAxis type="number" tickFormatter={(v) => `$${(v/1000000).toFixed(1)}M`} stroke="#94a3b8" />
+                <YAxis type="category" dataKey="territory" stroke="#94a3b8" width={100} />
                 <Tooltip 
+                  formatter={(value) => [`$${(Number(value || 0)/1000000).toFixed(2)}M`, 'Revenue']}
                   contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #475569' }}
-                  labelStyle={{ color: '#f1f5f9' }}
                 />
-                <Legend />
-                <Area yAxisId="left" type="monotone" dataKey="revenue" fill="#06b6d4" fillOpacity={0.2} stroke="#06b6d4" strokeWidth={2} name="Revenue ($K)" />
-                <Line yAxisId="right" type="monotone" dataKey="gp" stroke="#22c55e" strokeWidth={3} name="GP%" dot={{ r: 4 }} />
-              </ComposedChart>
+                <Bar dataKey="revenue" fill="#06b6d4" radius={[0, 4, 4, 0]} />
+              </BarChart>
             </ResponsiveContainer>
           </div>
-        </section>
 
-        {/* Quick Insights */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6">💡 Key Insights</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-gradient-to-br from-cyan-900/30 to-blue-900/20 rounded-xl p-6 border border-cyan-700/30">
-              <h3 className="text-cyan-400 font-bold mb-2">NorCal Leads Revenue</h3>
-              <p className="text-slate-300 text-sm">Bay Area generates 36% of West revenue with healthiest margins (42.5% GP). Protect and grow.</p>
+          <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+            <h2 className="text-xl font-bold text-white mb-4">GP% by Territory</h2>
+            <div className="space-y-4">
+              {revenueByTerritory.map((t, i) => (
+                <div key={i}>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span className="text-white">{t.territory}</span>
+                    <span className={t.gp >= 40 ? 'text-green-400' : t.gp >= 30 ? 'text-yellow-400' : 'text-red-400'}>
+                      {t.gp}% GP ({t.customers} customers)
+                    </span>
+                  </div>
+                  <div className="h-4 bg-slate-700 rounded-full overflow-hidden">
+                    <div 
+                      className="h-full rounded-full transition-all"
+                      style={{ 
+                        width: `${t.gp * 1.5}%`,
+                        backgroundColor: t.gp >= 40 ? '#22c55e' : t.gp >= 30 ? '#eab308' : '#ef4444'
+                      }}
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="bg-gradient-to-br from-red-900/30 to-orange-900/20 rounded-xl p-6 border border-red-700/30">
-              <h3 className="text-red-400 font-bold mb-2">SoCal Margin Crisis</h3>
-              <p className="text-slate-300 text-sm">San Diego + LA = 48% of revenue but only 26.8% blended GP. Four accounts drag down entire region.</p>
-            </div>
-            <div className="bg-gradient-to-br from-green-900/30 to-emerald-900/20 rounded-xl p-6 border border-green-700/30">
-              <h3 className="text-green-400 font-bold mb-2">PNW Opportunity</h3>
-              <p className="text-slate-300 text-sm">Seattle has best GP% (48.3%) but lowest revenue. Under-penetrated market with growth potential.</p>
+            <div className="mt-6 p-4 bg-red-900/20 rounded-lg border border-red-800">
+              <p className="text-red-300 text-sm font-semibold">🚨 LA BioMed Problem</p>
+              <p className="text-red-400/70 text-xs">8 customers, $6.47M revenue, only 22% GP - Kite + Amgen drag it down</p>
             </div>
           </div>
-        </section>
+        </div>
 
-        <div className="mt-8 flex gap-4">
-          <Link href="/margin-analysis" className="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold rounded-lg transition-all">
-            Deep Dive: Margin Analysis →
+        {/* Tier Breakdown */}
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
+          {tierBreakdown.map((tier, i) => (
+            <div key={i} className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-4 h-4 rounded-full" style={{ backgroundColor: tier.color }} />
+                <h3 className="text-lg font-bold text-white">{tier.tier}</h3>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <p className="text-slate-400 text-xs">Customers</p>
+                  <p className="text-2xl font-bold text-white">{tier.customers}</p>
+                </div>
+                <div>
+                  <p className="text-slate-400 text-xs">Revenue</p>
+                  <p className="text-2xl font-bold text-white">${(tier.revenue/1000000).toFixed(1)}M</p>
+                </div>
+                <div className="col-span-2">
+                  <p className="text-slate-400 text-xs">Effective GP%</p>
+                  <p className="text-2xl font-bold" style={{ color: tier.color }}>{tier.gpPercent}%</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Top 10 Customers Table */}
+        <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700 mb-8">
+          <h2 className="text-xl font-bold text-white mb-4">Top 10 Customers by Revenue</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-slate-700">
+                  <th className="text-left text-slate-400 text-sm py-2">Customer</th>
+                  <th className="text-left text-slate-400 text-sm py-2">Territory</th>
+                  <th className="text-right text-slate-400 text-sm py-2">Revenue</th>
+                  <th className="text-right text-slate-400 text-sm py-2">GP%</th>
+                  <th className="text-right text-slate-400 text-sm py-2">YoY</th>
+                  <th className="text-center text-slate-400 text-sm py-2">Tier</th>
+                </tr>
+              </thead>
+              <tbody>
+                {topCustomers.map((c, i) => (
+                  <tr key={i} className="border-b border-slate-700/50 hover:bg-slate-700/30">
+                    <td className="py-3 text-white font-medium">{c.name}</td>
+                    <td className="py-3 text-slate-400 text-sm">{c.territory}</td>
+                    <td className="py-3 text-right text-cyan-400">${c.revenue}K</td>
+                    <td className="py-3 text-right" style={{ color: getGPColor(c.gp) }}>{c.gp}%</td>
+                    <td className={`py-3 text-right ${c.yoy > 0 ? 'text-green-400' : 'text-red-400'}`}>
+                      {c.trend} {c.yoy > 0 ? '+' : ''}{c.yoy.toFixed(1)}%
+                    </td>
+                    <td className="py-3 text-center">
+                      <span 
+                        className="px-2 py-1 rounded text-xs font-bold"
+                        style={{ 
+                          backgroundColor: getTierColor(c.tier) + '20',
+                          color: getTierColor(c.tier)
+                        }}
+                      >
+                        {c.tier}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Pipeline & Growth */}
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+            <h2 className="text-xl font-bold text-white mb-4">Open Pipeline</h2>
+            <p className="text-5xl font-bold text-green-400 mb-2">${(openPipeline/1000000).toFixed(2)}M</p>
+            <p className="text-slate-400">Active opportunities across West region</p>
+            <div className="mt-4 p-3 bg-slate-700/50 rounded-lg">
+              <p className="text-slate-300 text-sm">Pipeline Coverage: <span className="text-cyan-400 font-bold">0.63x</span></p>
+              <p className="text-slate-500 text-xs">Based on 2025 revenue decline, need 1.5x+ for recovery</p>
+            </div>
+          </div>
+
+          <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+            <h2 className="text-xl font-bold text-white mb-4">Revenue Trend</h2>
+            <ResponsiveContainer width="100%" height={200}>
+              <ComposedChart data={yoyTrend}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+                <XAxis dataKey="year" stroke="#94a3b8" />
+                <YAxis tickFormatter={(v) => `$${(v/1000000).toFixed(0)}M`} stroke="#94a3b8" />
+                <Tooltip 
+                  formatter={(value) => [`$${(Number(value || 0)/1000000).toFixed(2)}M`, 'Revenue']}
+                  contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #475569' }}
+                />
+                <Bar dataKey="revenue" fill="#06b6d4" radius={[4, 4, 0, 0]} />
+                <Line type="monotone" dataKey="revenue" stroke="#ef4444" strokeWidth={2} dot={{ fill: '#ef4444' }} />
+              </ComposedChart>
+            </ResponsiveContainer>
+            <p className="text-red-400 text-sm text-center mt-2">📉 -$2.44M YoY decline</p>
+          </div>
+        </div>
+
+        {/* Strategic Insights */}
+        <div className="bg-gradient-to-r from-cyan-900/30 to-blue-900/30 rounded-xl p-6 border border-cyan-700/50">
+          <h2 className="text-xl font-bold text-white mb-4">🎯 Strategic Insights</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="text-cyan-400 font-semibold mb-2">Problem: Tier C Dominance</h3>
+              <ul className="text-slate-300 text-sm space-y-1">
+                <li>• 46 Tier C customers = $9.11M (53% of revenue)</li>
+                <li>• Effective GP only 20% on Tier C</li>
+                <li>• Kite ($1.96M @ 19%) + Amgen ($1.61M @ 15%) = #1 and #2</li>
+                <li>• LA BioMed territory: 8 customers, 22% GP overall</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-green-400 font-semibold mb-2">Opportunity: Tier A Expansion</h3>
+              <ul className="text-slate-300 text-sm space-y-1">
+                <li>• 103 Tier A customers = $5.05M at 59.5% GP</li>
+                <li>• Crinetics: +162% YoY at 41% GP (model customer)</li>
+                <li>• Biotech Beach: 147 customers at 42.5% GP</li>
+                <li>• Focus on Managed Services (higher margins)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Navigation */}
+        <div className="flex justify-center gap-4 mt-12">
+          <Link href="/margin-analysis" className="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-semibold transition">
+            Deep Dive: Margins →
           </Link>
-          <Link href="/" className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-all">
-            ← Back to Overview
+          <Link href="/map" className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-semibold transition">
+            View Map
           </Link>
         </div>
       </main>

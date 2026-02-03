@@ -28,7 +28,8 @@ export default function LTVPage() {
   const distributionData = [
     { name: 'Tier 1 (>$5M)', value: ltvDistribution.tier1_over5M.count, ltv: ltvDistribution.tier1_over5M.totalLtv },
     { name: 'Tier 2 ($2-5M)', value: ltvDistribution.tier2_2to5M.count, ltv: ltvDistribution.tier2_2to5M.totalLtv },
-    { name: 'Tier 3 (<$2M)', value: ltvDistribution.tier3_under2M.count, ltv: ltvDistribution.tier3_under2M.totalLtv },
+    { name: 'Tier 3 ($1-2M)', value: ltvDistribution.tier3_1to2M.count, ltv: ltvDistribution.tier3_1to2M.totalLtv },
+    { name: 'Tier 4 (<$1M)', value: ltvDistribution.tier4_under1M.count, ltv: ltvDistribution.tier4_under1M.totalLtv },
   ];
 
   const chartData = top20Customers.slice(0, 10).map(c => ({
@@ -177,8 +178,12 @@ export default function LTVPage() {
                 <span className="text-white">{ltvDistribution.tier2_2to5M.count} customers, {ltvDistribution.tier2_2to5M.pctOfTotal}% LTV</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-yellow-400">Tier 3 (&lt;$2M)</span>
-                <span className="text-white">{ltvDistribution.tier3_under2M.count} customers, {ltvDistribution.tier3_under2M.pctOfTotal}% LTV</span>
+                <span className="text-yellow-400">Tier 3 ($1-2M)</span>
+                <span className="text-white">{ltvDistribution.tier3_1to2M.count} customers, {ltvDistribution.tier3_1to2M.pctOfTotal}% LTV</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-orange-400">Tier 4 (&lt;$1M)</span>
+                <span className="text-white">{ltvDistribution.tier4_under1M.count} customers, {ltvDistribution.tier4_under1M.pctOfTotal}% LTV</span>
               </div>
             </div>
           </div>
@@ -204,7 +209,7 @@ export default function LTVPage() {
                       <td className="py-3 px-3 text-slate-500">{customer.rank}</td>
                       <td className="py-3 px-3">
                         <div className="text-white font-medium">{customer.name}</div>
-                        <div className="text-slate-500 text-xs">{customer.services.slice(0, 2).join(', ')}</div>
+                        <div className="text-slate-500 text-xs">{customer.territory} | {customer.gp}% GP</div>
                       </td>
                       <td className="py-3 px-3 text-right text-cyan-400 font-semibold">
                         ${(customer.ltv / 1000000).toFixed(2)}M

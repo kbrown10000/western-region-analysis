@@ -24,42 +24,43 @@ export default function Home() {
               <Link href="/executive-summary" className="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold rounded-lg transition-all transform hover:scale-105">
                 Executive Summary
               </Link>
-              <Link href="/market-analysis" className="px-8 py-4 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-all border border-slate-600">
-                View Full Report
+              <Link href="/dashboard" className="px-8 py-4 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-all border border-slate-600">
+                Financial Dashboard
               </Link>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Key Metrics Section */}
+      {/* Key Metrics Section - CORRECTED 2025 DATA */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white text-center mb-16">2024-2025 Performance Snapshot</h2>
+          <h2 className="text-3xl font-bold text-white text-center mb-4">2025 West Region Performance</h2>
+          <p className="text-slate-500 text-center mb-12 text-sm">Source: Finance MCP corrected data | 160 customers</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <MetricCard 
-              title="2024 Win Rate" 
-              value="40.1%" 
-              trend="baseline"
-              description="702 won deals"
-            />
-            <MetricCard 
-              title="2025 Win Rate" 
-              value="35.6%" 
+              title="2025 Revenue" 
+              value="$17.19M" 
               trend="down"
-              description="495 won deals"
+              description="-12.4% YoY"
             />
             <MetricCard 
-              title="Avg Deal Size Growth" 
-              value="+15.7%" 
-              trend="up"
-              description="$86K → $100K"
-            />
-            <MetricCard 
-              title="Active Pipeline" 
-              value="$7.4M" 
+              title="Blended GP%" 
+              value="34.3%" 
               trend="neutral"
-              description="84 open deals"
+              description="$5.90M gross profit"
+            />
+            <MetricCard 
+              title="West Customers" 
+              value="160" 
+              trend="neutral"
+              description="Active accounts"
+            />
+            <MetricCard 
+              title="Open Pipeline" 
+              value="$10.86M" 
+              trend="up"
+              description="Coverage: 0.63x"
             />
           </div>
         </div>
@@ -70,32 +71,40 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-4">Western Region Overview</h2>
           <p className="text-slate-400 text-center mb-16 max-w-2xl mx-auto">
-            Three powerhouse biotech clusters with distinct opportunities
+            Four powerhouse biotech clusters with distinct opportunities
           </p>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <RegionCard 
-              region="San Francisco Bay Area"
+              region="Genetown USA"
               companies="250+"
               funding="$58B+ in 2025"
               focus="AI Drug Discovery, Gene Therapy"
               highlights={["Genentech Ecosystem", "Stanford/UCSF Network", "VC Capital Hub"]}
-              link="/regions/bay-area"
+              link="/bay-area-deep-dive"
             />
             <RegionCard 
-              region="San Diego"
+              region="LA BioMed"
+              companies="50+"
+              funding="NantWorks Empire"
+              focus="CAR-T, Immunotherapy"
+              highlights={["Kite/Gilead Mfg", "ImmunityBio", "Academic Hubs"]}
+              link="/la-deep-dive"
+            />
+            <RegionCard 
+              region="Biotech Beach"
               companies="2,000+"
               funding="$56B Economic Output"
               focus="Manufacturing, Cell Therapy"
               highlights={["Scripps/Salk Research", "CRDMO Growth", "La Jolla Cluster"]}
-              link="/regions/san-diego"
+              link="/san-diego-deep-dive"
             />
             <RegionCard 
-              region="Seattle / Pacific NW"
+              region="Cascadia Corridor"
               companies="500+"
               funding="$9B+ Total Raised"
               focus="Cell Therapy, Epigenetics"
               highlights={["24% Employment Growth", "UW/Allen Institute", "In Vivo CAR-T"]}
-              link="/regions/seattle"
+              link="/seattle-deep-dive"
             />
           </div>
         </div>
@@ -167,9 +176,10 @@ export default function Home() {
             <NavCard title="💰 Customer LTV" link="/ltv" highlight />
             <NavCard title="⚠️ Churn Signals" link="/churn-signals" highlight />
             <NavCard title="🎯 Target Companies" link="/targets" highlight />
-            <NavCard title="Bay Area Deep Dive" link="/regions/bay-area" />
-            <NavCard title="San Diego Deep Dive" link="/regions/san-diego" />
-            <NavCard title="Seattle Deep Dive" link="/regions/seattle" />
+            <NavCard title="Genetown Deep Dive" link="/bay-area-deep-dive" />
+            <NavCard title="LA BioMed Deep Dive" link="/la-deep-dive" />
+            <NavCard title="Biotech Beach Deep Dive" link="/san-diego-deep-dive" />
+            <NavCard title="Cascadia Deep Dive" link="/seattle-deep-dive" />
             <NavCard title="Action Plan" link="/action-plan" />
             <NavCard title="Appendix" link="/appendix" />
           </div>
