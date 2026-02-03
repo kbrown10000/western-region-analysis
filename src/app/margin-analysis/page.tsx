@@ -18,16 +18,16 @@ const problemCustomers = [
 const starCustomers = [
   { name: 'Crinetics', revenue: 911795, gp: 40.9, gpDollars: 372851, hours: 6126, trend: '+162%', territory: 'Biotech Beach' },
   { name: 'Arrowhead', revenue: 551694, gp: 40.1, gpDollars: 221415, hours: 3326, trend: '+14%', territory: 'LA BioMed' },
-  { name: 'Corcept', revenue: 481861, gp: 41.2, gpDollars: 198650, hours: 3042, trend: '+27%', territory: 'Genetown' },
+  { name: 'Corcept', revenue: 481861, gp: 41.2, gpDollars: 198650, hours: 3042, trend: '+27%', territory: 'Biotech Bay' },
   { name: 'Tarsus', revenue: 366193, gp: 41.5, gpDollars: 152101, hours: 2295, trend: '+191%', territory: 'Biotech Beach' },
   { name: 'Eikon', revenue: 189450, gp: 43.1, gpDollars: 81611, hours: 1008, trend: '-29%', territory: 'Biotech Beach' },
-  { name: 'BioMarin', revenue: 133018, gp: 72.1, gpDollars: 95886, hours: 735, trend: '-43%', territory: 'Genetown' },
+  { name: 'BioMarin', revenue: 133018, gp: 72.1, gpDollars: 95886, hours: 735, trend: '-43%', territory: 'Biotech Bay' },
 ];
 
 // Territory comparison - REAL DATA
 const territoryComparison = [
   { territory: 'Biotech Beach', revenue: 9550000, gp: 42.5, customers: 147 },
-  { territory: 'Genetown', revenue: 790000, gp: 41.8, customers: 4 },
+  { territory: 'Biotech Bay', revenue: 790000, gp: 41.8, customers: 4 },
   { territory: 'LA BioMed', revenue: 6470000, gp: 22.0, customers: 8 },
   { territory: 'Cascadia', revenue: 370000, gp: 24.5, customers: 1 },
 ];

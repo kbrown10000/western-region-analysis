@@ -67,7 +67,7 @@ const regionZooms: Record<string, number> = {
 
 const regionLabels: Record<string, string> = {
   'All': 'All Regions',
-  'NorCal': 'Genetown',
+  'NorCal': 'Biotech Bay',
   'LA': 'LA BioMed',
   'SanDiego': 'Biotech Beach',
   'PNW': 'Cascadia',

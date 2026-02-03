@@ -78,7 +78,7 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <RegionCard 
-              region="Genetown USA"
+              region="Biotech Bay"
               companies="250+"
               funding="$58B+ in 2025"
               focus="AI Drug Discovery, Gene Therapy"
@@ -181,7 +181,7 @@ export default function Home() {
             <NavCard title="💰 Customer LTV" link="/ltv" highlight />
             <NavCard title="⚠️ Churn Signals" link="/churn-signals" highlight />
             <NavCard title="🎯 Target Companies" link="/targets" highlight />
-            <NavCard title="Genetown Deep Dive" link="/bay-area-deep-dive" />
+            <NavCard title="Biotech Bay Deep Dive" link="/bay-area-deep-dive" />
             <NavCard title="LA BioMed Deep Dive" link="/la-deep-dive" />
             <NavCard title="Biotech Beach Deep Dive" link="/san-diego-deep-dive" />
             <NavCard title="Cascadia Deep Dive" link="/seattle-deep-dive" />

@@ -38,7 +38,7 @@ export default function SanDiegoDeepDive() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <Link href="/" className="text-white font-bold text-xl">USDM Western Region</Link>
           <nav className="flex gap-6">
-            <Link href="/bay-area-deep-dive" className="text-slate-400 hover:text-white">Genetown</Link>
+            <Link href="/bay-area-deep-dive" className="text-slate-400 hover:text-white">Biotech Bay</Link>
             <Link href="/seattle-deep-dive" className="text-slate-400 hover:text-white">Cascadia</Link>
             <Link href="/targets" className="text-slate-400 hover:text-white">All Targets</Link>
           </nav>

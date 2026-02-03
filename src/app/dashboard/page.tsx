@@ -10,7 +10,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 const revenueByTerritory = [
   { territory: 'Biotech Beach', revenue: 9550000, gp: 42.5, customers: 147, gpDollars: 4058750 },
   { territory: 'LA BioMed', revenue: 6470000, gp: 22.0, customers: 8, gpDollars: 1423400 },
-  { territory: 'Genetown', revenue: 790000, gp: 41.8, customers: 4, gpDollars: 330220 },
+  { territory: 'Biotech Bay', revenue: 790000, gp: 41.8, customers: 4, gpDollars: 330220 },
   { territory: 'Cascadia', revenue: 370000, gp: 24.5, customers: 1, gpDollars: 90650 },
 ];
 
@@ -25,7 +25,7 @@ const topCustomers = [
   { name: 'Arrowhead', revenue: 552, gp: 40.1, tier: 'A', territory: 'LA BioMed', yoy: 13.5, trend: '↑' },
   { name: 'STAAR Surgical', revenue: 496, gp: 30.9, tier: 'B', territory: 'LA BioMed', yoy: -15.8, trend: '↓' },
   { name: 'Halozyme', revenue: 483, gp: 37.3, tier: 'B', territory: 'Biotech Beach', yoy: -24.6, trend: '↓' },
-  { name: 'Corcept', revenue: 482, gp: 41.2, tier: 'A', territory: 'Genetown', yoy: 27.0, trend: '↑' },
+  { name: 'Corcept', revenue: 482, gp: 41.2, tier: 'A', territory: 'Biotech Bay', yoy: 27.0, trend: '↑' },
 ];
 
 // Tier breakdown (REAL DATA)

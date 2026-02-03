@@ -47,7 +47,7 @@ export default function BayAreaDeepDive() {
 
       <main className="max-w-7xl mx-auto px-6 py-12">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-white mb-2">🌉 Genetown USA</h1>
+          <h1 className="text-4xl font-bold text-white mb-2">🌉 Biotech Bay</h1>
           <p className="text-xl text-cyan-400 mb-2">San Francisco Bay Area</p>
           <p className="text-slate-400">The birthplace of biotech — South San Francisco, Berkeley, and the peninsula</p>
         </div>

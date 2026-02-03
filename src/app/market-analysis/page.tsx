@@ -25,7 +25,7 @@ export default function MarketAnalysis() {
   const regions = [
     {
       name: 'San Francisco Bay Area',
-      nickname: 'Genetown USA',
+      nickname: 'Biotech Bay',
       emoji: '🌉',
       link: '/bay-area-deep-dive',
       targets: bayAreaTargets.length,
