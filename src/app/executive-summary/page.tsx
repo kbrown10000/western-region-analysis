@@ -49,7 +49,7 @@ export default function ExecutiveSummary() {
               
               <div className="bg-yellow-900/30 rounded-xl p-6 border border-yellow-800/50">
                 <h3 className="text-yellow-400 font-bold mb-3">📊 Pipeline Health Concerns</h3>
-                <p className="text-slate-300">Churn signals show <span className="font-bold">SameDayFlip</span> and <span className="font-bold">Regression</span> patterns indicating deal volatility. 84 open deals worth $7.4M in current pipeline.</p>
+                <p className="text-slate-300">Churn signals show <span className="font-bold">SameDayFlip</span> and <span className="font-bold">Regression</span> patterns indicating deal volatility. <span className="font-bold">194 open deals worth $14.05M</span> in current pipeline (verified Feb 4, 2026).</p>
               </div>
               
               <div className="bg-cyan-900/30 rounded-xl p-6 border border-cyan-800/50">

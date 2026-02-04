@@ -39,7 +39,7 @@ export default function Home() {
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-4">2025 West Region Performance</h2>
-          <p className="text-slate-500 text-center mb-12 text-sm">Source: Finance MCP corrected data | 160 customers</p>
+          <p className="text-slate-500 text-center mb-12 text-sm">Source: Finance MCP + Sales MCP | Verified Feb 4, 2026 | 160 customers</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <MetricCard 
               title="2025 Revenue" 
@@ -61,9 +61,9 @@ export default function Home() {
             />
             <MetricCard 
               title="Open Pipeline" 
-              value="$10.86M" 
+              value="$14.05M" 
               trend="up"
-              description="Coverage: 0.63x"
+              description="194 opps | Coverage: 0.82x"
             />
           </div>
         </div>
