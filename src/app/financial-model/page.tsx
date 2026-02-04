@@ -95,14 +95,17 @@ export default function FinancialModelPage() {
           <p className="text-slate-400 text-lg">
             Adjust inputs to model bookings scenarios and compensation plans
           </p>
-          <div className="mt-4 flex gap-4 text-xs">
-            <span className="bg-slate-800 px-3 py-1 rounded-full text-slate-300">
-              <span className="text-cyan-400 font-semibold">Bookings</span> = contract value at close
+          <div className="mt-4 flex flex-wrap gap-3 text-xs">
+            <span className="bg-cyan-900/30 px-3 py-1.5 rounded-full text-slate-300 border border-cyan-700/50">
+              <span className="text-cyan-400 font-semibold">Pipeline</span> = open opp amount
             </span>
-            <span className="bg-slate-800 px-3 py-1 rounded-full text-slate-300">
-              <span className="text-blue-400 font-semibold">Revenue</span> = GAAP recognized when billed
+            <span className="bg-purple-900/30 px-3 py-1.5 rounded-full text-slate-300 border border-purple-700/50">
+              <span className="text-purple-400 font-semibold">Bookings</span> = won opp amount (contract value at close)
             </span>
-            <span className="bg-slate-800 px-3 py-1 rounded-full text-slate-300">
+            <span className="bg-blue-900/30 px-3 py-1.5 rounded-full text-slate-300 border border-blue-700/50">
+              <span className="text-blue-400 font-semibold">Revenue</span> = GAAP recognized (billed)
+            </span>
+            <span className="bg-green-900/30 px-3 py-1.5 rounded-full text-slate-300 border border-green-700/50">
               <span className="text-green-400 font-semibold">EGP</span> = estimated gross profit
             </span>
           </div>
