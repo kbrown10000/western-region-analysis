@@ -252,12 +252,25 @@ export default function FinancialModelPage() {
               </div>
 
               <div className="bg-slate-900 rounded-lg p-5 border-l-4 border-green-500">
-                <div className="text-slate-400 text-sm mb-1">Projected Gross Profit (40%)</div>
-                <div className="text-3xl font-bold text-white">
+                <div className="text-slate-400 text-sm mb-1">Estimated Gross Profit (EGP)</div>
+                <div className="text-3xl font-bold text-green-400">
                   ${projectedGP.toFixed(2)}M
                 </div>
                 <div className="text-xs text-slate-500 mt-2">
-                  Target GP Margin: 40%
+                  EGP = Revenue × 40% target margin
+                </div>
+                <div className="text-xs text-green-400/70 mt-1">
+                  ⚡ EGP is the profit realized when contracts are delivered well
+                </div>
+              </div>
+
+              <div className="bg-slate-900 rounded-lg p-5 border-l-4 border-emerald-500">
+                <div className="text-slate-400 text-sm mb-1">EGP per New Logo</div>
+                <div className="text-3xl font-bold text-emerald-400">
+                  ${(avgDealSize * 0.40).toFixed(0)}K
+                </div>
+                <div className="text-xs text-slate-500 mt-2">
+                  ${avgDealSize}K avg deal × 40% GP
                 </div>
               </div>
 

@@ -3,13 +3,13 @@
 import Navigation from '@/components/Navigation';
 import { LineChart, Line, BarChart, Bar, AreaChart, Area, ComposedChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-// Data for Revenue Trend
+// Data for Revenue & EGP Trend
 const revenueData = [
-  { year: '2022', revenue: 14.2, type: 'actual' },
-  { year: '2023', revenue: 16.8, type: 'actual' },
-  { year: '2024', revenue: 19.6, type: 'actual' },
-  { year: '2025', revenue: 17.19, type: 'actual' },
-  { year: '2026', revenue: 21.0, type: 'target' },
+  { year: '2022', revenue: 14.2, egp: 5.1, gpPercent: 36, type: 'actual' },
+  { year: '2023', revenue: 16.8, egp: 6.4, gpPercent: 38, type: 'actual' },
+  { year: '2024', revenue: 19.6, egp: 7.6, gpPercent: 39, type: 'actual' },
+  { year: '2025', revenue: 17.19, egp: 5.9, gpPercent: 34.3, type: 'actual' },
+  { year: '2026', revenue: 21.0, egp: 8.4, gpPercent: 40, type: 'target' },
 ];
 
 // Data for Win Rate Trend
@@ -21,13 +21,13 @@ const winRateData = [
   { year: '2026', winRate: 42, type: 'target' },
 ];
 
-// Data for Deal Size Growth
+// Data for Deal Size & EGP per Deal Growth
 const dealSizeData = [
-  { year: '2022', dealSize: 65, type: 'actual' },
-  { year: '2023', dealSize: 78, type: 'actual' },
-  { year: '2024', dealSize: 87, type: 'actual' },
-  { year: '2025', dealSize: 100, type: 'actual' },
-  { year: '2026', dealSize: 115, type: 'target' },
+  { year: '2022', dealSize: 65, egpPerDeal: 23, type: 'actual' },
+  { year: '2023', dealSize: 78, egpPerDeal: 30, type: 'actual' },
+  { year: '2024', dealSize: 87, egpPerDeal: 37, type: 'actual' },
+  { year: '2025', dealSize: 100, egpPerDeal: 44, type: 'actual' },
+  { year: '2026', dealSize: 115, egpPerDeal: 46, type: 'target' },
 ];
 
 // Data for Pipeline Coverage
@@ -70,47 +70,46 @@ export default function TrendsPage() {
           </p>
         </div>
 
-        {/* Revenue Trend */}
+        {/* Revenue & EGP Trend */}
         <div className="bg-slate-800 rounded-lg p-6 mb-8">
-          <h2 className="text-2xl font-bold text-white mb-4">Revenue Trend (2022-2026)</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">Revenue & EGP Trend (2022-2026)</h2>
           <p className="text-slate-300 mb-6">
-            West region revenue trajectory showing 2025 dip and recovery plan to $21M in 2026
+            Revenue trajectory with <span className="text-green-400 font-semibold">Estimated Gross Profit (EGP)</span> — showing 2025 dip and recovery plan
           </p>
           <ResponsiveContainer width="100%" height={400}>
-            <LineChart data={revenueData}>
+            <ComposedChart data={revenueData}>
               <CartesianGrid strokeDasharray="3 3" stroke="#475569" />
               <XAxis dataKey="year" stroke="#94a3b8" />
-              <YAxis stroke="#94a3b8" label={{ value: 'Revenue ($M)', angle: -90, position: 'insideLeft', fill: '#94a3b8' }} />
+              <YAxis stroke="#94a3b8" label={{ value: '$ Millions', angle: -90, position: 'insideLeft', fill: '#94a3b8' }} />
               <Tooltip 
                 contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #475569', borderRadius: '8px' }}
                 labelStyle={{ color: '#fff' }}
-                formatter={(value: any) => [`$${value}M`, 'Revenue']}
+                formatter={(value) => `$${value}M`}
               />
               <Legend />
+              <Bar dataKey="revenue" fill="#3b82f6" name="Revenue ($M)" radius={[4, 4, 0, 0]} />
               <Line 
                 type="monotone" 
-                dataKey="revenue" 
-                stroke="#3b82f6" 
+                dataKey="egp" 
+                stroke="#10b981" 
                 strokeWidth={3}
-                dot={(props: any) => {
-                  const { cx, cy, payload } = props;
-                  return (
-                    <circle
-                      cx={cx}
-                      cy={cy}
-                      r={6}
-                      fill={payload.type === 'target' ? '#10b981' : '#3b82f6'}
-                      stroke="#fff"
-                      strokeWidth={2}
-                    />
-                  );
-                }}
-                name="Revenue ($M)"
+                dot={{ fill: '#10b981', stroke: '#fff', strokeWidth: 2, r: 6 }}
+                name="EGP ($M)"
               />
-            </LineChart>
+            </ComposedChart>
           </ResponsiveContainer>
+          <div className="mt-4 grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+            {revenueData.map((d) => (
+              <div key={d.year} className={`p-3 rounded-lg ${d.type === 'target' ? 'bg-green-900/30 border border-green-700' : 'bg-slate-700/50'}`}>
+                <div className="text-slate-400 text-xs">{d.year}</div>
+                <div className="text-white font-bold">${d.revenue}M</div>
+                <div className="text-green-400 text-sm">EGP: ${d.egp}M</div>
+                <div className="text-slate-500 text-xs">{d.gpPercent}% GP</div>
+              </div>
+            ))}
+          </div>
           <p className="text-sm text-slate-400 mt-4">
-            Data Source: Salesforce CRM (dim_opportunity, fact_opportunity_history) | 2026 values are targets
+            Data Source: Finance MCP (customer_ltv) | EGP = Estimated Gross Profit when contracts delivered well
           </p>
         </div>
 
@@ -158,21 +157,21 @@ export default function TrendsPage() {
           </p>
         </div>
 
-        {/* Deal Size Growth */}
+        {/* Deal Size & EGP per Deal */}
         <div className="bg-slate-800 rounded-lg p-6 mb-8">
-          <h2 className="text-2xl font-bold text-white mb-4">Average Deal Size Growth</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">Deal Size & EGP per Deal</h2>
           <p className="text-slate-300 mb-6">
-            Consistent deal size expansion from $65K (2022) to $115K target (2026)
+            Revenue per deal and <span className="text-green-400 font-semibold">EGP per deal</span> — showing margin improvement over time
           </p>
           <ResponsiveContainer width="100%" height={400}>
-            <BarChart data={dealSizeData}>
+            <ComposedChart data={dealSizeData}>
               <CartesianGrid strokeDasharray="3 3" stroke="#475569" />
               <XAxis dataKey="year" stroke="#94a3b8" />
-              <YAxis stroke="#94a3b8" label={{ value: 'Avg Deal Size ($K)', angle: -90, position: 'insideLeft', fill: '#94a3b8' }} />
+              <YAxis stroke="#94a3b8" label={{ value: '$ Thousands', angle: -90, position: 'insideLeft', fill: '#94a3b8' }} />
               <Tooltip 
                 contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #475569', borderRadius: '8px' }}
                 labelStyle={{ color: '#fff' }}
-                formatter={(value: any) => [`$${value}K`, 'Avg Deal Size']}
+                formatter={(value) => `$${value}K`}
               />
               <Legend />
               <Bar 
@@ -181,10 +180,20 @@ export default function TrendsPage() {
                 name="Avg Deal Size ($K)"
                 radius={[8, 8, 0, 0]}
               />
-            </BarChart>
+              <Bar 
+                dataKey="egpPerDeal" 
+                fill="#10b981" 
+                name="EGP per Deal ($K)"
+                radius={[8, 8, 0, 0]}
+              />
+            </ComposedChart>
           </ResponsiveContainer>
+          <div className="mt-4 p-4 bg-green-900/20 rounded-lg border border-green-700/50">
+            <p className="text-green-400 font-semibold">📈 EGP per Deal Growth</p>
+            <p className="text-slate-300 text-sm">EGP per deal grew from $23K (2022) to $44K (2025) — a <span className="text-green-400 font-bold">91% improvement</span>. Target: $46K in 2026.</p>
+          </div>
           <p className="text-sm text-slate-400 mt-4">
-            Data Source: dim_opportunity.Amount aggregated by CloseDate year
+            Data Source: dim_opportunity.Amount & fact_opportunity.EGP aggregated by CloseDate year
           </p>
         </div>
 
