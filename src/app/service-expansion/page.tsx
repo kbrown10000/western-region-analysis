@@ -200,6 +200,18 @@ export default function ServiceExpansion() {
           <p className="text-xl text-slate-400">One Trick Ponies → Multi-Service Relationships</p>
         </div>
 
+        <div className="mb-10 bg-gradient-to-br from-cyan-900/20 to-purple-900/10 rounded-xl p-6 border border-cyan-700/30">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <p className="text-white font-semibold">Loop the story: Cloud Assurance → AI Expansion</p>
+              <p className="text-slate-300 mt-1">Use Cloud Assurance as the compliance engine to expand AI governance, regulated AI enablement, data foundations, and managed services umbrella deals.</p>
+            </div>
+            <Link href="/cloud-assurance-expansion" className="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold rounded-lg transition-all">
+              Open CA→AI Playbook →
+            </Link>
+          </div>
+        </div>
+
         {/* Revenue Mix Overview */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-6">📊 Revenue Mix: Current vs Target</h2>
