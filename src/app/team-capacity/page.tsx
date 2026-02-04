@@ -2,197 +2,135 @@
 
 import Link from 'next/link';
 
-interface TeamMember {
-  role: string;
-  name: string;
-  territory: string;
-  accounts: number;
-  pipeline: string;
-  quota: string;
-  attainment: string;
-  status: 'green' | 'yellow' | 'red';
-}
-
-// Placeholder - replace with MCP data when bridge is stable
-const currentTeam: TeamMember[] = [
-  { role: 'Regional VP', name: 'TBD - Pull from Labor MCP', territory: 'Western Region', accounts: 55, pipeline: '$4.2M', quota: '$8M', attainment: '52%', status: 'yellow' },
-  { role: 'Account Executive', name: 'TBD', territory: 'Biotech Bay (SF)', accounts: 20, pipeline: '$1.8M', quota: '$2.5M', attainment: '48%', status: 'yellow' },
-  { role: 'Account Executive', name: 'TBD', territory: 'Biotech Beach (SD)', accounts: 18, pipeline: '$1.5M', quota: '$2.5M', attainment: '55%', status: 'yellow' },
-  { role: 'Account Executive', name: 'TBD', territory: 'Seattle/PNW', accounts: 0, pipeline: '$0', quota: 'N/A', attainment: 'NEW', status: 'red' },
-  { role: 'Solutions Consultant', name: 'TBD', territory: 'Western Region', accounts: 38, pipeline: 'Support', quota: 'N/A', attainment: 'N/A', status: 'green' },
+// REAL DATA from Labor MCP - get_solutions_team_roster (Feb 2026)
+const salesTeam = [
+  { name: 'Justin Ott', role: 'Account Executive (Level 2)', territory: 'Biotech Beach', opps: 127, winRate: 74.8, avgDeal: 17102, status: 'star' as const },
+  { name: 'Mike Campbell', role: 'Account Manager (Level 1)', territory: 'LA BioMed', opps: 77, winRate: 14.9, avgDeal: 27059, status: 'coaching' as const },
+  { name: 'Scott Pallardy', role: 'Account Manager (Level 1)', territory: 'East', opps: 73, winRate: 75.6, avgDeal: 7483, status: 'star' as const },
+  { name: 'Avani Macwan', role: 'Account Manager (Level 1)', territory: 'East', opps: 73, winRate: 41.1, avgDeal: 12174, status: 'ok' as const },
+  { name: 'Marcus Dinan', role: 'Account Manager (Level 1)', territory: 'East', opps: 71, winRate: 46.1, avgDeal: 4195, status: 'ok' as const },
+  { name: 'Joshua Ertmer', role: 'Staffing Account Manager', territory: 'National', opps: 76, winRate: 62.0, avgDeal: 106893, status: 'ok' as const },
+  { name: 'James Macdonell', role: 'Account Executive (Level 2)', territory: 'East', opps: 66, winRate: 54.8, avgDeal: 14941, status: 'ok' as const },
+  { name: 'Sherry DeLuca', role: 'Business Development', territory: 'National', opps: 48, winRate: 72.6, avgDeal: 9504, status: 'star' as const },
 ];
 
-interface CapacityMetric {
-  metric: string;
-  current: string;
-  benchmark: string;
-  gap: string;
-  status: 'green' | 'yellow' | 'red';
-}
-
-const capacityMetrics: CapacityMetric[] = [
-  { metric: 'Target Accounts per AE', current: '19', benchmark: '15-20', gap: 'At capacity', status: 'yellow' },
-  { metric: 'Pipeline Coverage Ratio', current: '1.7x', benchmark: '3-4x', gap: '-1.3x to -2.3x', status: 'red' },
-  { metric: 'Win Rate', current: '23.7%', benchmark: '35-40%', gap: '-11 to -16 pts', status: 'red' },
-  { metric: 'Avg Deal Size', current: '$185K', benchmark: '$150K+', gap: '+$35K ✓', status: 'green' },
-  { metric: 'Sales Cycle (days)', current: '127', benchmark: '90-120', gap: '+7 to +37 days', status: 'yellow' },
-  { metric: 'SE:AE Ratio', current: '1:2', benchmark: '1:2-3', gap: 'At benchmark', status: 'green' },
-  { metric: 'Seattle Coverage', current: '0 FTE', benchmark: '1+ FTE', gap: '-1 FTE', status: 'red' },
+const solutionsTeam = [
+  { name: 'John Petrakis', role: 'Pod Leader (Level 1)', opps: 22, winRate: 90.8, avgDeal: 131917, status: 'star' as const },
+  { name: 'Rathinaswamy Govindaswamy', role: 'Pod Leader (Level 2)', opps: 28, winRate: 5.9, avgDeal: 30440, status: 'coaching' as const },
+  { name: 'James Murray', role: 'Pod Leader (Level 1)', opps: 11, winRate: 98.3, avgDeal: 12794, status: 'star' as const },
+  { name: 'David Blewitt', role: 'Pod Leader (Level 2)', opps: 10, winRate: 24.0, avgDeal: 5486, status: 'coaching' as const },
+  { name: 'Joseph Cassella', role: 'Pod Leader (Level 2)', opps: 10, winRate: 40.3, avgDeal: 22031, status: 'ok' as const },
+  { name: 'Vega Finucan', role: 'Pod Leader (Level 1)', opps: 9, winRate: 98.2, avgDeal: 14411, status: 'star' as const },
+  { name: 'Brian Rankin', role: 'Pod Leader (Level 1)', opps: 8, winRate: 96.3, avgDeal: 130468, status: 'star' as const },
+  { name: 'John Danese', role: 'Pod Leader (Level 1)', opps: 5, winRate: 87.0, avgDeal: 59500, status: 'star' as const },
 ];
 
-interface HiringPlan {
-  role: string;
-  priority: 'P0' | 'P1' | 'P2';
-  quarter: string;
-  territory: string;
-  rationale: string;
-  expectedImpact: string;
-  annualCost: string;
-  revenueTarget: string;
-  roi: string;
-}
-
-const hiringPlan: HiringPlan[] = [
-  {
-    role: 'Account Executive - Seattle',
-    priority: 'P0',
-    quarter: 'Q1 2026',
-    territory: 'Cascadia Corridor (Seattle/PNW)',
-    rationale: '$0 current presence in $2B+ market with 15+ qualified targets (Tune, Sana, Outpace, Umoja, A-Alpha Bio)',
-    expectedImpact: 'Open new market, 3-5 new logos in Year 1',
-    annualCost: '$180K OTE',
-    revenueTarget: '$1.5M',
-    roi: '8.3x',
-  },
-  {
-    role: 'Business Development Rep (BDR)',
-    priority: 'P0',
-    quarter: 'Q1 2026',
-    territory: 'Western Region',
-    rationale: 'Pipeline coverage at 1.7x vs 3-4x benchmark. Need dedicated prospecting to fill funnel.',
-    expectedImpact: '+$3M qualified pipeline annually, 15-20 SQLs/month',
-    annualCost: '$85K OTE',
-    revenueTarget: '$750K influenced',
-    roi: '8.8x',
-  },
-  {
-    role: 'Solutions Consultant - AI/Data',
-    priority: 'P1',
-    quarter: 'Q2 2026',
-    territory: 'Western Region (AI Governance focus)',
-    rationale: 'AI Governance is top GTM pillar. Need specialized SE to support complex AI validation deals.',
-    expectedImpact: 'Improve win rate on AI deals by 10pts, enable $500K+ deal sizes',
-    annualCost: '$200K OTE',
-    revenueTarget: '$2M influenced',
-    roi: '10x',
-  },
-  {
-    role: 'Customer Success Manager',
-    priority: 'P1',
-    quarter: 'Q2 2026',
-    territory: 'Western Region',
-    rationale: 'One Trick Ponies (Gilead, Kite, Enovis) need expansion. CSM to drive upsell/cross-sell.',
-    expectedImpact: 'Expand 4 accounts from Staffing-only to Managed Services (+15pts margin)',
-    annualCost: '$140K OTE',
-    revenueTarget: '$1M expansion',
-    roi: '7.1x',
-  },
-  {
-    role: 'Account Executive - SF Expansion',
-    priority: 'P2',
-    quarter: 'Q3 2026',
-    territory: 'Biotech Bay (SF) - Growth',
-    rationale: 'Current AE at capacity (20 accounts). New logos need dedicated hunter.',
-    expectedImpact: '5+ new logos including Tier 1 targets (Cellares, GRAIL, Freenome)',
-    annualCost: '$180K OTE',
-    revenueTarget: '$2M',
-    roi: '11x',
-  },
-  {
-    role: 'Marketing Manager - Field',
-    priority: 'P2',
-    quarter: 'Q3 2026',
-    territory: 'Western Region',
-    rationale: 'Execute ABM campaigns, regional events, Seattle market entry support.',
-    expectedImpact: '+50 MQLs/quarter, 2 regional events, brand awareness in Seattle',
-    annualCost: '$150K + $100K budget',
-    revenueTarget: '$1.5M influenced',
-    roi: '6x',
-  },
+const partnerTeam = [
+  { name: 'Kim Guihen', role: 'Partner Leadership', opps: 8, winRate: 7.5, avgDeal: 47500, status: 'coaching' as const },
+  { name: 'Meghan Rutkowski', role: 'Partner Channel Manager', opps: 11, winRate: 37.5, avgDeal: 11389, status: 'coaching' as const },
 ];
 
-const revenueModel = {
-  current: {
-    headcount: 4,
-    quota: '$8M',
-    pipeline: '$4.2M',
-    projected: '$3.2M',
-  },
-  q2_2026: {
-    headcount: 6,
-    quota: '$11.5M',
-    pipeline: '$8M',
-    projected: '$5.5M',
-  },
-  q4_2026: {
-    headcount: 8,
-    quota: '$16M',
-    pipeline: '$14M',
-    projected: '$9M',
-  },
-  fy_2027: {
-    headcount: 10,
-    quota: '$22M',
-    pipeline: '$20M',
-    projected: '$14M',
-  },
+const leadershipTeam = [
+  { name: 'Hovsep Kirikian', role: 'Growth Leadership', opps: 110, winRate: 69.3, avgDeal: 20307, status: 'star' as const },
+  { name: 'Lisa Fry', role: 'Sales Leadership', opps: 63, winRate: 58.4, avgDeal: 65096, status: 'ok' as const },
+  { name: 'Jeff Burton', role: 'Sales Leadership', opps: 25, winRate: 4.0, avgDeal: 16286, status: 'coaching' as const },
+];
+
+// Capacity metrics from Labor MCP
+const capacityMetrics = {
+  totalResources: 50,
+  overloaded: 39,
+  optimal: 11,
+  underutilized: 0,
+  avgUtilization: 118.4
+};
+
+const getStatusColor = (status: 'star' | 'ok' | 'coaching') => {
+  switch(status) {
+    case 'star': return 'bg-green-900/50 border-green-700';
+    case 'ok': return 'bg-blue-900/50 border-blue-700';
+    case 'coaching': return 'bg-red-900/50 border-red-700';
+  }
+};
+
+const getStatusBadge = (status: 'star' | 'ok' | 'coaching') => {
+  switch(status) {
+    case 'star': return <span className="text-green-400">⭐ Star</span>;
+    case 'ok': return <span className="text-blue-400">✓ On Track</span>;
+    case 'coaching': return <span className="text-red-400">🎯 Coaching</span>;
+  }
 };
 
 export default function TeamCapacity() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-
-      <main className="max-w-7xl mx-auto px-6 py-12">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-white mb-2">👥 Team & Capacity Planning</h1>
-          <p className="text-xl text-slate-400">Current state, gaps, and hiring roadmap for Western Region growth</p>
-          <div className="mt-4 p-3 bg-yellow-900/30 border border-yellow-700/50 rounded-lg">
-            <p className="text-yellow-400 text-sm">⚠️ <strong>Data Integration Pending:</strong> Team member names to be pulled from Labor MCP when bridge is stable. Current data based on capacity modeling.</p>
-          </div>
+      <main className="max-w-7xl mx-auto px-6 py-16">
+        <div className="flex justify-between items-center mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white">Team Capacity</h1>
+          <span className="text-xs text-slate-400 bg-slate-800 px-3 py-1 rounded">Data: Labor MCP | Feb 2026</span>
         </div>
+        <p className="text-slate-300 mb-12 max-w-3xl">
+          Real performance data from USDM&apos;s Growth organization. Win rates, deal sizes, and territory coverage from the Fabric lakehouse.
+        </p>
 
-        {/* Current Team */}
+        {/* Capacity Overview */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6">📋 Current Team Structure</h2>
-          <div className="bg-slate-800/50 rounded-xl border border-slate-700 overflow-hidden">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-slate-800">
-                <tr>
-                  <th className="py-3 px-4 text-slate-400 font-semibold">Role</th>
-                  <th className="py-3 px-4 text-slate-400 font-semibold">Name</th>
-                  <th className="py-3 px-4 text-slate-400 font-semibold">Territory</th>
-                  <th className="py-3 px-4 text-slate-400 font-semibold text-center">Accounts</th>
-                  <th className="py-3 px-4 text-slate-400 font-semibold text-right">Pipeline</th>
-                  <th className="py-3 px-4 text-slate-400 font-semibold text-right">Quota</th>
-                  <th className="py-3 px-4 text-slate-400 font-semibold text-center">Attainment</th>
+          <h2 className="text-2xl font-bold text-cyan-400 mb-6">Delivery Capacity Overview</h2>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700 text-center">
+              <div className="text-3xl font-bold text-white">{capacityMetrics.totalResources}</div>
+              <div className="text-sm text-slate-400">Total Resources</div>
+            </div>
+            <div className="bg-red-900/30 rounded-xl p-4 border border-red-700/50 text-center">
+              <div className="text-3xl font-bold text-red-400">{capacityMetrics.overloaded}</div>
+              <div className="text-sm text-red-300">Overloaded (&gt;100%)</div>
+            </div>
+            <div className="bg-green-900/30 rounded-xl p-4 border border-green-700/50 text-center">
+              <div className="text-3xl font-bold text-green-400">{capacityMetrics.optimal}</div>
+              <div className="text-sm text-green-300">Optimal</div>
+            </div>
+            <div className="bg-yellow-900/30 rounded-xl p-4 border border-yellow-700/50 text-center">
+              <div className="text-3xl font-bold text-yellow-400">{capacityMetrics.underutilized}</div>
+              <div className="text-sm text-yellow-300">Underutilized</div>
+            </div>
+            <div className="bg-orange-900/30 rounded-xl p-4 border border-orange-700/50 text-center">
+              <div className="text-3xl font-bold text-orange-400">{capacityMetrics.avgUtilization.toFixed(1)}%</div>
+              <div className="text-sm text-orange-300">Avg Utilization</div>
+            </div>
+          </div>
+          <p className="text-sm text-slate-400 mt-4">
+            ⚠️ 78% of delivery resources are overloaded. Limited capacity for new project work without hiring.
+          </p>
+        </section>
+
+        {/* Sales Team */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-cyan-400 mb-6">Sales Team Performance</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-slate-700 text-left">
+                  <th className="py-3 px-4 text-slate-300">Name</th>
+                  <th className="py-3 px-4 text-slate-300">Role</th>
+                  <th className="py-3 px-4 text-slate-300">Territory</th>
+                  <th className="py-3 px-4 text-slate-300 text-right">Opps</th>
+                  <th className="py-3 px-4 text-slate-300 text-right">Win Rate</th>
+                  <th className="py-3 px-4 text-slate-300 text-right">Avg Deal</th>
+                  <th className="py-3 px-4 text-slate-300">Status</th>
                 </tr>
               </thead>
-              <tbody className="text-slate-300">
-                {currentTeam.map((member, idx) => (
-                  <tr key={idx} className="border-t border-slate-700">
-                    <td className="py-3 px-4 font-medium">{member.role}</td>
-                    <td className="py-3 px-4 text-slate-500 italic">{member.name}</td>
-                    <td className="py-3 px-4">{member.territory}</td>
-                    <td className="py-3 px-4 text-center">{member.accounts}</td>
-                    <td className="py-3 px-4 text-right text-cyan-400">{member.pipeline}</td>
-                    <td className="py-3 px-4 text-right">{member.quota}</td>
-                    <td className="py-3 px-4 text-center">
-                      <span className={`px-2 py-1 rounded text-xs font-bold ${
-                        member.status === 'green' ? 'bg-green-900/50 text-green-400' :
-                        member.status === 'yellow' ? 'bg-yellow-900/50 text-yellow-400' :
-                        'bg-red-900/50 text-red-400'
-                      }`}>{member.attainment}</span>
+              <tbody>
+                {salesTeam.map((person, i) => (
+                  <tr key={i} className={`border-b border-slate-800 ${getStatusColor(person.status)}`}>
+                    <td className="py-3 px-4 text-white font-medium">{person.name}</td>
+                    <td className="py-3 px-4 text-slate-300 text-xs">{person.role}</td>
+                    <td className="py-3 px-4 text-slate-300">{person.territory}</td>
+                    <td className="py-3 px-4 text-white text-right">{person.opps}</td>
+                    <td className={`py-3 px-4 text-right font-bold ${person.winRate >= 60 ? 'text-green-400' : person.winRate >= 40 ? 'text-yellow-400' : 'text-red-400'}`}>
+                      {person.winRate.toFixed(1)}%
                     </td>
+                    <td className="py-3 px-4 text-white text-right">${(person.avgDeal / 1000).toFixed(0)}K</td>
+                    <td className="py-3 px-4">{getStatusBadge(person.status)}</td>
                   </tr>
                 ))}
               </tbody>
@@ -200,182 +138,233 @@ export default function TeamCapacity() {
           </div>
         </section>
 
-        {/* Capacity Metrics */}
+        {/* Solutions Team */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6">📊 Capacity Analysis vs Benchmarks</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {capacityMetrics.map((metric, idx) => (
-              <div key={idx} className={`rounded-xl p-5 border ${
-                metric.status === 'green' ? 'bg-green-900/20 border-green-700/50' :
-                metric.status === 'yellow' ? 'bg-yellow-900/20 border-yellow-700/50' :
-                'bg-red-900/20 border-red-700/50'
-              }`}>
-                <h3 className="text-slate-400 text-sm font-semibold mb-2">{metric.metric}</h3>
-                <div className="flex items-end justify-between">
-                  <div>
-                    <p className={`text-2xl font-bold ${
-                      metric.status === 'green' ? 'text-green-400' :
-                      metric.status === 'yellow' ? 'text-yellow-400' :
-                      'text-red-400'
-                    }`}>{metric.current}</p>
-                    <p className="text-slate-500 text-xs">Benchmark: {metric.benchmark}</p>
-                  </div>
-                  <p className={`text-sm font-medium ${
-                    metric.status === 'green' ? 'text-green-400' :
-                    metric.status === 'yellow' ? 'text-yellow-400' :
-                    'text-red-400'
-                  }`}>{metric.gap}</p>
-                </div>
-              </div>
-            ))}
+          <h2 className="text-2xl font-bold text-purple-400 mb-6">Solutions Team Performance</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-slate-700 text-left">
+                  <th className="py-3 px-4 text-slate-300">Name</th>
+                  <th className="py-3 px-4 text-slate-300">Role</th>
+                  <th className="py-3 px-4 text-slate-300 text-right">Opps</th>
+                  <th className="py-3 px-4 text-slate-300 text-right">Win Rate</th>
+                  <th className="py-3 px-4 text-slate-300 text-right">Avg Deal</th>
+                  <th className="py-3 px-4 text-slate-300">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {solutionsTeam.map((person, i) => (
+                  <tr key={i} className={`border-b border-slate-800 ${getStatusColor(person.status)}`}>
+                    <td className="py-3 px-4 text-white font-medium">{person.name}</td>
+                    <td className="py-3 px-4 text-slate-300 text-xs">{person.role}</td>
+                    <td className="py-3 px-4 text-white text-right">{person.opps}</td>
+                    <td className={`py-3 px-4 text-right font-bold ${person.winRate >= 60 ? 'text-green-400' : person.winRate >= 40 ? 'text-yellow-400' : 'text-red-400'}`}>
+                      {person.winRate.toFixed(1)}%
+                    </td>
+                    <td className="py-3 px-4 text-white text-right">${(person.avgDeal / 1000).toFixed(0)}K</td>
+                    <td className="py-3 px-4">{getStatusBadge(person.status)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </section>
 
-        {/* Key Gaps */}
+        {/* Partner & Leadership */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          {/* Partner Team */}
+          <section>
+            <h2 className="text-2xl font-bold text-orange-400 mb-6">Partner Team</h2>
+            <div className="space-y-3">
+              {partnerTeam.map((person, i) => (
+                <div key={i} className={`rounded-xl p-4 border ${getStatusColor(person.status)}`}>
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <div className="text-white font-medium">{person.name}</div>
+                      <div className="text-xs text-slate-400">{person.role}</div>
+                    </div>
+                    {getStatusBadge(person.status)}
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 text-sm">
+                    <div><span className="text-slate-400">Opps:</span> <span className="text-white">{person.opps}</span></div>
+                    <div><span className="text-slate-400">Win:</span> <span className={person.winRate < 40 ? 'text-red-400' : 'text-white'}>{person.winRate}%</span></div>
+                    <div><span className="text-slate-400">Avg:</span> <span className="text-white">${(person.avgDeal / 1000).toFixed(0)}K</span></div>
+                  </div>
+                </div>
+              ))}
+              <p className="text-sm text-red-300 mt-4">
+                ⚠️ Partner channel underperforming. Combined 22.5% win rate needs immediate attention.
+              </p>
+            </div>
+          </section>
+
+          {/* Leadership */}
+          <section>
+            <h2 className="text-2xl font-bold text-yellow-400 mb-6">Growth Leadership</h2>
+            <div className="space-y-3">
+              {leadershipTeam.map((person, i) => (
+                <div key={i} className={`rounded-xl p-4 border ${getStatusColor(person.status)}`}>
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <div className="text-white font-medium">{person.name}</div>
+                      <div className="text-xs text-slate-400">{person.role}</div>
+                    </div>
+                    {getStatusBadge(person.status)}
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 text-sm">
+                    <div><span className="text-slate-400">Opps:</span> <span className="text-white">{person.opps}</span></div>
+                    <div><span className="text-slate-400">Win:</span> <span className={person.winRate < 40 ? 'text-red-400' : 'text-white'}>{person.winRate.toFixed(1)}%</span></div>
+                    <div><span className="text-slate-400">Avg:</span> <span className="text-white">${(person.avgDeal / 1000).toFixed(0)}K</span></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+
+        {/* Territory Alignment */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6">🚨 Critical Capacity Gaps</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <h2 className="text-2xl font-bold text-cyan-400 mb-6">Western Territory Alignment (Recommended)</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="bg-gradient-to-br from-green-900/30 to-green-800/30 rounded-xl p-5 border border-green-700/50">
+              <div className="text-green-400 font-bold mb-2">Biotech Beach</div>
+              <div className="text-white text-lg font-semibold mb-1">Justin Ott ⭐</div>
+              <div className="text-sm text-slate-300 mb-3">San Diego | 74.8% win rate</div>
+              <div className="text-xs text-green-300">Keep star on best territory</div>
+            </div>
+            <div className="bg-gradient-to-br from-red-900/30 to-red-800/30 rounded-xl p-5 border border-red-700/50">
+              <div className="text-red-400 font-bold mb-2">LA BioMed</div>
+              <div className="text-white text-lg font-semibold mb-1">Mike Campbell 🎯</div>
+              <div className="text-sm text-slate-300 mb-3">Los Angeles | 14.9% win rate</div>
+              <div className="text-xs text-red-300">Coaching focus on 8 key accounts</div>
+            </div>
+            <div className="bg-gradient-to-br from-yellow-900/30 to-yellow-800/30 rounded-xl p-5 border border-yellow-700/50">
+              <div className="text-yellow-400 font-bold mb-2">Biotech Bay</div>
+              <div className="text-white text-lg font-semibold mb-1">NEW HIRE NEEDED</div>
+              <div className="text-sm text-slate-300 mb-3">San Francisco | No coverage</div>
+              <div className="text-xs text-yellow-300">Biggest biotech market unserved</div>
+            </div>
+            <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/30 rounded-xl p-5 border border-blue-700/50">
+              <div className="text-blue-400 font-bold mb-2">Cascadia</div>
+              <div className="text-white text-lg font-semibold mb-1">Partner Channel</div>
+              <div className="text-sm text-slate-300 mb-3">Seattle | $0 pipeline</div>
+              <div className="text-xs text-blue-300">$150K investment per &quot;The Ask&quot;</div>
+            </div>
+          </div>
+        </section>
+
+        {/* Coaching Priorities */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-red-400 mb-6">🎯 Coaching Priorities</h2>
+          <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-red-900/20 rounded-xl p-6 border border-red-700/50">
-              <div className="text-4xl mb-3">🗺️</div>
-              <h3 className="text-xl font-bold text-red-400 mb-2">Zero Seattle Presence</h3>
-              <p className="text-slate-300 text-sm mb-3">$0 revenue from Cascadia Corridor despite 15+ qualified targets worth $2B+ TAM.</p>
-              <p className="text-red-400 font-semibold">→ Need: 1 AE immediately</p>
+              <div className="text-white font-bold text-lg mb-2">Mike Campbell</div>
+              <div className="text-red-400 font-semibold mb-3">14.9% Win Rate | 77 Opps</div>
+              <ul className="text-sm text-slate-300 space-y-2">
+                <li>• 10 churn signals (Regression, SameDayFlip)</li>
+                <li>• Holds 38% of West pipeline</li>
+                <li>• Deal qualification training needed</li>
+                <li>• Focus on 8 LA BioMed accounts</li>
+              </ul>
             </div>
             <div className="bg-red-900/20 rounded-xl p-6 border border-red-700/50">
-              <div className="text-4xl mb-3">📉</div>
-              <h3 className="text-xl font-bold text-red-400 mb-2">Pipeline Starvation</h3>
-              <p className="text-slate-300 text-sm mb-3">1.7x coverage vs 3-4x benchmark. Not enough deals to hit quota even with improved win rates.</p>
-              <p className="text-red-400 font-semibold">→ Need: 1 BDR + marketing support</p>
+              <div className="text-white font-bold text-lg mb-2">Kim Guihen</div>
+              <div className="text-red-400 font-semibold mb-3">7.5% Win Rate | 8 Opps</div>
+              <ul className="text-sm text-slate-300 space-y-2">
+                <li>• Partner channel underperforming</li>
+                <li>• High avg deal ($47.5K) but low close</li>
+                <li>• Review partner selection criteria</li>
+                <li>• May need channel strategy refresh</li>
+              </ul>
             </div>
-            <div className="bg-yellow-900/20 rounded-xl p-6 border border-yellow-700/50">
-              <div className="text-4xl mb-3">🔄</div>
-              <h3 className="text-xl font-bold text-yellow-400 mb-2">One Trick Ponies</h3>
-              <p className="text-slate-300 text-sm mb-3">Gilead, Kite, Enovis at 18-22% GP (staffing-only). No CSM to drive expansion to managed services.</p>
-              <p className="text-yellow-400 font-semibold">→ Need: 1 CSM for expansion</p>
+            <div className="bg-red-900/20 rounded-xl p-6 border border-red-700/50">
+              <div className="text-white font-bold text-lg mb-2">Jeff Burton</div>
+              <div className="text-red-400 font-semibold mb-3">4.0% Win Rate | 25 Opps</div>
+              <ul className="text-sm text-slate-300 space-y-2">
+                <li>• Sales Leadership with lowest close rate</li>
+                <li>• May be pursuing wrong opportunities</li>
+                <li>• Evaluate deal mix and qualification</li>
+                <li>• Consider territory/account reassignment</li>
+              </ul>
             </div>
           </div>
         </section>
 
         {/* Hiring Plan */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6">🎯 Role-Based Hiring Plan</h2>
-          <div className="space-y-4">
-            {hiringPlan.map((role, idx) => (
-              <div key={idx} className={`rounded-xl p-6 border ${
-                role.priority === 'P0' ? 'bg-gradient-to-r from-red-900/30 to-orange-900/20 border-red-700/50' :
-                role.priority === 'P1' ? 'bg-gradient-to-r from-yellow-900/30 to-amber-900/20 border-yellow-700/50' :
-                'bg-slate-800/50 border-slate-700'
-              }`}>
-                <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                  <div>
-                    <div className="flex items-center gap-3 mb-1">
-                      <span className={`text-xs font-bold px-2 py-1 rounded ${
-                        role.priority === 'P0' ? 'bg-red-500 text-white' :
-                        role.priority === 'P1' ? 'bg-yellow-500 text-slate-900' :
-                        'bg-slate-600 text-white'
-                      }`}>{role.priority}</span>
-                      <span className="text-slate-400 text-sm">{role.quarter}</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-white">{role.role}</h3>
-                    <p className="text-cyan-400 text-sm">{role.territory}</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-green-400 font-bold text-lg">{role.roi} ROI</p>
-                    <p className="text-slate-500 text-xs">{role.annualCost} → {role.revenueTarget}</p>
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <h4 className="text-slate-400 text-sm font-semibold mb-1">Rationale</h4>
-                    <p className="text-slate-300 text-sm">{role.rationale}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-slate-400 text-sm font-semibold mb-1">Expected Impact</h4>
-                    <p className="text-slate-300 text-sm">{role.expectedImpact}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <h2 className="text-2xl font-bold text-green-400 mb-6">📋 Recommended Hiring Plan</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-slate-700 text-left">
+                  <th className="py-3 px-4 text-slate-300">Priority</th>
+                  <th className="py-3 px-4 text-slate-300">Role</th>
+                  <th className="py-3 px-4 text-slate-300">Territory</th>
+                  <th className="py-3 px-4 text-slate-300">Rationale</th>
+                  <th className="py-3 px-4 text-slate-300 text-right">Est. Cost</th>
+                  <th className="py-3 px-4 text-slate-300 text-right">Target Rev</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-slate-800 bg-red-900/20">
+                  <td className="py-3 px-4"><span className="bg-red-600 text-white px-2 py-0.5 rounded text-xs font-bold">P0</span></td>
+                  <td className="py-3 px-4 text-white font-medium">Account Executive</td>
+                  <td className="py-3 px-4 text-slate-300">Seattle/Cascadia</td>
+                  <td className="py-3 px-4 text-slate-300">$0 presence in $2B+ market</td>
+                  <td className="py-3 px-4 text-white text-right">$180K</td>
+                  <td className="py-3 px-4 text-green-400 text-right">$1.5M</td>
+                </tr>
+                <tr className="border-b border-slate-800 bg-red-900/20">
+                  <td className="py-3 px-4"><span className="bg-red-600 text-white px-2 py-0.5 rounded text-xs font-bold">P0</span></td>
+                  <td className="py-3 px-4 text-white font-medium">BDR</td>
+                  <td className="py-3 px-4 text-slate-300">Western Region</td>
+                  <td className="py-3 px-4 text-slate-300">Pipeline coverage at 1.7x (need 3-4x)</td>
+                  <td className="py-3 px-4 text-white text-right">$85K</td>
+                  <td className="py-3 px-4 text-green-400 text-right">$750K</td>
+                </tr>
+                <tr className="border-b border-slate-800 bg-orange-900/20">
+                  <td className="py-3 px-4"><span className="bg-orange-600 text-white px-2 py-0.5 rounded text-xs font-bold">P1</span></td>
+                  <td className="py-3 px-4 text-white font-medium">Solutions Consultant - AI/Data</td>
+                  <td className="py-3 px-4 text-slate-300">Western Region</td>
+                  <td className="py-3 px-4 text-slate-300">AI Governance is top GTM pillar</td>
+                  <td className="py-3 px-4 text-white text-right">$200K</td>
+                  <td className="py-3 px-4 text-green-400 text-right">$2M</td>
+                </tr>
+                <tr className="border-b border-slate-800 bg-orange-900/20">
+                  <td className="py-3 px-4"><span className="bg-orange-600 text-white px-2 py-0.5 rounded text-xs font-bold">P1</span></td>
+                  <td className="py-3 px-4 text-white font-medium">Customer Success Manager</td>
+                  <td className="py-3 px-4 text-slate-300">Western Region</td>
+                  <td className="py-3 px-4 text-slate-300">Drive expansion in low-GP accounts</td>
+                  <td className="py-3 px-4 text-white text-right">$140K</td>
+                  <td className="py-3 px-4 text-green-400 text-right">$1M</td>
+                </tr>
+                <tr className="border-b border-slate-800 bg-yellow-900/20">
+                  <td className="py-3 px-4"><span className="bg-yellow-600 text-white px-2 py-0.5 rounded text-xs font-bold">P2</span></td>
+                  <td className="py-3 px-4 text-white font-medium">Account Executive</td>
+                  <td className="py-3 px-4 text-slate-300">Biotech Bay (SF)</td>
+                  <td className="py-3 px-4 text-slate-300">$1.35M in largest biotech market</td>
+                  <td className="py-3 px-4 text-white text-right">$180K</td>
+                  <td className="py-3 px-4 text-green-400 text-right">$2M</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+          <p className="text-sm text-slate-400 mt-4">
+            Total investment: $785K → Projected revenue: $7.25M (9.2x ROI)
+          </p>
         </section>
 
-        {/* Revenue Projection */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6">📈 Revenue Capacity Model</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {Object.entries(revenueModel).map(([period, data], idx) => (
-              <div key={idx} className={`rounded-xl p-6 border ${
-                idx === 0 ? 'bg-slate-800/50 border-slate-700' : 
-                'bg-gradient-to-b from-cyan-900/30 to-blue-900/20 border-cyan-700/50'
-              }`}>
-                <h3 className="text-slate-400 text-sm font-semibold mb-4">
-                  {period === 'current' ? 'Current State' : 
-                   period === 'q2_2026' ? 'Q2 2026' :
-                   period === 'q4_2026' ? 'Q4 2026' : 'FY 2027'}
-                </h3>
-                <div className="space-y-3">
-                  <div>
-                    <p className="text-slate-500 text-xs">Headcount</p>
-                    <p className="text-white font-bold text-lg">{data.headcount} FTE</p>
-                  </div>
-                  <div>
-                    <p className="text-slate-500 text-xs">Total Quota</p>
-                    <p className="text-white font-bold">{data.quota}</p>
-                  </div>
-                  <div>
-                    <p className="text-slate-500 text-xs">Pipeline</p>
-                    <p className="text-cyan-400 font-bold">{data.pipeline}</p>
-                  </div>
-                  <div>
-                    <p className="text-slate-500 text-xs">Projected Revenue</p>
-                    <p className="text-green-400 font-bold text-xl">{data.projected}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="mt-6 p-4 bg-blue-900/30 rounded-lg border border-blue-700/50">
-            <p className="text-blue-400 font-semibold mb-2">💡 Key Assumptions</p>
-            <ul className="text-slate-300 text-sm space-y-1">
-              <li>• Win rate improves from 23.7% to 35% with better coverage + SE support</li>
-              <li>• Seattle AE ramps to $1.5M in Year 1 (conservative for new market)</li>
-              <li>• BDR generates 3x pipeline coverage by Q3 2026</li>
-              <li>• CSM-driven expansion adds 15pts margin to One Trick Pony accounts</li>
-              <li>• Average deal size holds at $185K with AI Governance driving larger deals</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Investment Summary */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6">💰 Investment Summary</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700 text-center">
-              <p className="text-slate-400 text-sm mb-2">Total Investment (FY 2026)</p>
-              <p className="text-4xl font-bold text-white">$1.035M</p>
-              <p className="text-slate-500 text-xs mt-1">6 new hires + marketing budget</p>
-            </div>
-            <div className="bg-green-900/30 rounded-xl p-6 border border-green-700/50 text-center">
-              <p className="text-slate-400 text-sm mb-2">Projected Revenue Lift</p>
-              <p className="text-4xl font-bold text-green-400">+$5.8M</p>
-              <p className="text-slate-500 text-xs mt-1">From $3.2M → $9M by Q4 2026</p>
-            </div>
-            <div className="bg-cyan-900/30 rounded-xl p-6 border border-cyan-700/50 text-center">
-              <p className="text-slate-400 text-sm mb-2">Blended ROI</p>
-              <p className="text-4xl font-bold text-cyan-400">5.6x</p>
-              <p className="text-slate-500 text-xs mt-1">Revenue lift / investment</p>
-            </div>
-          </div>
-        </section>
-
-        <div className="flex gap-4">
-          <Link href="/gtm-strategy" className="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold rounded-lg transition-all">
-            View GTM Strategy →
+        {/* Navigation */}
+        <div className="flex flex-wrap gap-4 mt-12">
+          <Link href="/seller-performance" className="bg-cyan-700 hover:bg-cyan-600 px-6 py-3 rounded-lg text-white font-medium transition">
+            → Seller Performance Detail
           </Link>
-          <Link href="/marketing-alignment" className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-all">
-            ← Marketing Alignment
+          <Link href="/territories" className="bg-purple-700 hover:bg-purple-600 px-6 py-3 rounded-lg text-white font-medium transition">
+            → Territory Analysis
+          </Link>
+          <Link href="/financial-model" className="bg-green-700 hover:bg-green-600 px-6 py-3 rounded-lg text-white font-medium transition">
+            → Financial Model
           </Link>
         </div>
       </main>

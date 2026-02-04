@@ -1,0 +1,230 @@
+﻿{
+    "marketingTeam":  [
+                          {
+                              "name":  "Jadson Aires Dorneles",
+                              "role":  "Content Marketing"
+                          },
+                          {
+                              "name":  "Matthew Reinert",
+                              "role":  "Content Marketing"
+                          },
+                          {
+                              "name":  "Lisa Om",
+                              "role":  "Marketing Leadership"
+                          },
+                          {
+                              "name":  "Daniel Glock",
+                              "role":  "Content Marketing"
+                          },
+                          {
+                              "name":  "Melony Wood",
+                              "role":  "Engagement \u0026 Communications"
+                          },
+                          {
+                              "name":  "Marium Amin",
+                              "role":  "Content Marketing"
+                          },
+                          {
+                              "name":  "Darlene Limtiaco",
+                              "role":  "Campaign Marketing"
+                          }
+                      ],
+    "source":  "Labor MCP - get_solutions_team_roster",
+    "partnerTeam":  [
+                        {
+                            "winRate":  7.5,
+                            "avgDealSize":  47500,
+                            "name":  "Kim Guihen",
+                            "opps":  8,
+                            "role":  "Partner Leadership"
+                        },
+                        {
+                            "winRate":  37.5,
+                            "avgDealSize":  11389,
+                            "name":  "Meghan Rutkowski",
+                            "opps":  11,
+                            "role":  "Partner Channel Manager"
+                        }
+                    ],
+    "generated":  "2026-02-04",
+    "summary":  {
+                    "needsCoaching":  [
+                                          "Mike Campbell",
+                                          "Kim Guihen",
+                                          "Jeff Burton"
+                                      ],
+                    "highPerformers":  [
+                                           "Justin Ott",
+                                           "John Petrakis",
+                                           "Scott Pallardy",
+                                           "James Murray"
+                                       ],
+                    "totalGrowthResources":  41,
+                    "avgWinRate":  46.1
+                },
+    "solutionsTeam":  [
+                          {
+                              "winRate":  90.8,
+                              "avgDealSize":  131917,
+                              "name":  "John Petrakis",
+                              "opps":  22,
+                              "role":  "Pod Leader (Level 1)"
+                          },
+                          {
+                              "winRate":  98.8,
+                              "avgDealSize":  11033,
+                              "name":  "Jennifer Wallenhurst",
+                              "opps":  2,
+                              "role":  "Pod Leader (Level 2)"
+                          },
+                          {
+                              "winRate":  5.9,
+                              "avgDealSize":  30440,
+                              "name":  "Rathinaswamy Govindaswamy",
+                              "opps":  28,
+                              "role":  "Pod Leader (Level 2)"
+                          },
+                          {
+                              "winRate":  87.0,
+                              "avgDealSize":  59500,
+                              "name":  "John Danese",
+                              "opps":  5,
+                              "role":  "Pod Leader (Level 1)"
+                          },
+                          {
+                              "winRate":  98.3,
+                              "avgDealSize":  12794,
+                              "name":  "James Murray",
+                              "opps":  11,
+                              "role":  "Pod Leader (Level 1)"
+                          },
+                          {
+                              "winRate":  24.0,
+                              "avgDealSize":  5486,
+                              "name":  "David Blewitt",
+                              "opps":  10,
+                              "role":  "Pod Leader (Level 2)"
+                          },
+                          {
+                              "winRate":  40.3,
+                              "avgDealSize":  22031,
+                              "name":  "Joseph Cassella",
+                              "opps":  10,
+                              "role":  "Pod Leader (Level 2)"
+                          },
+                          {
+                              "winRate":  99.6,
+                              "avgDealSize":  4598,
+                              "name":  "Hussam Kazi",
+                              "opps":  2,
+                              "role":  "Pod Leader (Level 2)"
+                          },
+                          {
+                              "winRate":  98.2,
+                              "avgDealSize":  14411,
+                              "name":  "Vega Finucan",
+                              "opps":  9,
+                              "role":  "Pod Leader (Level 1)"
+                          },
+                          {
+                              "winRate":  96.3,
+                              "avgDealSize":  130468,
+                              "name":  "Brian Rankin",
+                              "opps":  8,
+                              "role":  "Pod Leader (Level 1)"
+                          },
+                          {
+                              "winRate":  88.9,
+                              "avgDealSize":  9750,
+                              "name":  "John Jay Crowley",
+                              "opps":  3,
+                              "role":  "Pod Leader (Level 2)"
+                          },
+                          {
+                              "winRate":  0.3,
+                              "avgDealSize":  55000,
+                              "name":  "Mayank Mahajan",
+                              "opps":  4,
+                              "role":  "Pod Leader (Level 2)"
+                          }
+                      ],
+    "salesTeam":  [
+                      {
+                          "winRate":  14.9,
+                          "avgDealSize":  27059,
+                          "name":  "Mike Campbell",
+                          "opps":  77,
+                          "role":  "Account Manager (Level 1)"
+                      },
+                      {
+                          "winRate":  75.6,
+                          "avgDealSize":  7483,
+                          "name":  "Scott Pallardy",
+                          "opps":  73,
+                          "role":  "Account Manager (Level 1)"
+                      },
+                      {
+                          "winRate":  62.0,
+                          "avgDealSize":  106893,
+                          "name":  "Joshua Ertmer",
+                          "opps":  76,
+                          "role":  "Staffing Account Manager"
+                      },
+                      {
+                          "winRate":  72.6,
+                          "avgDealSize":  9504,
+                          "name":  "Sherry DeLuca",
+                          "opps":  48,
+                          "role":  "Business Development"
+                      },
+                      {
+                          "winRate":  4,
+                          "avgDealSize":  16286,
+                          "name":  "Jeff Burton",
+                          "opps":  25,
+                          "role":  "Sales Leadership"
+                      },
+                      {
+                          "winRate":  58.4,
+                          "avgDealSize":  65096,
+                          "name":  "Lisa Fry",
+                          "opps":  63,
+                          "role":  "Sales Leadership"
+                      },
+                      {
+                          "winRate":  74.8,
+                          "avgDealSize":  17102,
+                          "name":  "Justin Ott",
+                          "opps":  127,
+                          "role":  "Account Executive (Level 2)"
+                      },
+                      {
+                          "winRate":  46.1,
+                          "avgDealSize":  4195,
+                          "name":  "Marcus Dinan",
+                          "opps":  71,
+                          "role":  "Account Manager (Level 1)"
+                      },
+                      {
+                          "winRate":  4.5,
+                          "avgDealSize":  17546,
+                          "name":  "Holger Brämer",
+                          "opps":  7,
+                          "role":  "Sales Leadership"
+                      },
+                      {
+                          "winRate":  54.8,
+                          "avgDealSize":  14941,
+                          "name":  "James Macdonell",
+                          "opps":  66,
+                          "role":  "Account Executive (Level 2)"
+                      },
+                      {
+                          "winRate":  41.1,
+                          "avgDealSize":  12174,
+                          "name":  "Avani Macwan",
+                          "opps":  73,
+                          "role":  "Account Manager (Level 1)"
+                      }
+                  ]
+}
