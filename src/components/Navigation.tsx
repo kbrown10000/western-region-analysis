@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 interface NavItem {
   label: string;
@@ -49,6 +49,7 @@ const navItems: NavItem[] = [
       { label: 'Margin Analysis', href: '/margin-analysis' },
       { label: 'Customer LTV', href: '/ltv' },
       { label: 'Churn Signals', href: '/churn-signals' },
+      { label: 'Territories', href: '/territories' },
     ],
   },
   {
@@ -72,10 +73,50 @@ export default function Navigation() {
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const isActive = (href: string) => pathname === href;
   const isChildActive = (children: { href: string }[]) => 
     children.some(child => pathname === child.href);
+
+  // Clear timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
+  const handleMouseEnter = (label: string) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    setOpenDropdown(label);
+  };
+
+  const handleMouseLeave = () => {
+    // Delay closing to allow moving to dropdown
+    timeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 150);
+  };
+
+  const handleClick = (label: string) => {
+    // Toggle on click for better mobile/touch support
+    setOpenDropdown(openDropdown === label ? null : label);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.nav-dropdown-container')) {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
 
   return (
     <nav className="bg-slate-900 border-b border-slate-700 sticky top-0 z-50">
@@ -92,9 +133,9 @@ export default function Navigation() {
             {navItems.map((item) => (
               <div
                 key={item.label}
-                className="relative"
-                onMouseEnter={() => item.children && setOpenDropdown(item.label)}
-                onMouseLeave={() => setOpenDropdown(null)}
+                className="relative nav-dropdown-container"
+                onMouseEnter={() => item.children && handleMouseEnter(item.label)}
+                onMouseLeave={handleMouseLeave}
               >
                 {item.href ? (
                   <Link
@@ -109,27 +150,40 @@ export default function Navigation() {
                   </Link>
                 ) : (
                   <button
+                    onClick={() => handleClick(item.label)}
                     className={`px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-1 ${
                       item.children && isChildActive(item.children)
                         ? 'bg-blue-600 text-white'
+                        : openDropdown === item.label
+                        ? 'bg-slate-800 text-white'
                         : 'text-slate-300 hover:bg-slate-800 hover:text-white'
                     }`}
                   >
                     {item.label}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg 
+                      className={`w-4 h-4 transition-transform ${openDropdown === item.label ? 'rotate-180' : ''}`} 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
                 )}
 
-                {/* Dropdown */}
+                {/* Dropdown - no gap, connected to button */}
                 {item.children && openDropdown === item.label && (
-                  <div className="absolute left-0 mt-1 w-56 bg-slate-800 rounded-md shadow-lg border border-slate-700 py-1">
+                  <div 
+                    className="absolute left-0 top-full w-56 bg-slate-800 rounded-b-md shadow-lg border border-slate-700 border-t-0 py-1 z-50"
+                    onMouseEnter={() => handleMouseEnter(item.label)}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        className={`block px-4 py-2 text-sm transition-colors ${
+                        onClick={() => setOpenDropdown(null)}
+                        className={`block px-4 py-2.5 text-sm transition-colors ${
                           isActive(child.href)
                             ? 'bg-blue-600 text-white'
                             : 'text-slate-300 hover:bg-slate-700 hover:text-white'
