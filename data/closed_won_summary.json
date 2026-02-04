@@ -1,0 +1,440 @@
+﻿{
+  "success": true,
+  "data": {
+    "deals": [
+      {
+        "opportunityId": "006Vo00000t89T4IAI",
+        "opportunityName": "5404-BD-ServiceMax Tester (N Zaidi) CO2 041526",
+        "accountName": "Becton Dickinson and Company",
+        "closeDate": "2025-12-05",
+        "amount": 38250,
+        "eGP": 9945
+      },
+      {
+        "opportunityId": "006Vo00000sLLFHIA4",
+        "opportunityName": "5195-Pfizer- Business Analyst (M Gade) SOW 063026",
+        "accountName": "Pfizer",
+        "closeDate": "2025-12-05",
+        "amount": 116480,
+        "eGP": 30284.8
+      },
+      {
+        "opportunityId": "006Vo00000zjl2rIAA",
+        "opportunityName": "5408-Argenx Third Party Vendor Managed Services-CR1",
+        "accountName": "argenx BV",
+        "closeDate": "2025-12-05",
+        "amount": 0,
+        "eGP": 0
+      },
+      {
+        "opportunityId": "006Vo00000zMag1IAC",
+        "opportunityName": "5384-Xencor Benchling Support (D Patel) CO2 123126",
+        "accountName": "Xencor, Inc.",
+        "closeDate": "2025-12-08",
+        "amount": 49950,
+        "eGP": 12987
+      },
+      {
+        "opportunityId": "006Vo00000niFvBIAU",
+        "opportunityName": "5472-BD- APM Labeling Integrations (K Patel)",
+        "accountName": "Becton Dickinson and Company",
+        "closeDate": "2025-12-05",
+        "amount": 124950,
+        "eGP": 32487
+      },
+      {
+        "opportunityId": "006Vo000011zpRGIAY",
+        "opportunityName": "5513-Apellis-Validation Analyst (L Samuel and S Gaji)",
+        "accountName": "Apellis Pharmaceuticals, Inc.",
+        "closeDate": "2025-12-08",
+        "amount": 384800,
+        "eGP": 100048
+      },
+      {
+        "opportunityId": "006Vo00000t6jxGIAQ",
+        "opportunityName": "5353-Adaptive - Regulatory Software Documentation Specialist (M Kelly) CO2 092526",
+        "accountName": "Adaptive Biotechnologies Corporation",
+        "closeDate": "2025-12-08",
+        "amount": 105300,
+        "eGP": 27378
+      },
+      {
+        "opportunityId": "006Vo000013kq7pIAA",
+        "opportunityName": "5020-Takeda MA Bio Ops LabWare LIMS (M K Burra) SOW 033126",
+        "accountName": "Takeda Pharmaceuticals U.S.A.",
+        "closeDate": "2025-12-09",
+        "amount": 75609.06,
+        "eGP": 19658.36
+      },
+      {
+        "opportunityId": "006Vo00000vogD0IAI",
+        "opportunityName": "5509-J&J- Quality Engineer (AK Khushu)",
+        "accountName": "Johnson & Johnson",
+        "closeDate": "2025-12-10",
+        "amount": 180000,
+        "eGP": 46800
+      },
+      {
+        "opportunityId": "006Vo0000126QarIAE",
+        "opportunityName": "4770-Gilead GPLM Operational Support (V Chaudhary) CO7 033126",
+        "accountName": "Gilead Sciences",
+        "closeDate": "2025-12-08",
+        "amount": 50400,
+        "eGP": 13104
+      },
+      {
+        "opportunityId": "006Vo00000xNvDPIA0",
+        "opportunityName": "5398-Arrowhead Validation Documentation and Compliance Consultant (S Ghei) CO1 121925",
+        "accountName": "Arrowhead Pharmaceuticals",
+        "closeDate": "2025-12-10",
+        "amount": 11500,
+        "eGP": 2990
+      },
+      {
+        "opportunityId": "006Vo000013SqB7IAK",
+        "opportunityName": "4840-Takeda MODA LIMS Analyst (D Oliver) SOW 070126",
+        "accountName": "Shire US Inc.",
+        "closeDate": "2025-12-09",
+        "amount": 173761.5,
+        "eGP": 45177.99
+      },
+      {
+        "opportunityId": "006Vo00000EtDaxIAF",
+        "opportunityName": "2772-Protara-Box GXP Services-Renewal (2026)",
+        "accountName": "Protara Therapeutics, Inc.",
+        "closeDate": "2025-12-09",
+        "amount": 20770,
+        "eGP": 17654.5
+      },
+      {
+        "opportunityId": "006Vo00000t7FHBIA2",
+        "opportunityName": "5523-Amgen - Biocore (R Arrieta)",
+        "accountName": "Amgen Inc.",
+        "closeDate": "2025-12-16",
+        "amount": 66560,
+        "eGP": 17305.6
+      },
+      {
+        "opportunityId": "006Vo000012ll0GIAQ",
+        "opportunityName": "5316-Amgen - Sr.  Technical CSA Specialist (S Kanhirangadan) SOW 063026",
+        "accountName": "Amgen Inc.",
+        "closeDate": "2025-12-16",
+        "amount": 85800,
+        "eGP": 22308
+      },
+      {
+        "opportunityId": "006Vo00000smPZjIAM",
+        "opportunityName": "5026-Microvention - PSUR Writer (S R Erkala) CO6 033126",
+        "accountName": "Terumo Neuro",
+        "closeDate": "2025-12-10",
+        "amount": 45500,
+        "eGP": 11830
+      },
+      {
+        "opportunityId": "006Vo00000DCBwHIAX",
+        "opportunityName": "3269-Brii Box GxP Cloud Assurance Subscription and Onboarding-Renewal(2026-2027)",
+        "accountName": "Brii Biosciences, Inc.",
+        "closeDate": "2025-12-17",
+        "amount": 37000,
+        "eGP": 31450
+      },
+      {
+        "opportunityId": "006Do000002N1UfIAK",
+        "opportunityName": "4564-HSG-Box CA-Renewal (2025-2028)",
+        "accountName": "Huntington Study Group, Ltd.",
+        "closeDate": "2025-12-16",
+        "amount": 114000,
+        "eGP": 96900
+      },
+      {
+        "opportunityId": "006Vo00000a6INJIA2",
+        "opportunityName": "5516-PTC Codebeamer Remediation - Partner",
+        "accountName": "PTC-Codebeamer",
+        "closeDate": "2025-12-16",
+        "amount": 58900,
+        "eGP": 38285
+      },
+      {
+        "opportunityId": "006Vo000009w3jWIAQ",
+        "opportunityName": "5507-Tarsus GxP Systems Support 2026",
+        "accountName": "Tarsus Pharmaceuticals, Inc.",
+        "closeDate": "2025-12-15",
+        "amount": 279575,
+        "eGP": 199723.75
+      },
+      {
+        "opportunityId": "006Vo000010PRSjIAO",
+        "opportunityName": "4940-Sequel Med Tech NetSuite Consulting Support (SK Nakka) CO5 063026",
+        "accountName": "Sequel Med Tech, LLC.",
+        "closeDate": "2025-12-09",
+        "amount": 130000,
+        "eGP": 33800
+      },
+      {
+        "opportunityId": "006Vo00000ePQmoIAG",
+        "opportunityName": "5409-Bausch Health GLIMS Platform: Deployment & Operations  CO1",
+        "accountName": "Bausch Health US, LLC",
+        "closeDate": "2025-12-18",
+        "amount": 80000,
+        "eGP": 32800
+      },
+      {
+        "opportunityId": "006Vo000014na9IIAQ",
+        "opportunityName": "5387-Edwards Labware LIMS Support (A Chodapaneedi) CO1 033126",
+        "accountName": "Edwards Lifesciences LLC",
+        "closeDate": "2025-12-19",
+        "amount": 28620,
+        "eGP": 7441.2
+      },
+      {
+        "opportunityId": "006Vo000007HHinIAG",
+        "opportunityName": "5104-J&J - DocuSign Assessment and CA-Renewal",
+        "accountName": "Biosense Webster Inc",
+        "closeDate": "2025-12-16",
+        "amount": 32000,
+        "eGP": 27200
+      },
+      {
+        "opportunityId": "006Do000002MWHzIAO",
+        "opportunityName": "4078-Corcept-DocuSign Core Premium Renewal (2026-2029)",
+        "accountName": "Corcept Therapeutics Incorporated",
+        "closeDate": "2025-12-10",
+        "amount": 81000,
+        "eGP": 68850
+      },
+      {
+        "opportunityId": "006Vo00000xSW9YIAW",
+        "opportunityName": "5502-Praxis Tracelink Vendor Qualification",
+        "accountName": "Praxis Precision Medicines, Inc.",
+        "closeDate": "2025-12-10",
+        "amount": 13000,
+        "eGP": 5330
+      },
+      {
+        "opportunityId": "006Vo0000103mSjIAI",
+        "opportunityName": "5383-Vaxcyte Project Management Support-CR-SOW",
+        "accountName": "Vaxcyte Inc",
+        "closeDate": "2025-12-22",
+        "amount": 82425,
+        "eGP": 33794.25
+      },
+      {
+        "opportunityId": "006Vo000015wSRxIAM",
+        "opportunityName": "5515-NNIT-Consulting Services-Ultragenyx",
+        "accountName": "NNIT, Inc.",
+        "closeDate": "2025-12-26",
+        "amount": 19500,
+        "eGP": 12675
+      },
+      {
+        "opportunityId": "006Vo00000t7oGXIAY",
+        "opportunityName": "5256-Takeda LAFE IT PM (P Thakur) CO2 022826",
+        "accountName": "Baxalta US Inc.",
+        "closeDate": "2025-12-17",
+        "amount": 44160,
+        "eGP": 11481.6
+      },
+      {
+        "opportunityId": "006Vo000014kAOCIA2",
+        "opportunityName": "5503-Kite Project Management Support 2026",
+        "accountName": "Kite Pharma, Inc.",
+        "closeDate": "2025-12-17",
+        "amount": 646664,
+        "eGP": 168132.64
+      },
+      {
+        "opportunityId": "006Vo000013y8F9IAI",
+        "opportunityName": "5505-Pfizer- US Data Review (Mayachika)",
+        "accountName": "Pfizer",
+        "closeDate": "2025-12-17",
+        "amount": 32200,
+        "eGP": 8372
+      },
+      {
+        "opportunityId": "006Vo0000147pvqIAA",
+        "opportunityName": "5419-Glaukos Validation Engineer (M Vallala) SOW 013127",
+        "accountName": "Glaukos Corporation",
+        "closeDate": "2025-12-23",
+        "amount": 239200,
+        "eGP": 62192
+      },
+      {
+        "opportunityId": "006Vo00000j5qaNIAQ",
+        "opportunityName": "5306-Kailera_PgM and Compliance Sustainment-Renewal 2026",
+        "accountName": "Kailera Therapeutics",
+        "closeDate": "2025-12-16",
+        "amount": 56000,
+        "eGP": 47600
+      },
+      {
+        "opportunityId": "006Vo00000sLVGFIA4",
+        "opportunityName": "5059-Santen-Technical Writer-CSV and IRMS (J Waitner) CO3 033126",
+        "accountName": "Santen Incorporated",
+        "closeDate": "2025-12-23",
+        "amount": 52515,
+        "eGP": 13653.9
+      },
+      {
+        "opportunityId": "006Vo000012p5LpIAI",
+        "opportunityName": "5490-Nurix DocuSign Lite Support-CO1",
+        "accountName": "Nurix Therapeutics, Inc.",
+        "closeDate": "2025-12-19",
+        "amount": 4500,
+        "eGP": 2925
+      },
+      {
+        "opportunityId": "006Vo00000t7UOHIA2",
+        "opportunityName": "5508-AstraZeneca - Business System Analyst (V Metzger)",
+        "accountName": "Astrazeneca Pharmaceuticals LP",
+        "closeDate": "2025-12-17",
+        "amount": 164430,
+        "eGP": 42751.8
+      },
+      {
+        "opportunityId": "006Vo00000t7uCKIAY",
+        "opportunityName": "5275-argenx BV - Validation Support Lead (B Setia) SOW 123126",
+        "accountName": "argenx BV",
+        "closeDate": "2025-12-16",
+        "amount": 332800,
+        "eGP": 86528
+      },
+      {
+        "opportunityId": "006Vo00000sT249IAC",
+        "opportunityName": "5437-Takeda- Sr. Business Analyst (A Dongre) SOW 071026",
+        "accountName": "Takeda Pharmaceuticals U.S.A.",
+        "closeDate": "2025-12-17",
+        "amount": 124800,
+        "eGP": 32448
+      },
+      {
+        "opportunityId": "006Vo00000Bqos1IAB",
+        "opportunityName": "5514-Harmony Biosciences Management- Veeva Managed Services.",
+        "accountName": "Harmony Biosciences Management, Inc.",
+        "closeDate": "2025-12-29",
+        "amount": 104600,
+        "eGP": 67990
+      },
+      {
+        "opportunityId": "006Vo00000xHui9IAC",
+        "opportunityName": "4307-Halozyme G&A Business Partner (J Breed) SOW 123126",
+        "accountName": "Halozyme, Inc.",
+        "closeDate": "2025-12-23",
+        "amount": 331760,
+        "eGP": 86257.6
+      },
+      {
+        "opportunityId": "006Vo00000t7bBFIAY",
+        "opportunityName": "5198-argenx BV - Validation Support (K S Kolhatkar) SOW 123126",
+        "accountName": "argenx BV",
+        "closeDate": "2025-12-16",
+        "amount": 301600,
+        "eGP": 78416
+      },
+      {
+        "opportunityId": "006Vo000014ye4hIAA",
+        "opportunityName": "4246-CenExel-Regulatory Compliance Consulting Support-CO8",
+        "accountName": "CenExel Clinical Research, LLC",
+        "closeDate": "2025-12-16",
+        "amount": 4375,
+        "eGP": 1793.75
+      },
+      {
+        "opportunityId": "006Vo00000t5wEzIAI",
+        "opportunityName": "5364-Amgen-Technical CSA Specialist (C Loka) SOW 063026",
+        "accountName": "Amgen Inc.",
+        "closeDate": "2025-12-16",
+        "amount": 130000,
+        "eGP": 33800
+      },
+      {
+        "opportunityId": "006Vo000012nEl0IAE",
+        "opportunityName": "5512-Eli Lilly- Validation Application System Support",
+        "accountName": "Eli Lilly and Company",
+        "closeDate": "2025-12-23",
+        "amount": 681200,
+        "eGP": 177112
+      },
+      {
+        "opportunityId": "006Vo00000zgbphIAA",
+        "opportunityName": "5517-Takeda-JDE and Orchestrator Support (V Kumar)",
+        "accountName": "Takeda Pharmaceuticals U.S.A.",
+        "closeDate": "2025-12-22",
+        "amount": 56160,
+        "eGP": 14601.6
+      },
+      {
+        "opportunityId": "006Vo00000eOcmfIAC",
+        "opportunityName": "5297-Bausch Health-Lab Digitalization Expansion Project (L Wooten) CO1 123126",
+        "accountName": "Bausch Health US, LLC",
+        "closeDate": "2025-12-26",
+        "amount": 312000,
+        "eGP": 81120
+      },
+      {
+        "opportunityId": "006Vo0000104CRvIAM",
+        "opportunityName": "5181-Vaxcyte IT Quality Assistance & Remediation",
+        "accountName": "Vaxcyte Inc",
+        "closeDate": "2025-12-22",
+        "amount": 124950,
+        "eGP": 81217.5
+      },
+      {
+        "opportunityId": "006Vo00000t7OSXIA2",
+        "opportunityName": "4721-Amgen-Horizon (J Anderson) SOW 123126",
+        "accountName": "Amgen Inc.",
+        "closeDate": "2025-12-16",
+        "amount": 320000,
+        "eGP": 83200
+      },
+      {
+        "opportunityId": "006Vo00000E8knLIAR",
+        "opportunityName": "3492-Harmony-DocuSign Cloud Assurance-Platinum-Renewal (2025-2026)",
+        "accountName": "Harmony Biosciences Management, Inc.",
+        "closeDate": "2025-12-29",
+        "amount": 28600,
+        "eGP": 24310
+      },
+      {
+        "opportunityId": "006Vo00000y38D5IAI",
+        "opportunityName": "5510-Xencor Veeva Managed Services 2026",
+        "accountName": "Xencor, Inc.",
+        "closeDate": "2025-12-18",
+        "amount": 61575,
+        "eGP": 40023.75
+      },
+      {
+        "opportunityId": "006Do000002O0UpIAK",
+        "opportunityName": "4634- Atlantic Health-Docusign Lite CA-Renewal",
+        "accountName": "Atlantic Health System",
+        "closeDate": "2025-12-11",
+        "amount": 27000,
+        "eGP": 22950
+      },
+      {
+        "opportunityId": "006Vo00000h7PvNIAU",
+        "opportunityName": "5511-Enable Injections - AI Governance and Training Support",
+        "accountName": "Enable Injections, Inc.",
+        "closeDate": "2025-12-19",
+        "amount": 31760,
+        "eGP": 15964
+      },
+      {
+        "opportunityId": "006Vo00000sLBB9IAO",
+        "opportunityName": "5154-Amgen - IT Lab Consultant (AK Athukuri) SOW 033126",
+        "accountName": "Amgen",
+        "closeDate": "2025-12-16",
+        "amount": 57200,
+        "eGP": 14872
+      }
+    ],
+    "periodLabel": "Q4 2025",
+    "count": 53,
+    "filters": {
+      "ownerIds": [],
+      "teamIds": []
+    },
+    "totalAmount": 6755699.5600000005,
+    "totalEGP": 2297920.59,
+    "avgDealSize": 127466.02943396228
+  }
+}

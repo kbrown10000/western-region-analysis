@@ -1,0 +1,186 @@
+﻿{
+  "success": true,
+  "data": {
+    "period": "Q4 2025",
+    "owners": [
+      {
+        "ownerId": "00540000000rVySAAU",
+        "ownerName": "Justin Ott",
+        "opportunityCount": 69,
+        "totalAmount": 6915775.4,
+        "totalEGP": 2630270.1899999995,
+        "openDeals": 0,
+        "pipelineAmount": 0,
+        "pipelineEGP": 0
+      },
+      {
+        "ownerId": "0058Z000009HHlfQAG",
+        "ownerName": "Doreen Marciano",
+        "opportunityCount": 2,
+        "totalAmount": 115000,
+        "totalEGP": 51750,
+        "openDeals": 0,
+        "pipelineAmount": 0,
+        "pipelineEGP": 0
+      },
+      {
+        "ownerId": "0058Z000009GQDrQAO",
+        "ownerName": "Cortney Whitehouse",
+        "opportunityCount": 1,
+        "totalAmount": 90000,
+        "totalEGP": 76500,
+        "openDeals": 0,
+        "pipelineAmount": 0,
+        "pipelineEGP": 0
+      },
+      {
+        "ownerId": "00540000001l9WNAAY",
+        "ownerName": "Jim Macdonell",
+        "opportunityCount": 7,
+        "totalAmount": 726700,
+        "totalEGP": 463627,
+        "openDeals": 1,
+        "pipelineAmount": 20000,
+        "pipelineEGP": 9000
+      },
+      {
+        "ownerId": "00540000001kzDVAAY",
+        "ownerName": "Hovsep Kirikian",
+        "opportunityCount": 15,
+        "totalAmount": 1771775,
+        "totalEGP": 1054076.75,
+        "openDeals": 0,
+        "pipelineAmount": 0,
+        "pipelineEGP": 0
+      },
+      {
+        "ownerId": "0051W000004NO3UQAW",
+        "ownerName": "Scott Pallardy",
+        "opportunityCount": 36,
+        "totalAmount": 3421565,
+        "totalEGP": 1710799.45,
+        "openDeals": 0,
+        "pipelineAmount": 0,
+        "pipelineEGP": 0
+      },
+      {
+        "ownerId": "0058Z000006XulNQAS",
+        "ownerName": "Marcus Dinan",
+        "opportunityCount": 39,
+        "totalAmount": 3845900,
+        "totalEGP": 1832965,
+        "openDeals": 0,
+        "pipelineAmount": 0,
+        "pipelineEGP": 0
+      },
+      {
+        "ownerId": "00540000001GqE6AAK",
+        "ownerName": "Jeff Burton",
+        "opportunityCount": 12,
+        "totalAmount": 928900,
+        "totalEGP": 561960,
+        "openDeals": 0,
+        "pipelineAmount": 0,
+        "pipelineEGP": 0
+      },
+      {
+        "ownerId": "00530000000f5JiAAI",
+        "ownerName": "Kim Guihen",
+        "opportunityCount": 1,
+        "totalAmount": 70000,
+        "totalEGP": 31500,
+        "openDeals": 0,
+        "pipelineAmount": 0,
+        "pipelineEGP": 0
+      },
+      {
+        "ownerId": "00540000002mADhAAM",
+        "ownerName": "Mike Campbell",
+        "opportunityCount": 34,
+        "totalAmount": 2942293,
+        "totalEGP": 1226715.13,
+        "openDeals": 0,
+        "pipelineAmount": 0,
+        "pipelineEGP": 0
+      },
+      {
+        "ownerId": "0058Z000009qmSlQAI",
+        "ownerName": "Meghan Rutkowski",
+        "opportunityCount": 12,
+        "totalAmount": 536400,
+        "totalEGP": 287660,
+        "openDeals": 0,
+        "pipelineAmount": 0,
+        "pipelineEGP": 0
+      },
+      {
+        "ownerId": "0051W0000048sLyQAI",
+        "ownerName": "Lisa Burgese Fry",
+        "opportunityCount": 25,
+        "totalAmount": 2497780,
+        "totalEGP": 957277,
+        "openDeals": 0,
+        "pipelineAmount": 0,
+        "pipelineEGP": 0
+      },
+      {
+        "ownerId": "00530000000hQHdAAM",
+        "ownerName": "Vega Finucan",
+        "opportunityCount": 2,
+        "totalAmount": 156160,
+        "totalEGP": 59601.6,
+        "openDeals": 0,
+        "pipelineAmount": 0,
+        "pipelineEGP": 0
+      },
+      {
+        "ownerId": "0051W00000590ulQAA",
+        "ownerName": "Shawn Mazza",
+        "opportunityCount": 3,
+        "totalAmount": 387600,
+        "totalEGP": 162100,
+        "openDeals": 0,
+        "pipelineAmount": 0,
+        "pipelineEGP": 0
+      },
+      {
+        "ownerId": "0058Z000005d0gjQAA",
+        "ownerName": "Avani Macwan",
+        "opportunityCount": 35,
+        "totalAmount": 2908316,
+        "totalEGP": 1240282.1600000001,
+        "openDeals": 0,
+        "pipelineAmount": 0,
+        "pipelineEGP": 0
+      },
+      {
+        "ownerId": "00540000001GcKZAA0",
+        "ownerName": "Sherry De Luca",
+        "opportunityCount": 7,
+        "totalAmount": 300000,
+        "totalEGP": 135000,
+        "openDeals": 0,
+        "pipelineAmount": 0,
+        "pipelineEGP": 0
+      },
+      {
+        "ownerId": "005400000024ZjiAAE",
+        "ownerName": "Josh Ertmer",
+        "opportunityCount": 45,
+        "totalAmount": 5595851.76,
+        "totalEGP": 1442027.87,
+        "openDeals": 0,
+        "pipelineAmount": 0,
+        "pipelineEGP": 0
+      }
+    ],
+    "totals": {
+      "totalOwners": 17,
+      "totalOpportunities": 345,
+      "totalAmount": 33210016.159999996,
+      "totalEGP": 13924112.149999999,
+      "totalPipelineAmount": 20000,
+      "totalPipelineEGP": 9000
+    }
+  }
+}

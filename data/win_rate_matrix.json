@@ -1,0 +1,170 @@
+﻿{
+  "success": true,
+  "data": {
+    "overall": {
+      "totalDeals": 3573,
+      "wonDeals": 1488,
+      "lostDeals": 2085,
+      "blendedWinRate": 0.4164567590260285,
+      "avgDealSize": 38198.8711,
+      "avgDaysToClose": 0,
+      "totalAmount": 136484566.33,
+      "wonAmount": 49677746.66,
+      "wonEGP": 0
+    },
+    "byEngagementType": [
+      {
+        "segment": "Engagement Type",
+        "segmentValue": "Project",
+        "totalDeals": 2695,
+        "wonDeals": 1260,
+        "lostDeals": 1435,
+        "winRate": 0.4675324675324675,
+        "avgDealSize": 15303.9943,
+        "avgDaysToClose": 0,
+        "totalAmount": 41244264.75,
+        "wonAmount": 22674040.08,
+        "wonEGP": 0
+      },
+      {
+        "segment": "Engagement Type",
+        "segmentValue": "LTE",
+        "totalDeals": 248,
+        "wonDeals": 221,
+        "lostDeals": 27,
+        "winRate": 0.8911290322580645,
+        "avgDealSize": 115364.0588,
+        "avgDaysToClose": 0,
+        "totalAmount": 28610286.58,
+        "wonAmount": 26405286.58,
+        "wonEGP": 0
+      },
+      {
+        "segment": "Engagement Type",
+        "segmentValue": "Managed Staffing",
+        "totalDeals": 4,
+        "wonDeals": 0,
+        "lostDeals": 4,
+        "winRate": 0,
+        "avgDealSize": 12043.75,
+        "avgDaysToClose": 0,
+        "totalAmount": 48175,
+        "wonAmount": 0,
+        "wonEGP": 0
+      },
+      {
+        "segment": "Engagement Type",
+        "segmentValue": "null",
+        "totalDeals": 626,
+        "wonDeals": 7,
+        "lostDeals": 619,
+        "winRate": 0.011182108626198083,
+        "avgDealSize": 106360.7668,
+        "avgDaysToClose": 0,
+        "totalAmount": 66581840,
+        "wonAmount": 598420,
+        "wonEGP": 0
+      }
+    ],
+    "byCustomerType": [
+      {
+        "segment": "Customer Type",
+        "segmentValue": "New Logo",
+        "totalDeals": 396,
+        "wonDeals": 357,
+        "lostDeals": 39,
+        "winRate": 0.9015151515151515,
+        "avgDealSize": 20570.739898989897,
+        "avgDaysToClose": 0,
+        "totalAmount": 8146013,
+        "wonAmount": 7185283,
+        "wonEGP": 0
+      },
+      {
+        "segment": "Customer Type",
+        "segmentValue": "Existing",
+        "totalDeals": 3177,
+        "wonDeals": 1131,
+        "lostDeals": 2046,
+        "winRate": 0.3559962228517469,
+        "avgDealSize": 40396.145209316965,
+        "avgDaysToClose": 0,
+        "totalAmount": 128338553.33,
+        "wonAmount": 42492463.66,
+        "wonEGP": 0
+      }
+    ],
+    "byDealSizeBucket": [
+      {
+        "segment": "Deal Size",
+        "segmentValue": "<$50K",
+        "totalDeals": 3573,
+        "wonDeals": 3573,
+        "lostDeals": 3573,
+        "winRate": 1,
+        "avgDealSize": 8955.0549,
+        "avgDaysToClose": 0,
+        "totalAmount": 31996411.2,
+        "wonAmount": 13897634.03,
+        "wonEGP": 0
+      },
+      {
+        "segment": "Deal Size",
+        "segmentValue": "$50K-$250K",
+        "totalDeals": 3573,
+        "wonDeals": 3573,
+        "lostDeals": 3573,
+        "winRate": 1,
+        "avgDealSize": 20401.5273,
+        "avgDaysToClose": 0,
+        "totalAmount": 72894657.18,
+        "wonAmount": 24271174.68,
+        "wonEGP": 0
+      },
+      {
+        "segment": "Deal Size",
+        "segmentValue": "$250K-$1M",
+        "totalDeals": 3573,
+        "wonDeals": 3573,
+        "lostDeals": 3573,
+        "winRate": 1,
+        "avgDealSize": 5445.9832,
+        "avgDaysToClose": 0,
+        "totalAmount": 19458497.95,
+        "wonAmount": 11518937.95,
+        "wonEGP": 0
+      },
+      {
+        "segment": "Deal Size",
+        "segmentValue": "Unknown",
+        "totalDeals": 3573,
+        "wonDeals": 3573,
+        "lostDeals": 3573,
+        "winRate": 1,
+        "avgDealSize": -2.7988,
+        "avgDaysToClose": 0,
+        "totalAmount": -10000,
+        "wonAmount": -10000,
+        "wonEGP": 0
+      },
+      {
+        "segment": "Deal Size",
+        "segmentValue": ">$1M",
+        "totalDeals": 3573,
+        "wonDeals": 3573,
+        "lostDeals": 3573,
+        "winRate": 1,
+        "avgDealSize": 3399.1044,
+        "avgDaysToClose": 0,
+        "totalAmount": 12145000,
+        "wonAmount": 0,
+        "wonEGP": 0
+      }
+    ],
+    "insights": [
+      "LTE renewals have 91% higher win rate than new business (89.1% vs 46.8%)",
+      "New logo win rate (90.2%) is -55 points below existing customer rate"
+    ],
+    "period": "Full Year 2025"
+  }
+}
