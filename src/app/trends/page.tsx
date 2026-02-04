@@ -322,6 +322,137 @@ export default function TrendsPage() {
           </p>
         </div>
 
+        {/* Customer Impact Analysis */}
+        <div className="bg-slate-800 rounded-lg p-6 mb-8">
+          <h2 className="text-2xl font-bold text-white mb-4">📊 Customer Impact: Who Drove These Trends?</h2>
+          <p className="text-slate-300 mb-6">
+            Behind every trend is a customer story. Here&apos;s what actually moved the numbers.
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            {/* Revenue Losers */}
+            <div className="bg-red-900/20 rounded-lg p-5 border border-red-700/50">
+              <h3 className="text-lg font-bold text-red-400 mb-4">📉 Biggest Revenue Declines (2024→2025)</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-white">Atara Biotherapeutics</span>
+                  <span className="text-red-400 font-mono">-$1.19M <span className="text-slate-500 text-xs">(30% GP)</span></span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-white">Kite/Gilead segment</span>
+                  <span className="text-red-400 font-mono">-$931K <span className="text-yellow-500 text-xs">(6.5% GP ⚠️)</span></span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-white">Takeda Pharmaceuticals</span>
+                  <span className="text-red-400 font-mono">-$436K <span className="text-slate-500 text-xs">(24.6% GP)</span></span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-white">Pfizer</span>
+                  <span className="text-red-400 font-mono">-$381K <span className="text-slate-500 text-xs">(27% GP)</span></span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-white">Fujifilm Diosynth</span>
+                  <span className="text-red-400 font-mono">-$351K <span className="text-slate-500 text-xs">(24.4% GP)</span></span>
+                </div>
+              </div>
+              <p className="text-xs text-slate-400 mt-4">
+                Most declines were low-GP accounts (&lt;30%). Losing low-margin customers can improve blended GP.
+              </p>
+            </div>
+
+            {/* Revenue Gainers */}
+            <div className="bg-green-900/20 rounded-lg p-5 border border-green-700/50">
+              <h3 className="text-lg font-bold text-green-400 mb-4">📈 Biggest Revenue Gains (2024→2025)</h3>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-white">Kite Pharma (core)</span>
+                  <span className="text-green-400 font-mono">+$952K <span className="text-slate-500 text-xs">(19.1% GP)</span></span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-white">Crinetics Pharmaceuticals</span>
+                  <span className="text-green-400 font-mono">+$564K <span className="text-green-300 text-xs">(40.9% GP ✓)</span></span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-white">Enovis Corporation</span>
+                  <span className="text-green-400 font-mono">+$552K <span className="text-yellow-500 text-xs">(11% GP ⚠️)</span></span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-white">Tarsus Pharmaceuticals</span>
+                  <span className="text-green-400 font-mono">+$240K <span className="text-green-300 text-xs">(41.5% GP ✓)</span></span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-white">CG Oncology</span>
+                  <span className="text-green-400 font-mono">+$176K <span className="text-green-300 text-xs">(38.8% GP ✓)</span></span>
+                </div>
+              </div>
+              <p className="text-xs text-slate-400 mt-4">
+                New growth includes high-GP accounts (Crinetics, Tarsus). Quality over quantity.
+              </p>
+            </div>
+          </div>
+
+          {/* The Gilead Story */}
+          <div className="bg-gradient-to-r from-yellow-900/30 to-orange-900/30 rounded-lg p-5 border border-yellow-700/50 mb-6">
+            <h3 className="text-lg font-bold text-yellow-400 mb-3">💡 The Gilead/Kite Story</h3>
+            <p className="text-slate-300 text-sm mb-3">
+              Gilead and its Kite Pharma subsidiary tell an important story about revenue quality vs quantity:
+            </p>
+            <div className="grid md:grid-cols-3 gap-4 text-sm">
+              <div className="bg-slate-800/50 rounded p-3">
+                <div className="text-slate-400">Peak Revenue (2023)</div>
+                <div className="text-white font-bold">$2.52M</div>
+              </div>
+              <div className="bg-slate-800/50 rounded p-3">
+                <div className="text-slate-400">2025 Revenue</div>
+                <div className="text-white font-bold">$1.96M</div>
+              </div>
+              <div className="bg-slate-800/50 rounded p-3">
+                <div className="text-slate-400">Gross Profit %</div>
+                <div className="text-red-400 font-bold">19.1% (Tier C)</div>
+              </div>
+            </div>
+            <p className="text-slate-400 text-xs mt-3">
+              <strong className="text-yellow-400">Takeaway:</strong> Losing $500K of 19% GP revenue hurts less than losing $500K of 50% GP revenue. 
+              The decline freed capacity for higher-margin work.
+            </p>
+          </div>
+
+          {/* Customer Journey */}
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-slate-700/30 rounded-lg p-4 border border-slate-600">
+              <h4 className="text-red-400 font-semibold mb-3">🚪 Churned (2023→2025)</h4>
+              <ul className="text-sm space-y-2">
+                <li className="text-slate-300">Accumulus Synergy <span className="text-slate-500">($648K, 0% GP)</span></li>
+                <li className="text-slate-300">Vial Trials <span className="text-slate-500">($181K, 0% GP)</span></li>
+                <li className="text-slate-300">Global Blood Therapeutics <span className="text-slate-500">($169K, 0% GP)</span></li>
+              </ul>
+              <p className="text-xs text-slate-500 mt-2">All churned accounts had 0% GP — no profit loss</p>
+            </div>
+            
+            <div className="bg-slate-700/30 rounded-lg p-4 border border-slate-600">
+              <h4 className="text-green-400 font-semibold mb-3">🆕 New Logos (2025)</h4>
+              <ul className="text-sm space-y-2">
+                <li className="text-slate-300">Enovis <span className="text-yellow-500">($711K, 11% GP)</span></li>
+                <li className="text-slate-300">Tarsus Pharma <span className="text-green-400">($366K, 41.5% GP)</span></li>
+                <li className="text-slate-300">CG Oncology <span className="text-green-400">($180K, 38.8% GP)</span></li>
+                <li className="text-slate-300">Structure Therapeutics <span className="text-green-400">($124K, 55.3% GP)</span></li>
+              </ul>
+              <p className="text-xs text-slate-500 mt-2">Mix of volume (Enovis) and margin (Tarsus, CG)</p>
+            </div>
+            
+            <div className="bg-slate-700/30 rounded-lg p-4 border border-slate-600">
+              <h4 className="text-blue-400 font-semibold mb-3">🚀 3-Year Growers</h4>
+              <ul className="text-sm space-y-2">
+                <li className="text-slate-300">Crinetics <span className="text-green-400">(+$871K, 40.9% GP)</span></li>
+                <li className="text-slate-300">STAAR Surgical <span className="text-slate-400">(+$320K, 30.9% GP)</span></li>
+                <li className="text-slate-300">Vaxcyte <span className="text-green-400">(+$288K, 39.7% GP)</span></li>
+                <li className="text-slate-300">Corcept <span className="text-green-400">(+$127K, 41.2% GP)</span></li>
+              </ul>
+              <p className="text-xs text-slate-500 mt-2">Consistent growers have 30-40%+ GP</p>
+            </div>
+          </div>
+        </div>
+
         {/* Summary Section */}
         <div className="bg-gradient-to-r from-blue-900 to-purple-900 rounded-lg p-8 border border-blue-700">
           <h2 className="text-2xl font-bold text-white mb-4">Key Insights</h2>
