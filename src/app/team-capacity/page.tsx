@@ -22,7 +22,6 @@ const solutionsTeam = [
   { name: 'Joseph Cassella', role: 'Pod Leader (Level 2)', opps: 10, winRate: 40.3, avgDeal: 22031, status: 'ok' as const },
   { name: 'Vega Finucan', role: 'Pod Leader (Level 1)', opps: 9, winRate: 98.2, avgDeal: 14411, status: 'star' as const },
   { name: 'Brian Rankin', role: 'Pod Leader (Level 1)', opps: 8, winRate: 96.3, avgDeal: 130468, status: 'star' as const },
-  { name: 'John Danese', role: 'Pod Leader (Level 1)', opps: 5, winRate: 87.0, avgDeal: 59500, status: 'star' as const },
 ];
 
 const partnerTeam = [
@@ -33,7 +32,6 @@ const partnerTeam = [
 const leadershipTeam = [
   { name: 'Hovsep Kirikian', role: 'Growth Leadership', opps: 110, winRate: 69.3, avgDeal: 20307, status: 'star' as const },
   { name: 'Lisa Fry', role: 'Sales Leadership', opps: 63, winRate: 58.4, avgDeal: 65096, status: 'ok' as const },
-  { name: 'Jeff Burton', role: 'Sales Leadership', opps: 25, winRate: 4.0, avgDeal: 16286, status: 'coaching' as const },
 ];
 
 // Capacity metrics from Labor MCP
@@ -257,7 +255,7 @@ export default function TeamCapacity() {
         {/* Coaching Priorities */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-red-400 mb-6">🎯 Coaching Priorities</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-red-900/20 rounded-xl p-6 border border-red-700/50">
               <div className="text-white font-bold text-lg mb-2">Mike Campbell</div>
               <div className="text-red-400 font-semibold mb-3">14.9% Win Rate | 77 Opps</div>
@@ -276,16 +274,6 @@ export default function TeamCapacity() {
                 <li>• High avg deal ($47.5K) but low close</li>
                 <li>• Review partner selection criteria</li>
                 <li>• May need channel strategy refresh</li>
-              </ul>
-            </div>
-            <div className="bg-red-900/20 rounded-xl p-6 border border-red-700/50">
-              <div className="text-white font-bold text-lg mb-2">Jeff Burton</div>
-              <div className="text-red-400 font-semibold mb-3">4.0% Win Rate | 25 Opps</div>
-              <ul className="text-sm text-slate-300 space-y-2">
-                <li>• Sales Leadership with lowest close rate</li>
-                <li>• May be pursuing wrong opportunities</li>
-                <li>• Evaluate deal mix and qualification</li>
-                <li>• Consider territory/account reassignment</li>
               </ul>
             </div>
           </div>
