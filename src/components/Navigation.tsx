@@ -55,6 +55,7 @@ const navItems: NavItem[] = [
     label: 'Operations',
     children: [
       { label: 'Team Capacity', href: '/team-capacity' },
+      { label: 'Seller Performance', href: '/seller-performance' },
     ],
   },
   { label: 'Appendix', href: '/appendix' },

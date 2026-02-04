@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Navigation from '@/components/Navigation';
 import { useState } from 'react';
 
 const companies = [
@@ -33,8 +34,7 @@ const companies = [
   { name: "RayzeBio", region: "San Diego", focus: "Radiopharmaceuticals", funding: "$358M IPO", employees: "150+", stage: "Clinical", priority: "High" },
   { name: "Element Biosciences", region: "San Diego", focus: "DNA Sequencing", funding: "Series C", employees: "200+", stage: "Commercial", priority: "High" },
   { name: "Aspen Neuroscience", region: "San Diego", focus: "Parkinson's Cell Therapy", funding: "$147.5M", employees: "80+", stage: "Clinical", priority: "High" },
-  { name: "Capstan Therapeutics", region: "San Diego", focus: "In Vivo Cell Engineering", funding: "$165M", employees: "50+", stage: "Preclinical", priority: "High" },
-  { name: "Poseida Therapeutics", region: "San Diego", focus: "CAR-T Gene Editing", funding: "Public", employees: "200+", stage: "Clinical", priority: "High" },
+  { name: "Boundless Bio", region: "San Diego", focus: "Oncology (ecDNA)", funding: "Public", employees: "80+", stage: "Clinical", priority: "High" },
   { name: "Fate Therapeutics", region: "San Diego", focus: "iPSC Cell Therapies", funding: "Public", employees: "500+", stage: "Clinical", priority: "High" },
   { name: "Crinetics Pharmaceuticals", region: "San Diego", focus: "Rare Endocrine", funding: "Public", employees: "200+", stage: "Clinical", priority: "Medium" },
   { name: "Human Longevity", region: "San Diego", focus: "Genomics + AI Health", funding: "$300M", employees: "100+", stage: "Commercial", priority: "Medium" },
@@ -86,17 +86,7 @@ export default function Targets() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      {/* Header */}
-      <header className="border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="text-white font-bold text-xl">USDM Western Region</Link>
-          <nav className="flex gap-6">
-            <Link href="/executive-summary" className="text-slate-400 hover:text-white">Summary</Link>
-            <Link href="/market-analysis" className="text-slate-400 hover:text-white">Market</Link>
-            <Link href="/action-plan" className="text-slate-400 hover:text-white">Action Plan</Link>
-          </nav>
-        </div>
-      </header>
+      <Navigation />
 
       <main className="max-w-7xl mx-auto px-6 py-16">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">

@@ -17,9 +17,10 @@ export default function Home() {
                 Growth Strategy
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-8">
-              USDM Life Sciences Account Growth Plan 2025-2026
+            <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-4">
+              USDM Life Sciences Account Growth Plan 2026
             </p>
+            <p className="text-sm text-cyan-400 mb-8">Board Presentation | February 2026</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/executive-summary" className="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold rounded-lg transition-all transform hover:scale-105">
                 Executive Summary
@@ -121,7 +122,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <TargetCard company="National Resilience" location="San Diego" funding="$2B" focus="Biomanufacturing" />
             <TargetCard company="Tune Therapeutics" location="Seattle" funding="$175M" focus="Epigenetics" />
-            <TargetCard company="Capstan Therapeutics" location="San Diego" funding="$165M" focus="In Vivo Cell Engineering" />
+            <TargetCard company="Cellares" location="Bay Area" funding="$257M" focus="Cell Therapy Manufacturing" />
             <TargetCard company="Outpace Bio" location="Seattle" funding="$144M" focus="AI-Powered CAR-T" />
             <TargetCard company="Aurion Biotech" location="Seattle" funding="$120M" focus="Corneal Cell Therapy" />
             <TargetCard company="Umoja Biopharma" location="Seattle" funding="$100M" focus="In Vivo CAR-T" />
@@ -130,6 +131,57 @@ export default function Home() {
             <Link href="/targets" className="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold rounded-lg transition-all inline-block">
               View All 60+ Target Companies →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* THE ASK - Board Decision Points */}
+      <section className="py-20 px-6 bg-gradient-to-r from-cyan-900/30 to-purple-900/30">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-white text-center mb-4">📋 The Ask</h2>
+          <p className="text-slate-400 text-center mb-12">Investment decisions for board approval</p>
+          
+          <div className="space-y-6">
+            <div className="bg-slate-800/80 rounded-xl p-6 border-l-4 border-cyan-500">
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="text-xl font-bold text-white">1. Seattle Market Development</h3>
+                <span className="bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-sm font-semibold">$150K</span>
+              </div>
+              <p className="text-slate-300 mb-3">Fund dedicated sales coverage + Q1 market trip to establish presence in fastest-growing Western market (24% employment growth, zero current coverage).</p>
+              <p className="text-slate-500 text-sm">Target ROI: 5 new accounts @ $200K avg = $1M pipeline</p>
+            </div>
+
+            <div className="bg-slate-800/80 rounded-xl p-6 border-l-4 border-purple-500">
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="text-xl font-bold text-white">2. AI Governance Service Launch</h3>
+                <span className="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm font-semibold">$75K</span>
+              </div>
+              <p className="text-slate-300 mb-3">Develop AI risk assessment toolkit and training. 52% of Bay Area funding goes to AI companies — massive unmet need.</p>
+              <p className="text-slate-500 text-sm">Target ROI: 8 engagements @ $150K avg = $1.2M revenue</p>
+            </div>
+
+            <div className="bg-slate-800/80 rounded-xl p-6 border-l-4 border-green-500">
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="text-xl font-bold text-white">3. Cell Therapy Manufacturing Package</h3>
+                <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">$50K</span>
+              </div>
+              <p className="text-slate-300 mb-3">Bundle Operating Model + CRO Oversight + GxP MS for clinical-to-commercial scale-up. 12+ funded cell therapy targets.</p>
+              <p className="text-slate-500 text-sm">Target ROI: 4 bundled deals @ $500K avg = $2M pipeline</p>
+            </div>
+
+            <div className="bg-slate-800/80 rounded-xl p-6 border-l-4 border-red-500">
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="text-xl font-bold text-white">4. Win Rate Recovery Program</h3>
+                <span className="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-semibold">URGENT</span>
+              </div>
+              <p className="text-slate-300 mb-3">Win rate dropped 4.5 pts (40.1% → 35.6%). Approve win/loss analysis, competitive intel, and sales enablement refresh.</p>
+              <p className="text-slate-500 text-sm">Impact: Each 1% improvement = $500K recovered revenue</p>
+            </div>
+          </div>
+
+          <div className="mt-10 text-center">
+            <p className="text-2xl font-bold text-white">Total Investment: <span className="text-cyan-400">$275K</span></p>
+            <p className="text-slate-400 mt-2">Projected Pipeline Impact: <span className="text-green-400 font-semibold">$4.2M</span></p>
           </div>
         </div>
       </section>
@@ -200,8 +252,9 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-slate-800">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-slate-400">USDM Life Sciences | Western Region Growth Strategy 2025-2026</p>
-          <p className="text-slate-500 text-sm mt-2">Generated February 2026</p>
+          <p className="text-slate-400">USDM Life Sciences | Western Region Growth Strategy 2026</p>
+          <p className="text-slate-500 text-sm mt-2">Board Presentation | February 2026</p>
+          <p className="text-slate-600 text-xs mt-4">Data verified via Fabric MCP (Sales, Labor, Finance) | Last refresh: Feb 4, 2026</p>
         </div>
       </footer>
     </div>

@@ -1,26 +1,46 @@
 'use client';
 
 import Link from 'next/link';
+import Navigation from '@/components/Navigation';
 
 export default function ExecutiveSummary() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      {/* Header */}
-      <header className="border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="text-white font-bold text-xl">USDM Western Region</Link>
-          <nav className="flex gap-6">
-            <Link href="/market-analysis" className="text-slate-400 hover:text-white">Market Analysis</Link>
-            <Link href="/gtm-strategy" className="text-slate-400 hover:text-white">GTM Strategy</Link>
-            <Link href="/targets" className="text-slate-400 hover:text-white">Targets</Link>
-            <Link href="/action-plan" className="text-slate-400 hover:text-white">Action Plan</Link>
-          </nav>
-        </div>
-      </header>
+      <Navigation />
 
       <main className="max-w-5xl mx-auto px-6 py-16">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-8">Executive Summary</h1>
         
+        {/* Key KPIs At-a-Glance */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-cyan-400 mb-6">Key KPIs At-a-Glance</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-gradient-to-br from-blue-900/50 to-blue-800/50 rounded-xl p-6 border border-blue-700">
+              <div className="text-blue-300 text-sm font-semibold mb-2">Open Pipeline</div>
+              <div className="text-4xl font-bold text-white mb-1">$14.05M</div>
+              <div className="text-blue-200 text-sm">194 opportunities</div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-red-900/50 to-red-800/50 rounded-xl p-6 border border-red-700">
+              <div className="text-red-300 text-sm font-semibold mb-2">Win Rate</div>
+              <div className="text-4xl font-bold text-white mb-1">35.6%</div>
+              <div className="text-red-200 text-sm">vs 40.1% prior year ↓</div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-green-900/50 to-green-800/50 rounded-xl p-6 border border-green-700">
+              <div className="text-green-300 text-sm font-semibold mb-2">Blended GP</div>
+              <div className="text-4xl font-bold text-white mb-1">34.3%</div>
+              <div className="text-green-200 text-sm">Gross profit margin</div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-orange-900/50 to-orange-800/50 rounded-xl p-6 border border-orange-700">
+              <div className="text-orange-300 text-sm font-semibold mb-2">At-Risk Deals</div>
+              <div className="text-4xl font-bold text-white mb-1">53</div>
+              <div className="text-orange-200 text-sm">flagged with churn signals</div>
+            </div>
+          </div>
+        </section>
+
         <div className="prose prose-invert prose-lg max-w-none">
           {/* Overview */}
           <section className="mb-16">

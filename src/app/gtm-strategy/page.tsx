@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Navigation from '@/components/Navigation';
 import targetsData from '../../../data/biotech-targets.json';
 
 interface GTMPillar {
@@ -26,7 +27,7 @@ const gtmPillars: GTMPillar[] = [
     entryPoint: 'AI Risk Assessment',
     expansion: 'Policy → Validation Framework → Ongoing AI PMO',
     targetCriteria: ['AI drug discovery companies', 'ML/AI in job postings', 'Using platforms with embedded AI'],
-    westernTargets: ['Atomwise', 'Deep Genomics', 'Anagenex', 'A-Alpha Bio', 'Arzeda', 'GRAIL', 'Color Health'],
+    westernTargets: ['Numerion Labs (ex-Atomwise)', 'Deep Genomics', 'Anagenex', 'A-Alpha Bio', 'Arzeda', 'GRAIL', 'Color Health'],
     existingCustomerPlay: 'Cross-reference with Veeva/Box/ServiceNow customers for embedded AI exposure',
   },
   {
@@ -98,7 +99,7 @@ const gtmPillars: GTMPillar[] = [
     entryPoint: 'Oversight Assessment',
     expansion: 'Framework Design → CTMS Config → Ongoing Support',
     targetCriteria: ['Sponsors with CRO-outsourced clinical ops', 'Active clinical programs', 'Vault Clinical implementations'],
-    westernTargets: ['Sana Biotechnology', 'Fate Therapeutics', 'Poseida', 'Tune Therapeutics', 'Allogene', 'Artiva'],
+    westernTargets: ['Sana Biotechnology', 'Fate Therapeutics', 'Tune Therapeutics', 'Allogene', 'Artiva', 'Boundless Bio'],
     existingCustomerPlay: 'Identify MSA accounts with active clinical programs and CRO relationships',
   },
   {
@@ -158,7 +159,7 @@ const gtmPillars: GTMPillar[] = [
     entryPoint: 'Data Foundation Assessment',
     expansion: 'Architecture → Implementation → Governance → Ongoing',
     targetCriteria: ['Manual data reconciliation', 'Multiple disconnected systems', 'UDI compliance needs'],
-    westernTargets: ['Manufacturing scale-ups', 'National Resilience', 'Capstan', 'Companies with multi-site ops'],
+    westernTargets: ['Manufacturing scale-ups', 'National Resilience', 'Cellares', 'Companies with multi-site ops'],
     existingCustomerPlay: 'Target accounts with multiple USDM-supported systems',
   },
   {
@@ -216,16 +217,7 @@ export default function GTMStrategy() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      <header className="border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="text-white font-bold text-xl">USDM Western Region</Link>
-          <nav className="flex gap-6">
-            <Link href="/market-analysis" className="text-slate-400 hover:text-white">Market Analysis</Link>
-            <Link href="/targets" className="text-slate-400 hover:text-white">Targets</Link>
-            <Link href="/action-plan" className="text-slate-400 hover:text-white">Action Plan</Link>
-          </nav>
-        </div>
-      </header>
+      <Navigation />
 
       <main className="max-w-7xl mx-auto px-6 py-12">
         <div className="mb-8">
@@ -294,7 +286,7 @@ export default function GTMStrategy() {
               <div className="space-y-2">
                 <p className="text-green-400 font-semibold text-sm">Top Targets:</p>
                 <div className="flex flex-wrap gap-1">
-                  {['Sana Bio', 'Tune', 'Cellares', 'Fate', 'Poseida'].map(t => (
+                  {['Sana Bio', 'Tune', 'Cellares', 'Fate', 'Allogene'].map(t => (
                     <span key={t} className="bg-green-900/50 text-green-300 text-xs px-2 py-1 rounded">{t}</span>
                   ))}
                 </div>
@@ -334,12 +326,12 @@ export default function GTMStrategy() {
                   { name: 'Sana Biotechnology', region: 'Seattle', primary: 'Cell Therapy Scale-Up', secondary: 'CRO Oversight', entry: 'Operating Model Assessment' },
                   { name: 'Tune Therapeutics', region: 'Seattle', primary: 'Operating Model', secondary: 'CRO Oversight', entry: 'Regulatory Strategy' },
                   { name: 'National Resilience', region: 'San Diego', primary: 'GxP Managed Services', secondary: 'ProcessX', entry: 'MS Assessment' },
-                  { name: 'Atomwise', region: 'Bay Area', primary: 'AI Governance', secondary: 'TPRM', entry: 'AI Risk Assessment' },
+                  { name: 'Numerion Labs', region: 'Bay Area', primary: 'AI Governance', secondary: 'TPRM', entry: 'AI Risk Assessment (Win-Back)' },
                   { name: 'Cellares', region: 'Bay Area', primary: 'Domain-Led AI', secondary: 'GxP MS', entry: 'Process Assessment' },
                   { name: 'Deep Genomics', region: 'Bay Area', primary: 'AI Governance', secondary: 'Data Integration', entry: 'AI Risk Assessment' },
                   { name: 'Fate Therapeutics', region: 'San Diego', primary: 'CRO Oversight', secondary: 'eTMF 2027', entry: 'Oversight Assessment' },
                   { name: 'Outpace Bio', region: 'Seattle', primary: 'Operating Model', secondary: 'Veeva SME', entry: 'Regulatory Strategy' },
-                  { name: 'Poseida', region: 'San Diego', primary: 'Cell Therapy Scale-Up', secondary: 'CRO Oversight', entry: 'Manufacturing QMS' },
+                  { name: 'Boundless Bio', region: 'San Diego', primary: 'Clinical Stage Support', secondary: 'Regulatory', entry: 'QMS Assessment' },
                   { name: 'A-Alpha Bio', region: 'Seattle', primary: 'AI Governance', secondary: 'Domain AI', entry: 'AI Risk Assessment' },
                 ].map((row, idx) => (
                   <tr key={idx} className="border-b border-slate-800 hover:bg-slate-800/30">
