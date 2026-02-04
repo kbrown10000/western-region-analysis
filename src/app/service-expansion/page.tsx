@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Navigation from '@/components/Navigation';
 
 interface CustomerService {
   name: string;
@@ -183,16 +184,7 @@ const revenueMixAnalysis = {
 export default function ServiceExpansion() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      <header className="border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="text-white font-bold text-xl">USDM Western Region</Link>
-          <nav className="flex gap-6">
-            <Link href="/gtm-strategy" className="text-slate-400 hover:text-white">GTM Strategy</Link>
-            <Link href="/account-rationale" className="text-slate-400 hover:text-white">Account Rationale</Link>
-            <Link href="/margin-analysis" className="text-slate-400 hover:text-white">Margin Analysis</Link>
-          </nav>
-        </div>
-      </header>
+      <Navigation />
 
       <main className="max-w-7xl mx-auto px-6 py-12">
         <div className="mb-8">

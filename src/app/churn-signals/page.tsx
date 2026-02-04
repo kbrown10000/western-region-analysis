@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Navigation from '@/components/Navigation';
 import { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts';
 import churnData from '../../../data/churn-signals.json';
@@ -51,18 +52,7 @@ export default function ChurnSignals() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      {/* Header */}
-      <header className="border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="text-white font-bold text-xl">USDM Western Region</Link>
-          <nav className="flex gap-6">
-            <Link href="/executive-summary" className="text-slate-400 hover:text-white">Summary</Link>
-            <Link href="/map" className="text-slate-400 hover:text-white">Map</Link>
-            <Link href="/margin-analysis" className="text-slate-400 hover:text-white">Margins</Link>
-            <Link href="/ltv" className="text-slate-400 hover:text-white">LTV</Link>
-          </nav>
-        </div>
-      </header>
+      <Navigation />
 
       <main className="max-w-7xl mx-auto px-6 py-12">
         <h1 className="text-4xl font-bold text-white mb-2">Churn Signals</h1>

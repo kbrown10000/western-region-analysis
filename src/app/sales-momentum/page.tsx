@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Navigation from '@/components/Navigation';
 
 type Metric = { label: string; value: string; note: string; tone?: 'good' | 'warn' | 'bad' | 'neutral' };
 
@@ -85,17 +86,7 @@ const motions: Motion[] = [
 export default function SalesMomentum() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      <header className="border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="text-white font-bold text-xl">USDM Western Region</Link>
-          <nav className="flex flex-wrap gap-6">
-            <Link href="/dashboard" className="text-slate-400 hover:text-white">Dashboard</Link>
-            <Link href="/churn-signals" className="text-slate-400 hover:text-white">Churn Signals</Link>
-            <Link href="/gtm-strategy" className="text-slate-400 hover:text-white">GTM Strategy</Link>
-            <Link href="/service-expansion" className="text-slate-400 hover:text-white">Service Expansion</Link>
-          </nav>
-        </div>
-      </header>
+      <Navigation />
 
       <main className="max-w-7xl mx-auto px-6 py-12">
         <div className="mb-8">

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Navigation from '@/components/Navigation';
 import dynamic from 'next/dynamic';
 import { useState, useMemo } from 'react';
 
@@ -118,18 +119,7 @@ export default function MapPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      {/* Header */}
-      <header className="border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="text-white font-bold text-xl">USDM Western Region</Link>
-          <nav className="flex gap-6">
-            <Link href="/executive-summary" className="text-slate-400 hover:text-white">Summary</Link>
-            <Link href="/targets" className="text-slate-400 hover:text-white">Targets</Link>
-            <Link href="/margin-analysis" className="text-slate-400 hover:text-white">Margins</Link>
-            <Link href="/churn-signals" className="text-slate-400 hover:text-white">Churn</Link>
-          </nav>
-        </div>
-      </header>
+      <Navigation />
 
       <main className="max-w-7xl mx-auto px-6 py-8">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-6">
