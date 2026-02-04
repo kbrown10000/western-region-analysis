@@ -134,9 +134,14 @@ export default function FinancialModelPage() {
           <h1 className="text-4xl font-bold text-white mb-2">
             2026 Growth Model: Labor → Bookings → GP → Revenue
           </h1>
-          <p className="text-slate-400 text-lg">
+          <p className="text-slate-400 text-lg mb-4">
             Interactive model showing how labor optimization flows through to revenue momentum
           </p>
+          <div className="bg-slate-800/30 rounded-lg px-4 py-2 text-xs text-slate-400 inline-block">
+            <span className="text-green-400">Labor MCP</span> → <code className="text-slate-500">get_gold_department_metrics</code>, <code className="text-slate-500">get_gold_capacity_forecast</code> | 
+            <span className="text-blue-400 ml-2">Sales MCP</span> → <code className="text-slate-500">get_team_performance</code>, <code className="text-slate-500">get_pipeline_quality</code> |
+            <span className="text-purple-400 ml-2">Finance MCP</span> → <code className="text-slate-500">analyze_customer_profitability</code>
+          </div>
           <div className="mt-4 flex flex-wrap gap-3 text-xs">
             <span className="bg-orange-900/30 px-3 py-1.5 rounded-full text-slate-300 border border-orange-700/50">
               <span className="text-orange-400 font-semibold">Labor</span> = billable hours × rate

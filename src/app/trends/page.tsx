@@ -80,6 +80,11 @@ export default function TrendsPage() {
               <span className="text-green-400 font-semibold">EGP</span> = est. gross profit
             </span>
           </div>
+          <div className="mt-4 bg-slate-800/30 rounded-lg px-4 py-2 text-xs text-slate-400 inline-block">
+            <span className="text-blue-400">Sales MCP</span> → <code className="text-slate-500">get_closed_won_summary</code>, <code className="text-slate-500">get_win_rate_matrix</code> | 
+            <span className="text-purple-400 ml-2">Finance MCP</span> → <code className="text-slate-500">analyze_customer_profitability</code> | 
+            Historical data: 2022-2025 actuals + 2026 targets
+          </div>
         </div>
 
         {/* Revenue & EGP Trend */}

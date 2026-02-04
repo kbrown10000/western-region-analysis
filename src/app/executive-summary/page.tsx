@@ -31,24 +31,28 @@ export default function ExecutiveSummary() {
               <div className="text-blue-300 text-sm font-semibold mb-2">Open Pipeline</div>
               <div className="text-4xl font-bold text-white mb-1">$14.05M</div>
               <div className="text-blue-200 text-sm">194 opportunities</div>
+              <div className="text-[10px] text-blue-400/60 mt-2">Sales MCP → get_open_pipeline_deals | Filter: West region, IsClosed=FALSE</div>
             </div>
             
             <div className="bg-gradient-to-br from-red-900/50 to-red-800/50 rounded-xl p-6 border border-red-700">
               <div className="text-red-300 text-sm font-semibold mb-2">Win Rate</div>
               <div className="text-4xl font-bold text-white mb-1">35.6%</div>
               <div className="text-red-200 text-sm">vs 40.1% prior year ↓</div>
+              <div className="text-[10px] text-red-400/60 mt-2">Sales MCP → get_win_rate_matrix | Filter: West region, 2025</div>
             </div>
             
             <div className="bg-gradient-to-br from-green-900/50 to-green-800/50 rounded-xl p-6 border border-green-700">
               <div className="text-green-300 text-sm font-semibold mb-2">Blended GP</div>
               <div className="text-4xl font-bold text-white mb-1">34.3%</div>
               <div className="text-green-200 text-sm">Gross profit margin</div>
+              <div className="text-[10px] text-green-400/60 mt-2">Finance MCP → analyze_customer_profitability | Filter: West accounts</div>
             </div>
             
             <div className="bg-gradient-to-br from-orange-900/50 to-orange-800/50 rounded-xl p-6 border border-orange-700">
               <div className="text-orange-300 text-sm font-semibold mb-2">At-Risk Deals</div>
               <div className="text-4xl font-bold text-white mb-1">53</div>
               <div className="text-orange-200 text-sm">flagged with churn signals</div>
+              <div className="text-[10px] text-orange-400/60 mt-2">Sales MCP → get_churn_signals | Filter: West region</div>
             </div>
           </div>
         </section>

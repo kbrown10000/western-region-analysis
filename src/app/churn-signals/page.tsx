@@ -54,7 +54,11 @@ export default function ChurnSignals() {
 
       <main className="max-w-7xl mx-auto px-6 py-12">
         <h1 className="text-4xl font-bold text-white mb-2">Churn Signals</h1>
-        <p className="text-slate-400 mb-8">{summary.totalAtRisk} at-risk opportunities totaling ${(summary.totalValue / 1000000).toFixed(2)}M</p>
+        <p className="text-slate-400 mb-2">{summary.totalAtRisk} at-risk opportunities totaling ${(summary.totalValue / 1000000).toFixed(2)}M</p>
+        <div className="bg-slate-800/30 rounded-lg px-4 py-2 text-xs text-slate-400 mb-8 inline-block">
+          <span className="text-blue-400">Sales MCP</span> → <code className="text-slate-500">get_churn_signals</code> | 
+          <span className="text-slate-500"> Flags: SameDayFlip, Regression, Stalled, PriceNegotiation, ChampionLoss, CompetitorMentioned</span>
+        </div>
 
         {/* Key Metrics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">

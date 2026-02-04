@@ -234,10 +234,15 @@ export default function TerritoriesPage() {
             🔴 LIVE | Sales MCP | Feb 2026
           </span>
         </div>
-        <p className="text-slate-300 mb-8 max-w-3xl">
+        <p className="text-slate-300 mb-4 max-w-3xl">
           Each territory is a geographic zone grouping accounts by regional biotech ecosystem — 
           city clusters, not states. Like pistons in an engine, they fire in sequence to drive growth.
         </p>
+        <div className="bg-slate-800/30 rounded-lg px-4 py-2 text-xs text-slate-400 mb-8 inline-block">
+          <span className="text-blue-400">Sales MCP</span> → <code className="text-slate-500">get_pipeline_by_owner</code>, <code className="text-slate-500">get_team_performance</code> | 
+          <span className="text-purple-400 ml-2">Finance MCP</span> → <code className="text-slate-500">analyze_customer_profitability</code> | 
+          <span className="text-slate-500"> Filter: </span><code className="text-slate-500">DIM_Account_Min[Sales_Region] = &quot;West&quot;</code>
+        </div>
 
         {/* Summary Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">

@@ -65,7 +65,11 @@ export default function MarginAnalysis() {
       <main className="max-w-7xl mx-auto px-6 py-12">
         <h1 className="text-4xl font-bold text-white mb-2">Margin Analysis</h1>
         <p className="text-slate-400 mb-2">Root cause: Tier C customers (46) generate 53% of revenue at 20% GP</p>
-        <p className="text-xs text-slate-500 mb-8">Source: customer_ltv_corrected_2025.xlsx | 160 West customers</p>
+        <div className="bg-slate-800/30 rounded-lg px-4 py-2 text-xs text-slate-400 mb-8 inline-block">
+          <span className="text-purple-400">Finance MCP</span> → <code className="text-slate-500">analyze_customer_profitability</code> | 
+          <span className="text-slate-500"> Filter: </span><code className="text-slate-500">DIM_Account_Min[Sales_Region] = &quot;West&quot;</code> | 
+          <span className="text-slate-500"> 160 customers | Feb 2026</span>
+        </div>
 
         {/* Key Metrics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">

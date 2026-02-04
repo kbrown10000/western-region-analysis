@@ -384,6 +384,38 @@ export default function TeamCapacity() {
           </div>
         </section>
 
+        {/* Data Sources */}
+        <section className="mb-12 mt-8">
+          <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+            <h3 className="text-sm font-semibold text-slate-400 mb-3">📊 Data Sources & Filters</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+              <div className="bg-slate-700/30 rounded-lg p-3">
+                <div className="text-blue-400 font-medium mb-1">Seller Performance</div>
+                <div className="text-slate-400">Sales MCP → <code className="text-slate-500">get_team_performance</code></div>
+                <div className="text-slate-500 mt-1">Filter: Q4 2025 | All sellers</div>
+              </div>
+              <div className="bg-slate-700/30 rounded-lg p-3">
+                <div className="text-blue-400 font-medium mb-1">Win Rate Matrix</div>
+                <div className="text-slate-400">Sales MCP → <code className="text-slate-500">get_win_rate_matrix</code></div>
+                <div className="text-slate-500 mt-1">Filter: All time | By engagement type</div>
+              </div>
+              <div className="bg-slate-700/30 rounded-lg p-3">
+                <div className="text-blue-400 font-medium mb-1">Pipeline Quality</div>
+                <div className="text-slate-400">Sales MCP → <code className="text-slate-500">get_pipeline_quality</code></div>
+                <div className="text-slate-500 mt-1">Filter: IsClosed = FALSE</div>
+              </div>
+              <div className="bg-slate-700/30 rounded-lg p-3">
+                <div className="text-blue-400 font-medium mb-1">Closed Won</div>
+                <div className="text-slate-400">Sales MCP → <code className="text-slate-500">get_closed_won_summary</code></div>
+                <div className="text-slate-500 mt-1">Filter: Q4 2025 | StageName = Closed Won</div>
+              </div>
+            </div>
+            <div className="mt-4 pt-3 border-t border-slate-700/50 text-xs text-slate-500">
+              <strong>Last updated:</strong> Feb 4, 2026 | <strong>Data source:</strong> USDM Fabric Lakehouse via Sales MCP (SalesAnalysis dataset) | <strong>Refresh:</strong> Daily
+            </div>
+          </div>
+        </section>
+
         {/* Navigation */}
         <div className="flex flex-wrap gap-4 mt-12">
           <Link href="/seller-performance" className="bg-cyan-700 hover:bg-cyan-600 px-6 py-3 rounded-lg text-white font-medium transition">

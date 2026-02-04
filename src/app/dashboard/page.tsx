@@ -70,8 +70,12 @@ export default function Dashboard() {
 
       <main className="max-w-7xl mx-auto px-6 py-12">
         <h1 className="text-4xl font-bold text-white mb-2">Financial Dashboard</h1>
-        <p className="text-slate-400 mb-2">Western Region 2025 Performance - Corrected Data from Finance MCP</p>
-        <p className="text-xs text-slate-500 mb-8">Source: customer_ltv_corrected_2025.xlsx | 160 West customers</p>
+        <p className="text-slate-400 mb-2">Western Region 2025 Performance - Live Data from Fabric Lakehouse</p>
+        <div className="bg-slate-800/30 rounded-lg px-4 py-2 text-xs text-slate-400 mb-8 inline-block">
+          <span className="text-purple-400">Finance MCP</span> → <code className="text-slate-500">analyze_customer_profitability</code>, <code className="text-slate-500">get_customer_ltv</code> | 
+          <span className="text-blue-400 ml-2">Sales MCP</span> → <code className="text-slate-500">get_pipeline_summary</code> |
+          <span className="text-slate-500"> Filter: </span><code className="text-slate-500">DIM_Account_Min[Sales_Region] = &quot;West&quot;</code> | 160 customers
+        </div>
 
         {/* Key Metrics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">

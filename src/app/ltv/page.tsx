@@ -43,7 +43,11 @@ export default function LTVPage() {
 
       <main className="max-w-7xl mx-auto px-6 py-12">
         <h1 className="text-4xl font-bold text-white mb-2">Customer Lifetime Value</h1>
-        <p className="text-slate-400 mb-8">Top 20 customers ranked by LTV with trend analysis</p>
+        <p className="text-slate-400 mb-2">Top 20 customers ranked by LTV with trend analysis</p>
+        <div className="bg-slate-800/30 rounded-lg px-4 py-2 text-xs text-slate-400 mb-8 inline-block">
+          <span className="text-purple-400">Finance MCP</span> → <code className="text-slate-500">get_customer_ltv</code> | 
+          <span className="text-slate-500"> Calculation: Historical revenue × retention rate × GP margin</span>
+        </div>
 
         {/* Key Metrics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
