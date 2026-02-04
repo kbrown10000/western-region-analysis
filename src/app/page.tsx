@@ -181,6 +181,7 @@ export default function Home() {
             <NavCard title="📊 Financial Dashboard" link="/dashboard" highlight />
             <NavCard title="📈 Margin Analysis" link="/margin-analysis" highlight />
             <NavCard title="🎪 Service Expansion" link="/service-expansion" highlight />
+            <NavCard title="⚡ Sales Momentum" link="/sales-momentum" highlight />
             <NavCard title="📣 Marketing Alignment" link="/marketing-alignment" highlight />
             <NavCard title="👥 Team & Capacity" link="/team-capacity" highlight />
             <NavCard title="💰 Customer LTV" link="/ltv" highlight />
