@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
 import targetsData from '../../../data/biotech-targets.json';
 
 interface GTMPillar {
@@ -217,7 +216,6 @@ export default function GTMStrategy() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      <Navigation />
 
       <main className="max-w-7xl mx-auto px-6 py-12">
         <div className="mb-8">

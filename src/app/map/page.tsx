@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
 import dynamic from 'next/dynamic';
 import { useState, useMemo } from 'react';
 
@@ -119,7 +118,6 @@ export default function MapPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      <Navigation />
 
       <main className="max-w-7xl mx-auto px-6 py-8">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-6">

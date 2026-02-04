@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend, ComposedChart, Line } from 'recharts';
 
 // CORRECTED 2025 DATA - From Finance MCP customer_ltv_corrected_2025.xlsx
@@ -68,7 +67,6 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      <Navigation />
 
       <main className="max-w-7xl mx-auto px-6 py-12">
         <h1 className="text-4xl font-bold text-white mb-2">Financial Dashboard</h1>

@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
 import { useState } from 'react';
 
 const companies = [
@@ -86,7 +85,6 @@ export default function Targets() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      <Navigation />
 
       <main className="max-w-7xl mx-auto px-6 py-16">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">

@@ -1,12 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
 
 export default function ExecutiveSummary() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      <Navigation />
 
       <main className="max-w-5xl mx-auto px-6 py-16">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Executive Summary</h1>

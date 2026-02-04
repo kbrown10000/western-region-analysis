@@ -1,0 +1,109 @@
+{
+  "generated": "2026-02-04",
+  "source": "MCP Sales/Finance + manual territory correction",
+  "territories": [
+    {
+      "name": "Biotech Beach",
+      "aka": "San Diego",
+      "states": ["CA (San Diego, Irvine, OC)"],
+      "accounts": 129,
+      "revenue2025M": 7.98,
+      "gpDollarsM": 3.52,
+      "avgGpPct": 70.8,
+      "pipelineM": 7.9,
+      "character": "High volume, excellent margins, healthy growth",
+      "topAccounts": ["Crinetics", "Ionis", "Halozyme", "Santen", "Terumo"],
+      "risks": ["Enovis at 11% GP needs fixing"],
+      "opportunities": ["Cell therapy manufacturing surge", "San Diego biotech boom"]
+    },
+    {
+      "name": "LA BioMed",
+      "aka": "Los Angeles / Thousand Oaks",
+      "states": ["CA (Los Angeles, Thousand Oaks)"],
+      "accounts": 8,
+      "revenue2025M": 6.47,
+      "gpDollarsM": 1.42,
+      "avgGpPct": 23.9,
+      "pipelineM": 1.61,
+      "character": "Big accounts, MARGIN CRISIS",
+      "topAccounts": ["Amgen", "Kite Pharma", "Edwards Lifesciences", "Takeda"],
+      "risks": ["Amgen 14.6% GP", "Kite 19.1% GP", "Edwards 28.6% GP declining"],
+      "opportunities": ["Convert to managed services for margin lift", "Renegotiate T&M rates"]
+    },
+    {
+      "name": "Biotech Bay",
+      "aka": "San Francisco / NorCal",
+      "states": ["CA (SF, South SF, Emeryville, Berkeley, Palo Alto, Redwood City)"],
+      "accounts": 17,
+      "revenue2025M": 1.35,
+      "gpDollarsM": 0.47,
+      "avgGpPct": 36.2,
+      "pipelineM": 1.09,
+      "character": "UNDERPENETRATED - Huge opportunity",
+      "topAccounts": ["Vaxcyte", "Benchling", "Apple", "Allogene", "Eikon"],
+      "risks": ["Low coverage in world's biggest biotech hub"],
+      "opportunities": ["AI governance plays (tech + biotech)", "10x market size vs current presence"]
+    },
+    {
+      "name": "Cascadia",
+      "aka": "Seattle / Pacific Northwest",
+      "states": ["WA", "OR"],
+      "accounts": 3,
+      "revenue2025M": 0.60,
+      "gpDollarsM": 0.16,
+      "avgGpPct": 43.4,
+      "pipelineM": 0,
+      "character": "GREENFIELD - Almost no presence",
+      "topAccounts": ["Adaptive Biotechnologies", "Juno Therapeutics"],
+      "risks": ["Zero pipeline = no future revenue", "Seattle biotech growing fast without us"],
+      "opportunities": ["$150K investment in 'The Ask'", "Fred Hutch, Sana, Nautilus targets"]
+    }
+  ],
+  "currentSellerAssignments": {
+    "Mike Campbell": {
+      "pipeline": 5.42,
+      "opps": 87,
+      "winRate": 14.9,
+      "status": "NEEDS_COACHING",
+      "currentTerritory": "Mixed (all West)"
+    },
+    "Justin Ott": {
+      "pipeline": 4.42,
+      "opps": 61,
+      "winRate": 74.8,
+      "status": "STAR_PERFORMER",
+      "currentTerritory": "Mixed (all West)"
+    }
+  },
+  "recommendedAlignment": {
+    "Biotech Beach": {
+      "primarySeller": "Justin Ott",
+      "rationale": "Keep star performer on highest-volume, best-margin territory",
+      "expectedOutcome": "Maintain 70%+ GP, grow pipeline"
+    },
+    "LA BioMed": {
+      "primarySeller": "Mike Campbell + Coaching",
+      "rationale": "Focus coaching on margin recovery with 8 key accounts",
+      "expectedOutcome": "Lift GP from 24% → 35% = $700K+ additional profit"
+    },
+    "Biotech Bay": {
+      "primarySeller": "NEW HIRE NEEDED",
+      "rationale": "SF is the largest biotech market with minimal USDM presence",
+      "expectedOutcome": "$2-3M new revenue at 50%+ GP within 24 months"
+    },
+    "Cascadia": {
+      "primarySeller": "Partner Channel Focus",
+      "rationale": "$150K investment per 'The Ask' for Seattle market entry",
+      "expectedOutcome": "Build $500K pipeline in Year 1, $1M+ Year 2"
+    }
+  },
+  "terminology": {
+    "territory": "Geographic zone grouping accounts by regional biotech ecosystem (city clusters, not states)",
+    "piston": "Territory as revenue engine component - each fires in sequence to drive regional growth",
+    "pipeline": "Open opportunity amount (not yet won)",
+    "bookings": "Won opportunity amount (contract value at close)",
+    "revenue": "GAAP recognized (when billed/delivered)",
+    "egp": "Estimated Gross Profit (projected margin at booking)",
+    "gp": "Actual Gross Profit (realized margin after delivery)"
+  }
+}

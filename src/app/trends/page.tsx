@@ -1,6 +1,5 @@
 'use client';
 
-import Navigation from '@/components/Navigation';
 import { LineChart, Line, BarChart, Bar, AreaChart, Area, ComposedChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 // Data for Revenue & EGP Trend
@@ -60,7 +59,6 @@ const customerData = [
 export default function TrendsPage() {
   return (
     <div className="min-h-screen bg-slate-900">
-      <Navigation />
       
       <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="mb-8">

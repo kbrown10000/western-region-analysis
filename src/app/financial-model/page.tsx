@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Navigation from '@/components/Navigation';
 
 interface Scenario {
   name: string;
@@ -84,7 +83,6 @@ export default function FinancialModelPage() {
 
   return (
     <div className="min-h-screen bg-slate-900">
-      <Navigation />
       
       <main className="max-w-7xl mx-auto px-4 py-8">
         {/* Header */}
