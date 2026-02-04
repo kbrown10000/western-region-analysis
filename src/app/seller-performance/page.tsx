@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, PieChart, Pie, Legend } from 'recharts';
 
+// Data: Sales MCP → get_team_performance, get_win_rate_matrix | Feb 2026
+
 export default function SellerPerformance() {
   const sellers = [
     {

@@ -81,7 +81,12 @@ export default function MarketAnalysis() {
       <main className="max-w-7xl mx-auto px-6 py-12">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-2">📊 Western Market Analysis</h1>
-          <p className="text-xl text-slate-400">Three biotech powerhouses. $150B+ combined market. One unified strategy.</p>
+          <p className="text-xl text-slate-400 mb-3">Three biotech powerhouses. $150B+ combined market. One unified strategy.</p>
+          <div className="bg-slate-800/30 rounded-lg px-4 py-2 text-xs text-slate-400 inline-block">
+            Targets: <code className="text-slate-500">biotech-targets.json</code> | 
+            Customers: <span className="text-purple-400">Finance MCP</span> → <code className="text-slate-500">get_customer_ltv</code> | 
+            Market data: Crunchbase, PitchBook, SEC filings
+          </div>
         </div>
 
         {/* Aggregate Metrics */}

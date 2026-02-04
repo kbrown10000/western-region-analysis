@@ -220,7 +220,12 @@ export default function GTMStrategy() {
       <main className="max-w-7xl mx-auto px-6 py-12">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-2">🎯 GTM Strategy Alignment</h1>
-          <p className="text-xl text-slate-400">Mapping Western targets to USDM 2026 Go-To-Market pillars</p>
+          <p className="text-xl text-slate-400 mb-3">Mapping Western targets to USDM 2026 Go-To-Market pillars</p>
+          <div className="bg-slate-800/30 rounded-lg px-4 py-2 text-xs text-slate-400 inline-block">
+            Targets: <code className="text-slate-500">biotech-targets.json</code> (60+ accounts) | 
+            Pipeline: <span className="text-blue-400">Sales MCP</span> → <code className="text-slate-500">get_open_pipeline_deals</code> | 
+            Strategy: USDM 2026 GTM Framework
+          </div>
         </div>
 
         <div className="mb-10 bg-gradient-to-br from-cyan-900/20 to-purple-900/10 rounded-xl p-6 border border-cyan-700/30">
