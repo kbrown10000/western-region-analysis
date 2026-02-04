@@ -84,7 +84,7 @@ export default function TrendsPage() {
               <Tooltip 
                 contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #475569', borderRadius: '8px' }}
                 labelStyle={{ color: '#fff' }}
-                formatter={(value: any, name: string) => [`$${value}M`, 'Revenue']}
+                formatter={(value: any) => [`$${value}M`, 'Revenue']}
               />
               <Legend />
               <Line 
@@ -128,7 +128,7 @@ export default function TrendsPage() {
               <Tooltip 
                 contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #475569', borderRadius: '8px' }}
                 labelStyle={{ color: '#fff' }}
-                formatter={(value: any, name: string) => [`${value}%`, 'Win Rate']}
+                formatter={(value: any) => [`${value}%`, 'Win Rate']}
               />
               <Legend />
               <Line 
@@ -172,7 +172,7 @@ export default function TrendsPage() {
               <Tooltip 
                 contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #475569', borderRadius: '8px' }}
                 labelStyle={{ color: '#fff' }}
-                formatter={(value: any, name: string) => [`$${value}K`, 'Avg Deal Size']}
+                formatter={(value: any) => [`$${value}K`, 'Avg Deal Size']}
               />
               <Legend />
               <Bar 
@@ -202,11 +202,11 @@ export default function TrendsPage() {
               <Tooltip 
                 contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #475569', borderRadius: '8px' }}
                 labelStyle={{ color: '#fff' }}
-                formatter={(value: any, name: string) => {
+                formatter={(value: any, name?: string) => {
                   if (name === 'Coverage') return [`${value.toFixed(2)}x`, 'Coverage Ratio'];
                   if (name === 'Low') return [`${value.toFixed(2)}x`, 'Lower Bound'];
                   if (name === 'High') return [`${value.toFixed(2)}x`, 'Upper Bound'];
-                  return [value, name];
+                  return [value, name || ''];
                 }}
               />
               <Legend />

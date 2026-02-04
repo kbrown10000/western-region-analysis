@@ -58,6 +58,13 @@ const navItems: NavItem[] = [
       { label: 'Seller Performance', href: '/seller-performance' },
     ],
   },
+  {
+    label: 'Analytics',
+    children: [
+      { label: 'Multi-Year Trends', href: '/trends' },
+      { label: 'Financial Model', href: '/financial-model' },
+    ],
+  },
   { label: 'Appendix', href: '/appendix' },
 ];
 
