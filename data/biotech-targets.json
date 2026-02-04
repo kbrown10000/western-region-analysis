@@ -2,9 +2,9 @@
   "targets": [
     {"name": "Genentech", "region": "NorCal", "city": "South San Francisco", "lat": 37.6563, "lng": -122.4077, "focus": "Oncology, Immunology", "funding": "Roche Subsidiary", "employees": "14-19K", "stage": "Commercial", "priority": "strategic", "isCustomer": true},
     {"name": "Denali Therapeutics", "region": "NorCal", "city": "South San Francisco", "lat": 37.6550, "lng": -122.4030, "focus": "Neurodegeneration", "funding": "Public", "employees": "364", "stage": "Clinical", "priority": "high", "isCustomer": false},
-    {"name": "Caribou Biosciences", "region": "NorCal", "city": "Berkeley", "lat": 37.8715, "lng": -122.2710, "focus": "CRISPR CAR-T", "funding": "Public", "employees": "200+", "stage": "Clinical", "priority": "high", "isCustomer": false},
+    {"name": "Caribou Biosciences", "region": "NorCal", "city": "Berkeley", "lat": 37.8715, "lng": -122.2710, "focus": "CRISPR CAR-T", "funding": "Public", "employees": "200+", "stage": "Clinical", "priority": "high", "isCustomer": true, "ltv": "$35.0K", "yoyGrowth": "+59.3%", "gp": "72.5%", "status": "growing"},
     {"name": "Altos Labs", "region": "NorCal", "city": "San Francisco", "lat": 37.7749, "lng": -122.4194, "focus": "Longevity/Rejuvenation", "funding": "$3B", "employees": "300+", "stage": "Research", "priority": "high", "isCustomer": false},
-    {"name": "Numerion Labs", "region": "NorCal", "city": "San Francisco", "lat": 37.7760, "lng": -122.4180, "focus": "AI Drug Discovery", "funding": "$174M", "employees": "100+", "stage": "Platform", "priority": "medium", "isCustomer": false, "note": "Formerly Atomwise - rebranded 2025"},
+    {"name": "Numerion Labs", "region": "NorCal", "city": "San Francisco", "lat": 37.7760, "lng": -122.4180, "focus": "AI Drug Discovery", "funding": "$174M", "employees": "100+", "stage": "Platform", "priority": "high", "isCustomer": true, "ltv": "$15.0K", "yoyGrowth": "-100%", "gp": "81.3%", "status": "churned", "note": "Formerly Atomwise - rebranded 2025. CHURNED - win back!"},
     {"name": "64x Bio", "region": "NorCal", "city": "Brisbane", "lat": 37.6855, "lng": -122.4001, "focus": "Gene Therapy Manufacturing", "funding": "$55M", "employees": "50+", "stage": "Growth", "priority": "high", "isCustomer": false, "news": "AAV Apex Suite launched Jun 2025"},
     {"name": "89bio", "region": "NorCal", "city": "San Francisco", "lat": 37.7853, "lng": -122.4005, "focus": "NASH/Liver Disease", "funding": "Public", "employees": "100+", "stage": "Phase 2", "priority": "medium", "isCustomer": false},
     {"name": "Calico Life Sciences", "region": "NorCal", "city": "South San Francisco", "lat": 37.6531, "lng": -122.4010, "focus": "Aging Research", "funding": "Alphabet", "employees": "367", "stage": "Research", "priority": "medium", "isCustomer": false},
@@ -20,7 +20,7 @@
     {"name": "Color Health", "region": "NorCal", "city": "Burlingame", "lat": 37.5775, "lng": -122.3477, "focus": "Population Genomics", "funding": "$278M", "employees": "400+", "stage": "Commercial", "priority": "medium", "isCustomer": false},
     {"name": "Gritstone Oncology", "region": "NorCal", "city": "Emeryville", "lat": 37.8313, "lng": -122.2850, "focus": "Cancer Immunotherapy", "funding": "Public", "employees": "51-200", "stage": "Clinical", "priority": "medium", "isCustomer": false},
     {"name": "Freenome", "region": "NorCal", "city": "South San Francisco", "lat": 37.6540, "lng": -122.4055, "focus": "Multi-Cancer Detection AI", "funding": "SPAC 2025", "employees": "300+", "stage": "Commercial", "priority": "strategic", "isCustomer": false, "news": "Going public via SPAC, Roche partnership Nov 2025, Exact Sciences license, new CEO Apr 2025"},
-    {"name": "Kyverna Therapeutics", "region": "NorCal", "city": "Emeryville", "lat": 37.8320, "lng": -122.2860, "focus": "Autoimmune CAR-T", "funding": "Public", "employees": "100+", "stage": "Clinical", "priority": "high", "isCustomer": false, "news": "First-mover in autoimmune cell therapy, new CFO Jun 2025"},
+    {"name": "Kyverna Therapeutics", "region": "NorCal", "city": "Emeryville", "lat": 37.8320, "lng": -122.2860, "focus": "Autoimmune CAR-T", "funding": "Public", "employees": "100+", "stage": "Clinical", "priority": "strategic", "isCustomer": true, "ltv": "$23.0K", "yoyGrowth": "+175.6%", "gp": "99.6%", "status": "hot", "news": "🔥 EXPAND! 175% growth, 99.6% GP. First-mover in autoimmune cell therapy"},
     {"name": "Insitro", "region": "NorCal", "city": "South San Francisco", "lat": 37.6558, "lng": -122.4070, "focus": "ML Drug Discovery", "funding": "$400M+", "employees": "150+", "stage": "Platform", "priority": "high", "isCustomer": false, "news": "Founded by Daphne Koller, AI governance leader"},
     {"name": "Recursion Pharmaceuticals", "region": "NorCal", "city": "Salt Lake City", "lat": 40.7608, "lng": -111.8910, "focus": "AI Drug Discovery", "funding": "Public", "employees": "500+", "stage": "Clinical", "priority": "high", "isCustomer": false, "news": "Leading AI drug discovery platform"},
     
@@ -33,7 +33,7 @@
     {"name": "CytoDyn", "region": "LA", "city": "Los Angeles", "lat": 34.0525, "lng": -118.2440, "focus": "HIV/Oncology", "funding": "Public", "employees": "30+", "stage": "Clinical", "priority": "medium", "isCustomer": false},
     {"name": "Emmaus Medical", "region": "LA", "city": "Torrance", "lat": 33.8358, "lng": -118.3406, "focus": "Sickle Cell Disease", "funding": "Public", "employees": "50+", "stage": "Commercial", "priority": "medium", "isCustomer": false},
 
-    {"name": "National Resilience", "region": "SanDiego", "city": "San Diego", "lat": 32.8789, "lng": -117.2359, "focus": "Biomanufacturing CDMO", "funding": "$825M (Oct 2025)", "employees": "2000+", "stage": "Commercial", "priority": "strategic", "isCustomer": false, "news": "New CEO Dec 2024, major facility expansion, CARGO Therapeutics partnership"},
+    {"name": "National Resilience", "region": "SanDiego", "city": "San Diego", "lat": 32.8789, "lng": -117.2359, "focus": "Biomanufacturing CDMO", "funding": "$825M (Oct 2025)", "employees": "2000+", "stage": "Commercial", "priority": "strategic", "isCustomer": true, "ltv": "$6.7K", "yoyGrowth": "N/A", "gp": "100%", "status": "expand", "news": "🎯 MASSIVE EXPANSION OPP! $825M funding, 2000+ employees but only $6.7K LTV. New CEO Dec 2024"},
     {"name": "Gilead Sciences", "region": "SanDiego", "city": "Oceanside", "lat": 33.1959, "lng": -117.3795, "focus": "Antivirals, Oncology", "funding": "Public", "employees": "14K+", "stage": "Commercial", "priority": "strategic", "isCustomer": true},
     {"name": "Neurocrine Biosciences", "region": "SanDiego", "city": "San Diego", "lat": 32.8820, "lng": -117.2100, "focus": "Neurology", "funding": "Public", "employees": "1500+", "stage": "Commercial", "priority": "strategic", "isCustomer": true},
     {"name": "Enovis Corp", "region": "SanDiego", "city": "Carlsbad", "lat": 33.1581, "lng": -117.3506, "focus": "Medical Devices", "funding": "Public", "employees": "500+", "stage": "Commercial", "priority": "medium", "isCustomer": true},
@@ -72,16 +72,36 @@
   ],
   "existingCustomers": [
     {"name": "Genentech", "region": "NorCal", "city": "South San Francisco", "lat": 37.6563, "lng": -122.4077, "revenue": "$1.8M", "gp": "42%"},
-    {"name": "Amgen", "region": "LA", "city": "Thousand Oaks", "lat": 34.1706, "lng": -118.8376, "revenue": "$1.75M", "gp": "21.1%"},
-    {"name": "Kite Pharma", "region": "LA", "city": "Santa Monica", "lat": 34.0195, "lng": -118.4912, "revenue": "$2.08M", "gp": "19.9%"},
-    {"name": "Gilead Sciences", "region": "SanDiego", "city": "Oceanside", "lat": 33.1959, "lng": -117.3795, "revenue": "$2.13M", "gp": "22%"},
+    {"name": "Amgen", "region": "LA", "city": "Thousand Oaks", "lat": 34.1706, "lng": -118.8376, "revenue": "$1.75M", "gp": "21.1%", "status": "margin-fix"},
+    {"name": "Kite Pharma", "region": "LA", "city": "Santa Monica", "lat": 34.0195, "lng": -118.4912, "revenue": "$2.08M", "gp": "19.9%", "status": "margin-fix"},
+    {"name": "Gilead Sciences", "region": "SanDiego", "city": "Oceanside", "lat": 33.1959, "lng": -117.3795, "revenue": "$2.13M", "gp": "22%", "status": "margin-fix"},
     {"name": "Neurocrine Biosciences", "region": "SanDiego", "city": "San Diego", "lat": 32.8820, "lng": -117.2100, "revenue": "$890K", "gp": "48%"},
-    {"name": "Enovis Corp", "region": "SanDiego", "city": "Carlsbad", "lat": 33.1581, "lng": -117.3506, "revenue": "$773K", "gp": "18.3%"}
+    {"name": "Enovis Corp", "region": "SanDiego", "city": "Carlsbad", "lat": 33.1581, "lng": -117.3506, "revenue": "$773K", "gp": "18.3%", "status": "margin-fix"},
+    {"name": "Kyverna Therapeutics", "region": "NorCal", "city": "Emeryville", "ltv": "$23.0K", "gp": "99.6%", "yoyGrowth": "+175.6%", "status": "hot-expand"},
+    {"name": "Caribou Biosciences", "region": "NorCal", "city": "Berkeley", "ltv": "$35.0K", "gp": "72.5%", "yoyGrowth": "+59.3%", "status": "growing"},
+    {"name": "Neumora Therapeutics", "region": "NorCal", "city": "South San Francisco", "ltv": "$51.6K", "gp": "95.9%", "yoyGrowth": "+26.2%", "status": "healthy"},
+    {"name": "Protagonist Therapeutics", "region": "NorCal", "city": "Newark", "ltv": "$20.9K", "gp": "93.0%", "yoyGrowth": "+32.4%", "status": "healthy"},
+    {"name": "VIR Biotechnology", "region": "NorCal", "city": "San Francisco", "ltv": "$34.1K", "gp": "95.7%", "yoyGrowth": "-61.9%", "status": "at-risk"},
+    {"name": "Maze Therapeutics", "region": "NorCal", "city": "South San Francisco", "ltv": "$49.5K", "gp": "78.3%", "yoyGrowth": "-62.2%", "status": "at-risk"},
+    {"name": "Numerion Labs (ex-Atomwise)", "region": "NorCal", "city": "San Francisco", "ltv": "$15.0K", "gp": "81.3%", "yoyGrowth": "-100%", "status": "churned"},
+    {"name": "Ultragenyx Pharmaceutical", "region": "NorCal", "city": "Novato", "ltv": "$11.7K", "gp": "100%", "yoyGrowth": "-100%", "status": "churned"},
+    {"name": "Guardant Health", "region": "NorCal", "city": "Redwood City", "ltv": "$8.2K", "gp": "93.5%", "yoyGrowth": "N/A", "status": "dormant"},
+    {"name": "National Resilience", "region": "SanDiego", "city": "San Diego", "ltv": "$6.7K", "gp": "100%", "yoyGrowth": "N/A", "status": "expand-opportunity"}
   ],
   "acquiredCompanies": [
     {"name": "Capstan Therapeutics", "region": "SanDiego", "city": "San Diego", "acquiredBy": "AbbVie", "acquiredDate": "August 2025", "note": "Lead asset CPTX2309 now in Phase 1"},
     {"name": "Poseida Therapeutics", "region": "SanDiego", "city": "San Diego", "acquiredBy": "Roche", "acquiredDate": "2025", "note": "Now part of Roche Group"}
   ],
-  "lastUpdated": "2026-02-03",
-  "researchNotes": "Atomwise rebranded to Numerion Labs. Sana Biotechnology has active securities fraud litigation - monitor closely."
+  "lastUpdated": "2026-02-03T19:45:00-08:00",
+  "researchNotes": "Atomwise rebranded to Numerion Labs (CHURNED - win back!). Sana Biotechnology has active securities fraud litigation - monitor closely.",
+  "dataSource": "Live MCP data from Finance MCP (get_customer_ltv) - Feb 3, 2026",
+  "keyInsights": {
+    "totalWesternCustomers": 16,
+    "hotExpansion": ["Kyverna (+175.6%)", "Caribou (+59.3%)", "Protagonist (+32.4%)"],
+    "atRisk": ["Maze (-62.2%)", "VIR Bio (-61.9%)"],
+    "churned": ["Numerion Labs", "Ultragenyx"],
+    "massiveOpportunity": "National Resilience - $825M funding, 2000 employees, only $6.7K LTV!",
+    "marginFix": ["Gilead (22% GP)", "Amgen (21% GP)", "Kite (20% GP)", "Enovis (18% GP)"],
+    "seattleGap": "$0 revenue from 15 PNW targets"
+  }
 }

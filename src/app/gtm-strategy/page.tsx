@@ -233,6 +233,18 @@ export default function GTMStrategy() {
           <p className="text-xl text-slate-400">Mapping Western targets to USDM 2026 Go-To-Market pillars</p>
         </div>
 
+        <div className="mb-10 bg-gradient-to-br from-cyan-900/20 to-purple-900/10 rounded-xl p-6 border border-cyan-700/30">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <p className="text-white font-semibold">New: Cloud Assurance → AI Expansion Playbook</p>
+              <p className="text-slate-300 mt-1">A repeatable CA-led motion to convert existing compliance subscriptions into AI governance, enablement, and managed services expansion.</p>
+            </div>
+            <Link href="/cloud-assurance-expansion" className="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold rounded-lg transition-all">
+              Open Playbook →
+            </Link>
+          </div>
+        </div>
+
         {/* Quick Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
