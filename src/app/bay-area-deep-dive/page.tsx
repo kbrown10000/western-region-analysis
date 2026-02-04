@@ -74,7 +74,7 @@ export default function BayAreaDeepDive() {
             </div>
             <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/20 rounded-xl p-6 border border-purple-700/30">
               <h3 className="text-purple-400 font-bold mb-2">AI Drug Discovery Hub</h3>
-              <p className="text-slate-300 text-sm">52% of Bay Area biotech funding now goes to AI-driven companies. Atomwise, Deep Genomics, Anagenex leading the way.</p>
+              <p className="text-slate-300 text-sm">52% of Bay Area biotech funding now goes to AI-driven companies. Numerion Labs (ex-Atomwise), Deep Genomics, Anagenex leading the way.</p>
             </div>
             <div className="bg-gradient-to-br from-green-900/30 to-emerald-900/20 rounded-xl p-6 border border-green-700/30">
               <h3 className="text-green-400 font-bold mb-2">UCSF/Stanford Pipeline</h3>

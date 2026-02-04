@@ -240,7 +240,7 @@ export default function MarketAnalysis() {
             <div className="bg-gradient-to-br from-yellow-900/30 to-orange-900/20 rounded-xl p-6 border border-yellow-700/30">
               <h3 className="text-yellow-400 font-bold text-lg mb-3">CDMO/CRDMO Expansion</h3>
               <p className="text-slate-300 mb-3">San Diego becoming the manufacturing hub of the West. National Resilience ($2B), BioDuro-Sundia, and emerging players building capacity.</p>
-              <p className="text-slate-500 text-sm">Key targets: National Resilience, Capstan Therapeutics, Poseida</p>
+              <p className="text-slate-500 text-sm">Key targets: National Resilience, Cellares, Boundless Bio</p>
             </div>
           </div>
         </section>

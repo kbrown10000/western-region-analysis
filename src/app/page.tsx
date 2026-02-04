@@ -206,7 +206,7 @@ export default function Home() {
             <RecommendationCard 
               number="03"
               title="AI/ML Drug Discovery Wave"
-              description="Companies like Atomwise, Anagenex, and Deep Genomics generating massive data. Data management opportunity."
+              description="Companies like Numerion Labs (ex-Atomwise), Anagenex, and Deep Genomics generating massive data. Data management opportunity."
               urgency="medium"
             />
             <RecommendationCard 
