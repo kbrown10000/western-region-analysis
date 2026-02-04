@@ -222,7 +222,7 @@ export default function MarketAnalysis() {
             <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/20 rounded-xl p-6 border border-purple-700/30">
               <h3 className="text-purple-400 font-bold text-lg mb-3">AI Drug Discovery Boom</h3>
               <p className="text-slate-300 mb-3">52% of Bay Area biotech funding now goes to AI-driven companies. Data management, compliance, and 21 CFR Part 11 expertise critical.</p>
-              <p className="text-slate-500 text-sm">Key targets: Atomwise, Deep Genomics, Anagenex, A-Alpha Bio</p>
+              <p className="text-slate-500 text-sm">Key targets: Numerion Labs (win-back!), Deep Genomics, Anagenex, A-Alpha Bio</p>
             </div>
             
             <div className="bg-gradient-to-br from-cyan-900/30 to-blue-900/20 rounded-xl p-6 border border-cyan-700/30">
@@ -261,7 +261,7 @@ export default function MarketAnalysis() {
             
             <div className="bg-cyan-900/30 rounded-xl p-6 border border-cyan-700/50">
               <h3 className="text-cyan-400 font-bold mb-2">📈 Defend & Expand: Bay Area</h3>
-              <p className="text-slate-300">Existing customer base provides foundation. Focus on expansion into AI drug discovery (Atomwise, Deep Genomics) and cell therapy manufacturing (Cellares, 64x Bio).</p>
+              <p className="text-slate-300">Existing customer base provides foundation. Focus on expansion into AI drug discovery (Numerion Labs - churned, Deep Genomics) and cell therapy manufacturing (Cellares, 64x Bio).</p>
             </div>
           </div>
         </section>

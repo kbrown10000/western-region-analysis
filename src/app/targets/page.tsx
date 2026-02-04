@@ -11,7 +11,7 @@ const companies = [
   { name: "Denali Therapeutics", region: "Bay Area", focus: "Neurodegeneration", funding: "Public", employees: "364", stage: "Clinical", priority: "High" },
   { name: "Caribou Biosciences", region: "Bay Area", focus: "CRISPR CAR-T", funding: "Public", employees: "200+", stage: "Clinical", priority: "High" },
   { name: "Altos Labs", region: "Bay Area", focus: "Longevity/Rejuvenation", funding: "$3B", employees: "300+", stage: "Research", priority: "High" },
-  { name: "Atomwise", region: "Bay Area", focus: "AI Drug Discovery", funding: "$174M", employees: "100+", stage: "Platform", priority: "Medium" },
+  { name: "Numerion Labs", region: "Bay Area", focus: "AI Drug Discovery (ex-Atomwise)", funding: "$174M", employees: "100+", stage: "Platform", priority: "High" },
   { name: "64x Bio", region: "Bay Area", focus: "Gene Therapy Manufacturing", funding: "Series B", employees: "50+", stage: "Growth", priority: "High" },
   { name: "89bio", region: "Bay Area", focus: "NASH/Liver Disease", funding: "Public", employees: "100+", stage: "Phase 2", priority: "Medium" },
   { name: "Calico Life Sciences", region: "Bay Area", focus: "Aging Research", funding: "Alphabet", employees: "367", stage: "Research", priority: "Medium" },

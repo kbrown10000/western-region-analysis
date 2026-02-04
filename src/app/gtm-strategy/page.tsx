@@ -171,7 +171,7 @@ const gtmPillars: GTMPillar[] = [
     entryPoint: 'TPRM Assessment',
     expansion: 'Black Kite → vCISO Advisory → AI Vendor Risk → Managed TPRM',
     targetCriteria: ['Limited TPRM maturity', 'Large vendor ecosystems', 'AI adoption with vendor concerns'],
-    westernTargets: ['AI drug discovery companies with multiple AI vendors', 'Atomwise', 'Deep Genomics'],
+    westernTargets: ['AI drug discovery companies with multiple AI vendors', 'Numerion Labs', 'Deep Genomics'],
     existingCustomerPlay: 'Position as bundle with existing compliance or security engagements',
   },
 ];
@@ -270,7 +270,7 @@ export default function GTMStrategy() {
               <div className="space-y-2">
                 <p className="text-purple-400 font-semibold text-sm">Top Targets:</p>
                 <div className="flex flex-wrap gap-1">
-                  {['Atomwise', 'Deep Genomics', 'Anagenex', 'A-Alpha Bio'].map(t => (
+                  {['Numerion Labs', 'Deep Genomics', 'Anagenex', 'A-Alpha Bio'].map(t => (
                     <span key={t} className="bg-purple-900/50 text-purple-300 text-xs px-2 py-1 rounded">{t}</span>
                   ))}
                 </div>

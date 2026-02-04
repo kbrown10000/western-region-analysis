@@ -151,7 +151,7 @@ export default function ExecutiveSummary() {
                 <ul className="space-y-2 text-slate-300">
                   <li>• <span className="font-semibold">250+ biotech companies</span> with 12M sq ft dedicated space</li>
                   <li>• AI drug discovery boom — 52% of startup funding in AI</li>
-                  <li>• Key targets: Atomwise, Anagenex, Deep Genomics, Cellares</li>
+                  <li>• Key targets: Numerion Labs (ex-Atomwise), Anagenex, Deep Genomics, Cellares</li>
                   <li>• Strong UCSF/Stanford research pipeline</li>
                 </ul>
               </div>
@@ -161,7 +161,7 @@ export default function ExecutiveSummary() {
                 <ul className="space-y-2 text-slate-300">
                   <li>• <span className="font-semibold">$56B economic output</span> from ~2,000 life science companies</li>
                   <li>• Manufacturing and CRDMO growth center</li>
-                  <li>• Key targets: National Resilience ($2B), Capstan ($165M), Aspen Neuro</li>
+                  <li>• Key targets: National Resilience ($2B customer!), Boundless Bio, Aspen Neuro</li>
                   <li>• Scripps Research / Salk Institute ecosystem</li>
                 </ul>
               </div>
