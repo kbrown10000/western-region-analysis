@@ -283,10 +283,115 @@ export default function Dashboard() {
           </div>
         </div>
 
+        {/* 2025→2026 Revenue Bridge */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold text-white mb-6">📊 2025 → 2026 Revenue Bridge</h2>
+          <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+            <div className="flex items-end justify-between gap-4 h-64">
+              {/* 2025 Base */}
+              <div className="flex flex-col items-center">
+                <div className="bg-slate-600 w-20 rounded-t-lg flex items-end justify-center" style={{height: '172px'}}>
+                  <span className="text-white font-bold pb-2">$17.2M</span>
+                </div>
+                <span className="text-slate-400 text-sm mt-2">2025 Base</span>
+              </div>
+              
+              {/* Win Rate Recovery */}
+              <div className="flex flex-col items-center">
+                <div className="bg-green-500 w-20 rounded-t-lg flex items-end justify-center" style={{height: '36px'}}>
+                  <span className="text-white font-bold text-sm pb-1">+$1.8M</span>
+                </div>
+                <span className="text-slate-400 text-sm mt-2 text-center">Win Rate<br/>Recovery</span>
+              </div>
+              
+              {/* New Logos */}
+              <div className="flex flex-col items-center">
+                <div className="bg-cyan-500 w-20 rounded-t-lg flex items-end justify-center" style={{height: '30px'}}>
+                  <span className="text-white font-bold text-sm pb-1">+$1.5M</span>
+                </div>
+                <span className="text-slate-400 text-sm mt-2 text-center">New Logos<br/>(15 accts)</span>
+              </div>
+              
+              {/* Expansion */}
+              <div className="flex flex-col items-center">
+                <div className="bg-purple-500 w-20 rounded-t-lg flex items-end justify-center" style={{height: '24px'}}>
+                  <span className="text-white font-bold text-sm pb-1">+$1.2M</span>
+                </div>
+                <span className="text-slate-400 text-sm mt-2 text-center">Account<br/>Expansion</span>
+              </div>
+              
+              {/* Churn Risk */}
+              <div className="flex flex-col items-center">
+                <div className="bg-red-500 w-20 rounded-b-lg flex items-start justify-center" style={{height: '14px', marginTop: '158px'}}>
+                  <span className="text-white font-bold text-sm pt-0">-$0.7M</span>
+                </div>
+                <span className="text-slate-400 text-sm mt-2 text-center">Expected<br/>Churn</span>
+              </div>
+              
+              {/* 2026 Target */}
+              <div className="flex flex-col items-center">
+                <div className="bg-gradient-to-t from-cyan-600 to-cyan-400 w-20 rounded-t-lg flex items-end justify-center" style={{height: '210px'}}>
+                  <span className="text-white font-bold pb-2">$21M</span>
+                </div>
+                <span className="text-cyan-400 text-sm mt-2 font-semibold">2026 Target</span>
+              </div>
+            </div>
+            
+            <div className="mt-6 grid grid-cols-4 gap-4 text-center">
+              <div className="bg-green-900/30 rounded-lg p-3">
+                <p className="text-green-400 font-semibold">Win Rate Impact</p>
+                <p className="text-slate-300 text-sm">35.6% → 42% = +$1.8M</p>
+              </div>
+              <div className="bg-cyan-900/30 rounded-lg p-3">
+                <p className="text-cyan-400 font-semibold">New Business</p>
+                <p className="text-slate-300 text-sm">15 logos × $100K avg</p>
+              </div>
+              <div className="bg-purple-900/30 rounded-lg p-3">
+                <p className="text-purple-400 font-semibold">Expansion</p>
+                <p className="text-slate-300 text-sm">15% growth on base</p>
+              </div>
+              <div className="bg-red-900/30 rounded-lg p-3">
+                <p className="text-red-400 font-semibold">Churn Mitigation</p>
+                <p className="text-slate-300 text-sm">4% attrition target</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 2026 Growth Targets */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold text-white mb-6">🎯 2026 Growth Targets</h2>
+          <div className="grid md:grid-cols-4 gap-4">
+            <div className="bg-gradient-to-br from-cyan-900/50 to-cyan-800/30 rounded-xl p-6 border border-cyan-700/50">
+              <p className="text-cyan-400 text-sm mb-1">Revenue Target</p>
+              <p className="text-4xl font-bold text-white">$21M</p>
+              <p className="text-green-400 text-sm">+22% vs 2025</p>
+            </div>
+            <div className="bg-gradient-to-br from-green-900/50 to-green-800/30 rounded-xl p-6 border border-green-700/50">
+              <p className="text-green-400 text-sm mb-1">Win Rate Target</p>
+              <p className="text-4xl font-bold text-white">42%</p>
+              <p className="text-green-400 text-sm">+6.4 pts vs 2025</p>
+            </div>
+            <div className="bg-gradient-to-br from-purple-900/50 to-purple-800/30 rounded-xl p-6 border border-purple-700/50">
+              <p className="text-purple-400 text-sm mb-1">GP% Target</p>
+              <p className="text-4xl font-bold text-white">40%</p>
+              <p className="text-green-400 text-sm">+5.7 pts vs 2025</p>
+            </div>
+            <div className="bg-gradient-to-br from-orange-900/50 to-orange-800/30 rounded-xl p-6 border border-orange-700/50">
+              <p className="text-orange-400 text-sm mb-1">New Logos</p>
+              <p className="text-4xl font-bold text-white">15</p>
+              <p className="text-slate-400 text-sm">$1.5M+ pipeline</p>
+            </div>
+          </div>
+        </section>
+
         {/* Navigation */}
         <div className="flex justify-center gap-4 mt-12">
           <Link href="/margin-analysis" className="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-semibold transition">
             Deep Dive: Margins →
+          </Link>
+          <Link href="/financial-model" className="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-semibold transition">
+            Interactive Model →
           </Link>
           <Link href="/map" className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-semibold transition">
             View Map
