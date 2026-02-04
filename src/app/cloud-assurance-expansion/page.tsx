@@ -305,6 +305,37 @@ export default function CloudAssuranceExpansionPlaybook() {
                 </div>
               </div>
             </div>
+
+            {/* Data Sources */}
+            <div className="mt-6 bg-slate-900/60 rounded-xl p-5 border border-slate-700/50">
+              <h3 className="text-white font-semibold mb-3">📊 Data Sources & MCP Queries</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                <div className="bg-slate-800/50 rounded-lg p-3 border border-slate-700/50">
+                  <p className="text-cyan-400 font-semibold mb-1">Finance MCP (port 3003)</p>
+                  <ul className="text-slate-400 space-y-1 font-mono">
+                    <li>• get_customer_ltv → 375 accounts, $47.9M</li>
+                    <li>• get_ar_aging → $4.7M AR, 95.2% current</li>
+                  </ul>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3 border border-slate-700/50">
+                  <p className="text-amber-400 font-semibold mb-1">Sales MCP (port 3001)</p>
+                  <ul className="text-slate-400 space-y-1 font-mono">
+                    <li>• get_churn_signals → 53 flagged opps</li>
+                    <li>• Flags: SameDayFlip, Regression, Resurrected</li>
+                  </ul>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3 border border-slate-700/50">
+                  <p className="text-red-400 font-semibold mb-1">Labor MCP (port 3002)</p>
+                  <ul className="text-slate-400 space-y-1 font-mono">
+                    <li>• get_gold_capacity_forecast → 50 resources</li>
+                    <li>• 39 overloaded (78%), 118.4% avg util</li>
+                  </ul>
+                </div>
+              </div>
+              <p className="text-slate-500 text-xs mt-3">
+                Bridge: mcp-http-bridge | Protocol: JSON-RPC 2.0 | Method: tools/call | Verified: 2026-02-04
+              </p>
+            </div>
           </div>
         </section>
 
