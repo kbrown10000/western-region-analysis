@@ -93,8 +93,19 @@ export default function FinancialModelPage() {
             Interactive 2026 Financial Model
           </h1>
           <p className="text-slate-400 text-lg">
-            Adjust inputs to model revenue scenarios and compensation plans
+            Adjust inputs to model bookings scenarios and compensation plans
           </p>
+          <div className="mt-4 flex gap-4 text-xs">
+            <span className="bg-slate-800 px-3 py-1 rounded-full text-slate-300">
+              <span className="text-cyan-400 font-semibold">Bookings</span> = contract value at close
+            </span>
+            <span className="bg-slate-800 px-3 py-1 rounded-full text-slate-300">
+              <span className="text-blue-400 font-semibold">Revenue</span> = GAAP recognized when billed
+            </span>
+            <span className="bg-slate-800 px-3 py-1 rounded-full text-slate-300">
+              <span className="text-green-400 font-semibold">EGP</span> = estimated gross profit
+            </span>
+          </div>
         </div>
 
         {/* Scenario Buttons */}
@@ -242,12 +253,15 @@ export default function FinancialModelPage() {
             
             <div className="space-y-6">
               <div className="bg-slate-900 rounded-lg p-5 border-l-4 border-cyan-500">
-                <div className="text-slate-400 text-sm mb-1">Projected Revenue</div>
+                <div className="text-slate-400 text-sm mb-1">Projected Bookings</div>
                 <div className="text-3xl font-bold text-white">
                   ${projectedRevenue.toFixed(2)}M
                 </div>
                 <div className="text-xs text-slate-500 mt-2">
                   Base: ${baseRevenue.toFixed(2)}M × (1 + {expansionRate}%) + ({newLogos} × ${avgDealSize}K)
+                </div>
+                <div className="text-xs text-cyan-400/70 mt-1">
+                  Bookings = contract value at close
                 </div>
               </div>
 

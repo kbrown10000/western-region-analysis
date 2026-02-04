@@ -68,13 +68,24 @@ export default function TrendsPage() {
           <p className="text-lg text-slate-300">
             Historical performance data (2022-2025) and 2026 targets for the Western Region
           </p>
+          <div className="mt-4 flex flex-wrap gap-3 text-xs">
+            <span className="bg-slate-800 px-3 py-1.5 rounded-full text-slate-300 border border-slate-700">
+              <span className="text-blue-400 font-semibold">Revenue</span> = GAAP recognized (billed)
+            </span>
+            <span className="bg-slate-800 px-3 py-1.5 rounded-full text-slate-300 border border-slate-700">
+              <span className="text-cyan-400 font-semibold">Bookings</span> = contract value at close
+            </span>
+            <span className="bg-slate-800 px-3 py-1.5 rounded-full text-slate-300 border border-slate-700">
+              <span className="text-green-400 font-semibold">EGP</span> = estimated gross profit
+            </span>
+          </div>
         </div>
 
         {/* Revenue & EGP Trend */}
         <div className="bg-slate-800 rounded-lg p-6 mb-8">
-          <h2 className="text-2xl font-bold text-white mb-4">Revenue & EGP Trend (2022-2026)</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">GAAP Revenue & EGP Trend (2022-2026)</h2>
           <p className="text-slate-300 mb-6">
-            Revenue trajectory with <span className="text-green-400 font-semibold">Estimated Gross Profit (EGP)</span> — showing 2025 dip and recovery plan
+            GAAP recognized revenue (billed) with <span className="text-green-400 font-semibold">Estimated Gross Profit (EGP)</span> — showing 2025 dip and recovery plan
           </p>
           <ResponsiveContainer width="100%" height={400}>
             <ComposedChart data={revenueData}>
