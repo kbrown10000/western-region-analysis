@@ -12,8 +12,8 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: 'Home', href: '/' },
-  { label: '📊 Visual Summary', href: '/visual-summary' },
   { label: 'Executive Summary', href: '/executive-summary' },
+  { label: '📊 Visual Summary', href: '/visual-summary' },
   {
     label: 'Partners',
     children: [
