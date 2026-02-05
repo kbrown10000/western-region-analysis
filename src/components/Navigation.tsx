@@ -12,8 +12,7 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: 'Home', href: '/' },
-  { label: 'Executive Summary', href: '/executive-summary' },
-  { label: '📊 Visual Summary', href: '/visual-summary' },
+  { label: 'Summary', href: '/executive-summary' },
   {
     label: 'Partners',
     children: [
@@ -74,6 +73,7 @@ const navItems: NavItem[] = [
   {
     label: 'Analytics',
     children: [
+      { label: '📊 Visual Summary', href: '/visual-summary' },
       { label: 'Multi-Year Trends', href: '/trends' },
       { label: 'Financial Model', href: '/financial-model' },
     ],
@@ -165,7 +165,7 @@ export default function Navigation() {
                 {item.href ? (
                   <Link
                     href={item.href}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap ${
                       isActive(item.href)
                         ? 'bg-blue-600 text-white'
                         : 'text-slate-300 hover:bg-slate-800 hover:text-white'
@@ -176,7 +176,7 @@ export default function Navigation() {
                 ) : (
                   <button
                     onClick={() => handleClick(item.label)}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-1 ${
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-1 whitespace-nowrap ${
                       item.children && isChildActive(item.children)
                         ? 'bg-blue-600 text-white'
                         : openDropdown === item.label
