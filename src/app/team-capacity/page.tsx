@@ -65,7 +65,7 @@ const getStatusColor = (status: 'star' | 'ok' | 'coaching') => {
   switch(status) {
     case 'star': return 'bg-green-900/50 border-green-700';
     case 'ok': return 'bg-blue-900/50 border-blue-700';
-    case 'coaching': return 'bg-red-900/50 border-red-700';
+    case 'coaching': return 'bg-yellow-900/50 border-yellow-700';
   }
 };
 
@@ -73,7 +73,7 @@ const getStatusBadge = (status: 'star' | 'ok' | 'coaching') => {
   switch(status) {
     case 'star': return <span className="text-green-400 text-xs font-bold">⭐ STAR</span>;
     case 'ok': return <span className="text-blue-400 text-xs">✓ On Track</span>;
-    case 'coaching': return <span className="text-red-400 text-xs font-bold">🎯 COACHING</span>;
+    case 'coaching': return <span className="text-yellow-400 text-xs font-bold">🎯 COACHING</span>;
   }
 };
 
@@ -280,11 +280,11 @@ export default function TeamCapacity() {
 
         {/* Coaching Priorities */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-red-400 mb-6">🎯 Coaching Priorities</h2>
+          <h2 className="text-2xl font-bold text-yellow-400 mb-6">🎯 Coaching Priorities</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-red-900/20 rounded-xl p-6 border border-red-700/50">
+            <div className="bg-yellow-900/20 rounded-xl p-6 border border-yellow-700/50">
               <div className="text-white font-bold text-lg mb-1">Mike Campbell</div>
-              <div className="text-red-400 font-semibold text-sm mb-3">LA BioMed | 38.2% Win Rate</div>
+              <div className="text-yellow-400 font-semibold text-sm mb-3">LA BioMed | 38.2% Win Rate</div>
               <ul className="text-xs text-slate-300 space-y-2">
                 <li>• $2.9M pipeline but only $1.5M closed</li>
                 <li>• 13/34 deals won (38%)</li>
@@ -292,9 +292,9 @@ export default function TeamCapacity() {
                 <li>• Focus: Deal qualification</li>
               </ul>
             </div>
-            <div className="bg-red-900/20 rounded-xl p-6 border border-red-700/50">
+            <div className="bg-yellow-900/20 rounded-xl p-6 border border-yellow-700/50">
               <div className="text-white font-bold text-lg mb-1">Avani Macwan</div>
-              <div className="text-red-400 font-semibold text-sm mb-3">East | 17.1% Win Rate</div>
+              <div className="text-yellow-400 font-semibold text-sm mb-3">East | 17.1% Win Rate</div>
               <ul className="text-xs text-slate-300 space-y-2">
                 <li>• $2.9M pipeline, $1M closed</li>
                 <li>• Only 6/35 deals won (17%)</li>
@@ -302,9 +302,9 @@ export default function TeamCapacity() {
                 <li>• Focus: Opportunity scoring</li>
               </ul>
             </div>
-            <div className="bg-red-900/20 rounded-xl p-6 border border-red-700/50">
+            <div className="bg-yellow-900/20 rounded-xl p-6 border border-yellow-700/50">
               <div className="text-white font-bold text-lg mb-1">Marcus Dinan</div>
-              <div className="text-red-400 font-semibold text-sm mb-3">Europe | 17.9% Win Rate</div>
+              <div className="text-yellow-400 font-semibold text-sm mb-3">Europe | 17.9% Win Rate</div>
               <ul className="text-xs text-slate-300 space-y-2">
                 <li>• $3.8M pipeline but only $227K closed</li>
                 <li>• 7/39 deals won (18%)</li>
@@ -353,7 +353,7 @@ export default function TeamCapacity() {
         {/* Pipeline Health */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-red-400 mb-6">⚠️ Pipeline Health Alert</h2>
-          <div className="bg-red-900/20 rounded-xl p-6 border border-red-700/50">
+          <div className="bg-yellow-900/20 rounded-xl p-6 border border-yellow-700/50">
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="text-4xl font-bold text-red-400">{pipelineQuality.agingPct}%</div>
