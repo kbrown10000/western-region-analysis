@@ -18,6 +18,7 @@ const navItems: NavItem[] = [
     children: [
       { label: 'GTM Strategy', href: '/gtm-strategy' },
       { label: 'Cloud Assurance → AI', href: '/cloud-assurance-expansion' },
+      { label: 'Partner & Alliances', href: '/partner-strategy' },
       { label: 'Sales Momentum', href: '/sales-momentum' },
       { label: 'Service Expansion', href: '/service-expansion' },
       { label: 'Marketing Alignment', href: '/marketing-alignment' },
