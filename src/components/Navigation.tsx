@@ -77,6 +77,18 @@ const navItems: NavItem[] = [
       { label: 'Financial Model', href: '/financial-model' },
     ],
   },
+  {
+    label: 'Critique',
+    children: [
+      { label: 'Overview', href: '/critique' },
+      { label: 'Executive Summary', href: '/critique/executive-summary' },
+      { label: 'Partner Strategy', href: '/critique/partner-strategy' },
+      { label: 'Territories', href: '/critique/territories' },
+      { label: 'GTM Strategy', href: '/critique/gtm-strategy' },
+      { label: 'Financial Model', href: '/critique/financial-model' },
+      { label: 'Team Capacity', href: '/critique/team-capacity' },
+    ],
+  },
   { label: 'Appendix', href: '/appendix' },
 ];
 
