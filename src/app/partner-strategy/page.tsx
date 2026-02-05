@@ -37,7 +37,10 @@ const partnerTeam = [
     department: 'Growth - Partnership and Alliances',
     // From Labor MCP get_solutions_team_roster
     opportunitiesTouched: 8,
-    winRate: 7.5,          // 7.5% - very low, needs investigation
+    // Note: Win rate not the right metric - partner managers SOURCE deals, AMs CLOSE them
+    // Better metric: Partner-originated pipeline/EGP
+    partnerOriginatedPipeline: 606400,  // Total partner-sourced pipeline
+    partnerOriginatedEGP: 319160,
     avgDealSize: 47500,    // $47.5K average
     // From Sales MCP get_team_performance (Q4 2025)
     pipeline: 70000,
@@ -46,8 +49,8 @@ const partnerTeam = [
     closedWonEGP: 31500,
     deals: 1,
     wonDeals: 1,
-    status: 'concern' as const,
-    notes: 'Very low win rate (7.5%) suggests deal sourcing/qualification issues, not closing'
+    status: 'ok' as const,
+    notes: 'Partner-originated EGP: $319K. Deals closed by AMs - attribution to closers not sourcers.'
   },
   {
     name: 'Meghan Rutkowski',
@@ -274,8 +277,8 @@ export default function PartnerStrategy() {
                       <div className="text-lg font-bold text-white">{member.name}</div>
                       <div className="text-slate-400 text-sm">{member.role}</div>
                     </div>
-                    <div className={`text-sm font-bold ${member.winRate < 20 ? 'text-red-400' : member.winRate < 40 ? 'text-yellow-400' : 'text-green-400'}`}>
-                      {member.winRate}% Win Rate
+                    <div className="text-sm font-bold text-blue-400">
+                      ${((member.partnerOriginatedEGP || 0) / 1000).toFixed(0)}K Partner EGP
                     </div>
                   </div>
                   <div className="grid grid-cols-4 gap-4 text-sm">

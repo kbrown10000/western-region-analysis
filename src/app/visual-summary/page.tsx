@@ -34,11 +34,11 @@ const infographics = [
   {
     id: 3,
     title: 'Seller Performance Variance',
-    subtitle: '8.1x Gap Between Best and Worst',
+    subtitle: 'Win Rate Gap Across Closers',
     filename: '03-seller-variance.png',
-    description: 'Dramatic performance variance across sellers. Justin Ott leads at 60.9% win rate, Mike Campbell needs coaching at 38.2%, Kim Guihen\'s 7.5% is a critical concern.',
+    description: 'Performance variance across quota-carrying sellers. Justin Ott leads at 60.9% win rate, Mike Campbell at 38.2% needs coaching. Partner team metrics differ: they source deals, AMs close.',
     linkedPage: '/team-capacity',
-    keyMetrics: ['Justin: 60.9%', 'Mike: 38.2%', 'Kim: 7.5%', 'Company avg: 41.6%'],
+    keyMetrics: ['Justin: 60.9%', 'Mike: 38.2%', 'Company avg: 41.6%', 'Partner EGP: $319K'],
   },
   {
     id: 4,

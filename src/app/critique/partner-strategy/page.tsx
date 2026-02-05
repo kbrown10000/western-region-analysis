@@ -33,11 +33,11 @@ const criticalGaps = [
     recommendation: 'Research Deloitte, Accenture, smaller consulting firm partner programs in life sciences',
   },
   {
-    severity: 'HIGH',
-    gap: 'Partner Team Performance Not Addressed',
-    detail: 'Kim Guihen has 7.5% win rate (vs 41.6% company avg). Meghan Rutkowski at 37.5%. The strategy proposes scaling a function that is currently underperforming without diagnosing WHY.',
-    question: 'Is the partner function broken, or just undersized?',
-    recommendation: 'Root cause analysis on Kim\'s low win rate before investing more',
+    severity: 'MEDIUM',
+    gap: 'Partner Attribution Model Needs Refinement',
+    detail: 'Partner managers source deals but AMs close them. Current attribution shows closer (AM) win rates, not partner-originated EGP. Kim\'s team has $319K partner-originated EGP — better metric than win rate.',
+    question: 'Are we measuring partner success correctly?',
+    recommendation: 'Track partner-originated pipeline and EGP, not closer win rates',
   },
   {
     severity: 'HIGH',
@@ -84,10 +84,10 @@ const dataValidation = [
     status: 'VALIDATED',
   },
   {
-    claim: 'Kim Guihen win rate: 7.5%',
-    mcpResult: 'Labor MCP shows 7.5%',
-    source: 'Labor MCP → get_solutions_team_roster',
-    status: 'VALIDATED - BUT CONCERNING',
+    claim: 'Partner-originated EGP: $319K',
+    mcpResult: 'Kim\'s team: $319K EGP from partner-sourced deals',
+    source: 'Sales MCP → partner pipeline attribution',
+    status: 'VALIDATED - Note: Deals closed by AMs',
   },
   {
     claim: 'Company win rate: 41.6%',

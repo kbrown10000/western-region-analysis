@@ -14,9 +14,11 @@ const sellerPerformance = [
   { name: 'Hovsep Kirikian', role: 'CGO', territory: 'National', pipeline: 1771775, pipelineEGP: 1054077, closedWon: 617075, closedWonEGP: 286562, deals: 15, wonDeals: 6, winRate: 40.0, status: 'ok' as const },
 ];
 
+// Partner team - Note: Partner managers SOURCE deals, AMs CLOSE them
+// Better metric: Partner-originated EGP, not closer win rates
 const partnerTeam = [
-  { name: 'Kim Guihen', role: 'Alliances', pipeline: 70000, pipelineEGP: 31500, closedWon: 70000, closedWonEGP: 31500, deals: 1, wonDeals: 1, winRate: 100, status: 'ok' as const },
-  { name: 'Meghan Rutkowski', role: 'Partner Manager', pipeline: 536400, pipelineEGP: 287660, closedWon: 146400, closedWonEGP: 99160, deals: 12, wonDeals: 4, winRate: 33.3, status: 'coaching' as const },
+  { name: 'Kim Guihen', role: 'Alliances', pipeline: 70000, pipelineEGP: 31500, partnerOriginatedEGP: 319160, closedWon: 70000, closedWonEGP: 31500, deals: 1, wonDeals: 1, status: 'ok' as const, note: 'Sources deals; AMs close' },
+  { name: 'Meghan Rutkowski', role: 'Partner Manager', pipeline: 536400, pipelineEGP: 287660, partnerOriginatedEGP: 99160, closedWon: 146400, closedWonEGP: 99160, deals: 12, wonDeals: 4, status: 'ok' as const, note: 'Partner development' },
 ];
 
 // Win Rate Matrix from Sales MCP V2
@@ -267,8 +269,8 @@ export default function TeamCapacity() {
                     <div className="text-white">{partner.wonDeals}/{partner.deals}</div>
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400">Win Rate</div>
-                    <div className={`font-bold text-xl ${getWinRateColor(partner.winRate)}`}>{partner.winRate.toFixed(1)}%</div>
+                    <div className="text-xs text-slate-400">Partner EGP</div>
+                    <div className="font-bold text-xl text-blue-400">${((partner.partnerOriginatedEGP || 0) / 1000).toFixed(0)}K</div>
                   </div>
                 </div>
               </div>

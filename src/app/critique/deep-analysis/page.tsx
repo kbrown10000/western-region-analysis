@@ -108,35 +108,35 @@ const partnerFailure = {
     {
       name: 'Kim Guihen',
       role: 'Partner Leadership',
-      winRate: 7.5,
-      assessment: 'CATASTROPHIC',
-      detail: '7.5% win rate means 92.5% of deals she touches are lost. This isn\'t coaching territory — this is role fit.',
+      partnerOriginatedEGP: 319160,
+      assessment: 'SOURCING',
+      detail: 'Partner managers source deals; AMs close them. Better metric: $319K partner-originated EGP. Attribution goes to closers, not sourcers.',
       questions: [
-        'Is Kim in the wrong role?',
-        'What happened to deals she touched — were they qualified?',
-        'Has anyone reviewed her opportunity involvement?',
+        'How much pipeline originated from partner referrals?',
+        'What is the close rate when AMs work partner-sourced deals?',
+        'Is partner-originated EGP tracking improving?',
       ],
     },
     {
       name: 'Meghan Rutkowski',
       role: 'Partner Manager',
-      winRate: 37.5,
-      assessment: 'UNDERPERFORMING',
-      detail: 'Below company average (41.6%) but not disastrous. Smaller deals ($11K avg) suggest tactical not strategic.',
+      partnerOriginatedEGP: 99160,
+      assessment: 'DEVELOPING',
+      detail: 'Supporting partner development with smaller deals ($11K avg). Focus area: deal size expansion and partner enablement.',
       questions: [
-        'Why are partner deals so small?',
-        'Is Meghan finding partners or just processing referrals?',
+        'Can partner deal sizes increase with better qualification?',
+        'What partner enablement resources are needed?',
       ],
     },
   ],
-  dataSource: 'Labor MCP → get_solutions_team_roster | Sales MCP → get_team_performance',
-  verdict: '2 FTEs generating $606K pipeline = $303K per person. At estimated $150K loaded cost each, ROI is negative.',
+  dataSource: 'Sales MCP → partner-originated pipeline attribution',
+  verdict: '2 FTEs managing $606K partner pipeline with $319K EGP. Metric: partner-originated bookings, not closer win rates.',
   questions: [
-    'Should partner function be restructured or eliminated?',
-    'What would happen if we redeployed Kim to a different role?',
-    'Is Meghan worth keeping if partner strategy changes?',
+    'How can we improve partner-originated deal attribution?',
+    'What is the true ROI of partner-sourced vs direct-sourced deals?',
+    'Should we invest in partner enablement tools?',
   ],
-  recommendation: 'DECISION REQUIRED: Either fix partner function (new leadership) or redeploy resources to direct sales',
+  recommendation: 'TRACK: Partner-originated EGP and bookings. Current $319K EGP shows pipeline is being generated.',
 };
 
 // ========== UNDERPERFORMER ANALYSIS ==========
@@ -167,25 +167,16 @@ const underperformers = {
       detail: '17.1% win rate, similar to Marcus. Closing less than a third of what pipeline would suggest.',
       action: '90-day PIP with coaching support',
     },
-    {
-      name: 'Kim Guihen',
-      role: 'Partner Leadership',
-      territory: 'Partners',
-      winRate: 7.5,
-      pipeline: 70000,
-      closed: 70000,
-      assessment: 'ROLE MISFIT',
-      detail: '7.5% win rate is not a coaching problem — it\'s a role fit problem. Consider reassignment.',
-      action: 'Immediate role review — reassign to non-customer-facing or transition',
-    },
+    // Kim removed from underperformers - partner managers source deals, AMs close them
+    // Her metrics: $319K partner-originated EGP - tracked separately
   ],
   dataSource: 'Sales MCP → get_team_performance (Q4 2025) | Labor MCP → get_solutions_team_roster',
   contrast: {
     topPerformer: 'Justin Ott',
     topWinRate: 60.9,
-    bottomPerformer: 'Kim Guihen',
-    bottomWinRate: 7.5,
-    variance: '8.1x difference',
+    bottomPerformer: 'Avani Macwan',
+    bottomWinRate: 17.1,
+    variance: '3.6x difference',
   },
   recommendation: 'Replace "coaching needed" language with specific intervention plans. Document actions being taken.',
 };
@@ -467,15 +458,15 @@ export default function DeepAnalysis() {
           
           <div className="space-y-4 mb-4">
             {partnerFailure.teamAnalysis.map((member, i) => (
-              <div key={i} className={`p-4 rounded-lg border ${member.assessment === 'CATASTROPHIC' ? 'bg-red-900/30 border-red-700' : 'bg-yellow-900/30 border-yellow-700'}`}>
+              <div key={i} className={`p-4 rounded-lg border ${member.assessment === 'SOURCING' ? 'bg-blue-900/30 border-blue-700' : 'bg-slate-700/30 border-slate-600'}`}>
                 <div className="flex justify-between items-start mb-2">
                   <div>
                     <span className="text-lg font-bold text-white">{member.name}</span>
                     <span className="text-slate-400 text-sm ml-2">{member.role}</span>
                   </div>
                   <div className="text-right">
-                    <span className={`px-2 py-1 rounded text-xs font-bold ${member.assessment === 'CATASTROPHIC' ? 'bg-red-900 text-red-300' : 'bg-yellow-900 text-yellow-300'}`}>{member.assessment}</span>
-                    <div className="text-2xl font-bold text-white mt-1">{member.winRate}%</div>
+                    <span className={`px-2 py-1 rounded text-xs font-bold ${member.assessment === 'SOURCING' ? 'bg-blue-900 text-blue-300' : 'bg-slate-700 text-slate-300'}`}>{member.assessment}</span>
+                    <div className="text-xl font-bold text-white mt-1">${(member.partnerOriginatedEGP / 1000).toFixed(0)}K EGP</div>
                   </div>
                 </div>
                 <p className="text-slate-300 text-sm mb-2">{member.detail}</p>
