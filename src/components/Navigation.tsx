@@ -14,11 +14,21 @@ const navItems: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Executive Summary', href: '/executive-summary' },
   {
+    label: 'Partners',
+    children: [
+      { label: 'Partner Overview', href: '/partner-overview' },
+      { label: 'Partner Plays', href: '/partner-plays' },
+      { label: 'Technology Ecosystem', href: '/partner-ecosystem' },
+      { label: 'Solutions Alignment', href: '/partner-solutions' },
+      { label: 'Partner Metrics', href: '/partner-strategy' },
+      { label: 'Western Partner Plan', href: '/partner-west' },
+    ],
+  },
+  {
     label: 'Strategy',
     children: [
       { label: 'GTM Strategy', href: '/gtm-strategy' },
       { label: 'Cloud Assurance → AI', href: '/cloud-assurance-expansion' },
-      { label: 'Partner & Alliances', href: '/partner-strategy' },
       { label: 'Sales Momentum', href: '/sales-momentum' },
       { label: 'Service Expansion', href: '/service-expansion' },
       { label: 'Marketing Alignment', href: '/marketing-alignment' },
