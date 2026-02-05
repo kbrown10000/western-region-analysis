@@ -81,6 +81,7 @@ const navItems: NavItem[] = [
     label: 'Critique',
     children: [
       { label: 'Overview', href: '/critique' },
+      { label: '⚡ Deep Analysis', href: '/critique/deep-analysis' },
       { label: 'Executive Summary', href: '/critique/executive-summary' },
       { label: 'Partner Strategy', href: '/critique/partner-strategy' },
       { label: 'Territories', href: '/critique/territories' },
